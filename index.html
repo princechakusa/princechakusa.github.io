@@ -2,189 +2,167 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Prince Chakusa Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
   <style>
-    /* Add this for smooth scrolling */
-    html {
-      scroll-behavior: smooth;
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      background: #f4f4f4;
+      color: #333;
     }
-
-    /* Fixed header styles */
     header {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background: #005f73;
-      z-index: 1000;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+      background: #222;
+      color: #fff;
+      padding: 20px 0;
+      text-align: center;
     }
-
-    main {
-      padding-top: 120px; /* space for fixed header */
-      max-width: 900px;
-      margin: 0 auto;
-      padding-left: 1rem;
-      padding-right: 1rem;
-    }
-
-    section {
-      margin-bottom: 80px;
-      background: white;
-      padding: 2rem;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    }
-
-    /* Nav styles */
     nav ul {
       list-style: none;
-      display: flex;
-      justify-content: center;
-      padding: 1rem 0;
+      padding: 0;
+      text-align: center;
+      background: #444;
       margin: 0;
-      gap: 2rem;
     }
-
+    nav ul li {
+      display: inline;
+      margin: 0 15px;
+    }
     nav ul li a {
-      color: white;
+      color: #fff;
       text-decoration: none;
-      font-weight: 600;
-      font-size: 1.1rem;
-      padding: 0.3rem 0.6rem;
-      border-radius: 5px;
-      display: inline-block;
+      font-weight: bold;
     }
-
-    nav ul li a:hover,
-    nav ul li a.active {
-      background-color: #94d2bd;
-      color: #003d33;
+    section {
+      padding: 40px 20px;
+      max-width: 900px;
+      margin: auto;
+      background: #fff;
+      margin-top: 20px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
-
-    /* Profile image */
-    .profile-img {
-      display: block;
-      margin: 0 auto 1.5rem auto;
-      width: 180px;
+    h2 {
+      color: #222;
+      border-bottom: 2px solid #eee;
+      padding-bottom: 10px;
+    }
+    .project img {
+      max-width: 100%;
       border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+      margin: 10px 0;
+    }
+    footer {
+      background: #222;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      margin-top: 20px;
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1 style="color: white; text-align: center; padding: 0.5rem;">Prince Chakusa</h1>
-    <nav>
-      <ul>
-        <li><a href="#about" class="active">About</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#education">Education</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
 
-  <main>
-    <section id="about">
-      <img class="profile-img" src="https://github.com/princechakusa/princechakusa.github.io/blob/master/WhatsApp%20Image%202025-05-17%20at%2010.45.21_7e7d5154.jpg?raw=true" alt="Prince Chakusa" />
-      <h2>About Me</h2>
-      <p>
-        I am an adaptable and results-driven customer experience specialist with over five years of progressive expertise in hospitality and client support sectors. Skilled in leveraging CRM systems, conflict resolution, and team leadership to deliver exceptional guest service and enhance operational efficiency. Currently advancing my knowledge through a Computer Science degree, I aim to integrate technology-driven solutions with customer service excellence to innovate and optimize user experiences in dynamic environments.
-      </p>
-      <p>
-        My experience ranges from managing large-scale apartment service operations with multi-disciplinary teams to implementing digital concierge solutions that reduce response times and improve guest satisfaction. I am passionate about continuous learning, problem-solving, and driving customer retention through personalized and empathetic engagement.
-      </p>
-    </section>
+<header>
+  <h1>Prince Chakusa</h1>
+  <p>Customer Service & Hospitality Specialist | Dubai, UAE</p>
+</header>
 
-    <section id="experience">
-      <h2>Experience</h2>
+<nav>
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
 
-      <h3>Customer Care Specialist – STONETREE HOLDING (UAE)</h3>
-      <p><em>Nov 2024 – Present</em></p>
-      <ul>
-        <li>Managed customer service operations for 350+ apartments, ensuring exceptional guest experiences across diverse properties.</li>
-        <li>Oversaw cleaning schedules and coordinated housekeeping teams to ensure apartments were pristine before guest move-ins.</li>
-        <li>Trained and supervised concierge coordinators and new team members, boosting overall team performance and service quality.</li>
-        <li>Handled conflict resolution and guest complaints efficiently, maintaining high satisfaction and retention rates.</li>
-        <li>Processed 300+ service tickets monthly with 98% accuracy using CRM and real-time escalation systems.</li>
-        <li>Led guest experience initiatives, increasing satisfaction by 18% within six months.</li>
-      </ul>
+<section id="about">
+  <h2>About</h2>
+  <p>
+    I'm Prince Chakusa, a results-driven customer service and hospitality professional with over 5 years of international experience. I specialize in guest satisfaction, problem-solving, conflict resolution, and team leadership. I have a passion for technology and am currently pursuing a Computer Science degree to integrate smart solutions into guest and customer experiences. Fluent in English and based in Dubai, I bring dedication and innovation to every role.
+  </p>
+</section>
 
-      <h3>Guest Relations Officer – Daniels Holiday Homes (UAE)</h3>
-      <p><em>Jan 2023 – Nov 2024</em></p>
-      <ul>
-        <li>Managed check-ins and check-outs for 50+ clients weekly, contributing to a 25% increase in 5-star guest reviews.</li>
-        <li>Implemented a digital concierge platform, reducing front desk workload by 40% and enhancing response efficiency.</li>
-        <li>Analyzed guest feedback and led training programs to continuously improve service standards.</li>
-        <li>Coordinated with housekeeping and maintenance to maintain high cleanliness and maintenance standards.</li>
-        <li>Handled escalated guest complaints professionally, turning issues into positive guest experiences.</li>
-        <li>Mentored four new hires, shortening onboarding time by 20% and improving team cohesion.</li>
-      </ul>
-    </section>
+<section id="experience">
+  <h2>Experience</h2>
 
-    <section id="education">
-      <h2>Education</h2>
+  <h3>Customer Care Specialist – Stonetree Holding, UAE (Nov 2024 – Present)</h3>
+  <ul>
+    <li>Managing 350+ apartments while coordinating concierge and cleaning teams to ensure units are move-in ready.</li>
+    <li>Led implementation of a digital cleaning & maintenance tracking system, improving operational efficiency.</li>
+    <li>Resolved 95% of guest complaints on first contact via CRM tools and real-time escalation.</li>
+    <li>Processed 300+ service tickets monthly with 98% accuracy.</li>
+    <li>Trained new concierge staff and supervised cleaning schedule enforcement across all properties.</li>
+  </ul>
 
-      <h3>University of the People</h3>
-      <p><em>Associate of Science in Computer Science (Sep 2024 – Jun 2026, In Progress)</em></p>
+  <h3>Guest Relations Officer – Daniels Holiday Homes, UAE (Jan 2023 – Nov 2024)</h3>
+  <ul>
+    <li>Managed weekly check-ins/outs for 50+ clients, increasing 5-star reviews by 25%.</li>
+    <li>Launched Cadillac transportation service for tenants, generating additional revenue.</li>
+    <li>Implemented digital concierge tools, reducing front desk workload by 40%.</li>
+    <li>Trained 4 new hires, reducing onboarding time by 20%.</li>
+    <li>Analyzed post-stay surveys and led service enhancements based on feedback.</li>
+  </ul>
+</section>
 
-      <h3>Lyceum College, South Africa</h3>
-      <p><em>Diploma in Business Management (Sep 2019 – Jun 2021)</em></p>
-    </section>
+<section id="education">
+  <h2>Education</h2>
+  <ul>
+    <li><strong>University of the People</strong> – Associate of Science in Computer Science (In Progress)</li>
+    <li><strong>Lyceum College South Africa</strong> – Diploma in Business Management</li>
+  </ul>
+</section>
 
-    <section id="skills">
-      <h2>Skills</h2>
-      <ul>
-        <li>Guest Experience Optimization</li>
-        <li>CRM & Ticketing Systems</li>
-        <li>Hospitality Operations</li>
-        <li>Conflict Resolution</li>
-        <li>Sales & Upselling</li>
-        <li>Data-Driven Problem Solving</li>
-        <li>Campaign Strategy</li>
-        <li>Customer Retention</li>
-        <li>Leadership & Training</li>
-        <li>Technical Support</li>
-      </ul>
-    </section>
+<section id="skills">
+  <h2>Skills</h2>
+  <ul>
+    <li>Guest Experience Optimization</li>
+    <li>CRM & Ticketing Systems</li>
+    <li>Hospitality Operations</li>
+    <li>Conflict Resolution</li>
+    <li>Sales & Upselling</li>
+    <li>Customer Retention</li>
+    <li>Leadership & Team Training</li>
+    <li>Data-Driven Problem Solving</li>
+    <li>Technical Support</li>
+  </ul>
+</section>
 
-    <section id="contact">
-      <h2>Contact Me</h2>
-      <p>Email: <a href="mailto:chakusaprince@gmail.com">chakusaprince@gmail.com</a></p>
-      <p>Phone: <a href="tel:+971581852582">+971 58 185 2582</a></p>
-      <p>LinkedIn: <a href="https://linkedin.com/in/prince-chakusa-44430230a" target="_blank" rel="noopener">linkedin.com/in/prince-chakusa-44430230a</a></p>
-    </section>
-  </main>
+<section id="projects">
+  <h2>Projects</h2>
 
-  <footer style="text-align:center; padding:1rem; background:#005f73; color:white;">
-    &copy; 2025 Prince Chakusa
-  </footer>
+  <div class="project">
+    <h3>Cadillac Tenant Transportation Service</h3>
+    <img src="https://github.com/princechakusa/princechakusa.github.io/blob/master/princeportifolio.jpg?raw=true"
+         alt="Prince Chakusa - Cadillac Project"
+         style="width: 250px; border-radius: 10px; float: right; margin-left: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);" />
+    <p>
+      Launched a Cadillac transportation service for tenant transfers at Daniels Holiday Homes. This service improved convenience, tenant loyalty, and generated extra revenue for the business.
+    </p>
+  </div>
 
-  <script>
-    // Highlight active nav link on scroll
-    const sections = document.querySelectorAll('section');
-    const navLinks = document.querySelectorAll('nav ul li a');
+  <div class="project">
+    <h3>Digital Cleaning & Maintenance Tracking</h3>
+    <p>
+      Developed and implemented a digital system at Stonetree Holding for managing cleaning schedules and maintenance. Helped coordinate over 350 apartments, streamlining operations and reducing move-in delays.
+    </p>
+  </div>
+</section>
 
-    window.addEventListener('scroll', () => {
-      let current = '';
+<section id="contact">
+  <h2>Contact</h2>
+  <p>Email: chakusaprince@gmail.com</p>
+  <p>Phone: +971 58 185 2582</p>
+  <p>LinkedIn: <a href="https://linkedin.com/in/prince-chakusa-44430230a" target="_blank">linkedin.com/in/prince-chakusa-44430230a</a></p>
+</section>
 
-      sections.forEach(section => {
-        const sectionTop = section.offsetTop - 130;
-        if(pageYOffset >= sectionTop) {
-          current = section.getAttribute('id');
-        }
-      });
+<footer>
+  <p>&copy; 2025 Prince Chakusa. All Rights Reserved.</p>
+</footer>
 
-      navLinks.forEach(link => {
-        link.classList.remove('active');
-        if(link.getAttribute('href') === '#' + current) {
-          link.classList.add('active');
-        }
-      });
-    });
-  </script>
 </body>
 </html>
