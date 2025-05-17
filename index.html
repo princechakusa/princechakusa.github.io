@@ -1,100 +1,198 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Prince Chakusa | Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Prince Chakusa - Portfolio</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+
+<!-- Font Awesome for icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+<style>
+  body {
+    font-family: 'Montserrat', sans-serif;
+    background: #f4f7f8;
+    color: #2c3e50;
+    margin: 0;
+    padding: 0 20px;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  header {
+    text-align: center;
+    padding: 40px 0 20px 0;
+  }
+  header img {
+    width: 150px;
+    border-radius: 50%;
+    border: 4px solid #2980b9;
+  }
+  header h1 {
+    margin: 15px 0 5px 0;
+    font-weight: 700;
+    font-size: 2.8rem;
+  }
+  header p {
+    font-size: 1.2rem;
+    color: #555;
+    margin-top: 0;
+  }
+  .contact {
+    text-align: center;
+    margin: 15px 0 40px 0;
+  }
+  .contact a {
+    margin: 0 15px;
+    color: #2980b9;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+  }
+  .contact a:hover {
+    color: #1c5980;
+  }
+  section {
+    margin-bottom: 40px;
+  }
+  section h2 {
+    border-bottom: 3px solid #2980b9;
+    padding-bottom: 8px;
+    margin-bottom: 20px;
+    font-weight: 700;
+    color: #1c5980;
+  }
+  .experience-item, .education-item {
+    margin-bottom: 20px;
+  }
+  .experience-item h3, .education-item h3 {
+    margin: 0;
+    font-weight: 700;
+    font-size: 1.2rem;
+  }
+  .experience-item span, .education-item span {
+    font-style: italic;
+    color: #777;
+  }
+  .experience-item ul {
+    margin: 8px 0 0 20px;
+    padding: 0;
+  }
+  .experience-item ul li {
+    margin-bottom: 5px;
+    line-height: 1.4;
+  }
+  footer {
+    text-align: center;
+    color: #999;
+    font-size: 0.9rem;
+    padding-bottom: 30px;
+  }
+  @media (max-width: 600px) {
+    body {
+      padding: 0 10px;
+    }
+    header h1 {
+      font-size: 2rem;
+    }
+  }
+</style>
 </head>
 <body>
-  <header>
-    <h1>Prince Chakusa</h1>
-    <p>Customer Experience Specialist | Hospitality Professional | Tech-Enthusiast</p>
-  </header>
 
-  <section id="about">
-    <h2>About Me</h2>
-    <p>
-      I am a highly adaptable and results-driven professional with over 5 years of international experience
-      in customer service, hospitality, and client support. I specialize in enhancing customer experience, resolving
-      complex issues, and using technology to drive service excellence. Currently pursuing a Computer Science degree
-      to bridge technical solutions with service leadership.
-    </p>
-  </section>
+<header>
+  <img src="https://avatars.githubusercontent.com/u/12345678?v=4" alt="Prince Chakusa" />
+  <h1>Prince Chakusa</h1>
+  <p>Customer Service Specialist | Hospitality & Tech Enthusiast</p>
+  <div class="contact">
+    <a href="mailto:chakusaprince@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+    <a href="tel:+971581852582" title="Phone"><i class="fas fa-phone"></i></a>
+    <a href="https://linkedin.com/in/prince-chakusa-44430230a" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+  </div>
+</header>
 
-  <section id="experience">
-    <h2>Professional Experience</h2>
+<section id="about">
+  <h2>About Me</h2>
+  <p>Adaptable and results-oriented hospitality professional with over 5 years of experience improving service standards and boosting guest satisfaction across customer-focused roles. Skilled in resolving complex issues, streamlining guest services, and leading service improvement initiatives. Currently pursuing a Computer Science degree to integrate tech-enabled solutions in guest experience.</p>
+</section>
 
-    <h3>Customer Care Specialist – STONETREE HOLDING, UAE</h3>
-    <p><em>Nov 2024 – Present</em></p>
+<section id="experience">
+  <h2>Experience</h2>
+
+  <div class="experience-item">
+    <h3>Customer Care Specialist - STONETREE HOLDING, UAE</h3>
+    <span>Nov 2024 – Present</span>
     <ul>
-      <li>Resolved over 95% of guest complaints on first contact through proactive listening and CRM strategies.</li>
-      <li>Handled 300+ customer service tickets monthly with a 98% accuracy rate, maintaining operational excellence.</li>
-      <li>Led a guest experience enhancement initiative that raised satisfaction scores by 18% within 6 months.</li>
-      <li>Collaborated with IT and Operations to implement automation tools, cutting average response time by 30%.</li>
-      <li>Mentored junior team members, accelerating onboarding efficiency and improving service consistency.</li>
+      <li>Resolved 95% of guest complaints on first contact using CRM and real-time escalation.</li>
+      <li>Processed 300+ service tickets monthly with 98% accuracy.</li>
+      <li>Led guest experience initiative improving satisfaction by 18% in 6 months.</li>
+      <li>Collaborated with IT/operations to automate queries, reducing response time by 30%.</li>
     </ul>
+  </div>
 
-    <h3>Guest Relations Officer – Daniels Holiday Homes, UAE</h3>
-    <p><em>Jan 2023 – Nov 2024</em></p>
+  <div class="experience-item">
+    <h3>Guest Relations Officer - Daniels Holiday Homes, UAE</h3>
+    <span>Jan 2023 – Nov 2024</span>
     <ul>
-      <li>Managed over 50 weekly guest check-ins/check-outs, improving guest review scores by 25%.</li>
-      <li>Implemented a digital concierge system, decreasing front desk inquiries by 40%.</li>
-      <li>Analyzed customer feedback to identify service gaps and collaborated with departments to implement improvements.</li>
-      <li>Trained and supervised 4 new hires, streamlining their ramp-up period by 20%.</li>
-      <li>Handled VIP and long-term guest relations, ensuring retention and personalized experiences.</li>
+      <li>Managed guest check-ins/outs for 50+ clients weekly, increasing 5-star reviews by 25%.</li>
+      <li>Implemented digital concierge solution, reducing front desk workload by 40%.</li>
+      <li>Analyzed post-stay surveys to improve service, trained 4 new hires reducing onboarding by 20%.</li>
     </ul>
+  </div>
 
-    <h3>Marketing Manager Specialist – LE MORGAN GROUP, South Africa</h3>
-    <p><em>2020 – 2021</em></p>
+  <div class="experience-item">
+    <h3>Marketing Manager Specialist - LE MORGAN GROUP, South Africa</h3>
+    <span>2020 – 2021</span>
     <ul>
-      <li>Planned and executed 5 major digital campaigns, boosting brand engagement by 40%.</li>
-      <li>Monitored ROI using analytics, resulting in an 18% optimization in marketing spend.</li>
-      <li>Designed a loyalty program that increased repeat customer rates by 35%.</li>
-      <li>Collaborated closely with sales to align strategies and optimize conversion funnels.</li>
-      <li>Generated monthly performance reports and proposed growth strategies to senior management.</li>
+      <li>Executed 5 online campaigns, increasing brand engagement by 40%.</li>
+      <li>Used analytics and CRM for ROI tracking, optimized spend by 18%.</li>
+      <li>Led loyalty strategy growing repeat clients by 35%.</li>
     </ul>
+  </div>
 
-    <h3>Sales Representative – TFG (The Foschini Group), South Africa</h3>
-    <p><em>2018 – 2019</em></p>
+  <div class="experience-item">
+    <h3>Sales Representative - TFG (The Foschini Group), South Africa</h3>
+    <span>2018 – 2019</span>
     <ul>
-      <li>Consistently exceeded sales targets for 10 consecutive months.</li>
-      <li>Built a loyal customer base of 100+ clients by offering personalized recommendations and follow-up service.</li>
-      <li>Increased average transaction size by 15% through upselling and cross-selling techniques.</li>
-      <li>Recognized twice as "Top Regional Seller" for outstanding sales performance.</li>
-      <li>Managed in-store displays and promotions to drive customer traffic and product visibility.</li>
+      <li>Surpassed sales targets 10 months consecutively.</li>
+      <li>Built and retained 100+ client base with personalized service.</li>
+      <li>Increased average transaction value by 15% through upselling.</li>
     </ul>
-  </section>
+  </div>
+</section>
 
-  <section id="skills">
-    <h2>Skills</h2>
-    <ul>
-      <li>Customer Retention & Relationship Management</li>
-      <li>Conflict Resolution & Crisis Management</li>
-      <li>CRM Platforms (Zendesk, Freshdesk, HubSpot)</li>
-      <li>Sales & Upselling Strategies</li>
-      <li>Process Optimization & Automation</li>
-      <li>Data-Driven Decision Making</li>
-      <li>Training & Team Leadership</li>
-    </ul>
-  </section>
+<section id="education">
+  <h2>Education</h2>
+  <div class="education-item">
+    <h3>Associate of Science in Computer Science (In Progress)</h3>
+    <span>University of the People (Sep 2024 – Jun 2026)</span>
+  </div>
+  <div class="education-item">
+    <h3>Diploma in Business Management</h3>
+    <span>Lyceum College South Africa (Sep 2019 – Jun 2021)</span>
+  </div>
+</section>
 
-  <section id="education">
-    <h2>Education</h2>
-    <p><strong>University of the People</strong> – Associate of Science in Computer Science (In Progress)</p>
-    <p><strong>Lyceum College South Africa</strong> – Diploma in Business Management (2019 – 2021)</p>
-  </section>
+<section id="skills">
+  <h2>Skills</h2>
+  <ul>
+    <li>Guest Experience Optimization</li>
+    <li>CRM & Ticketing Systems</li>
+    <li>Hospitality Operations</li>
+    <li>Conflict Resolution</li>
+    <li>Sales & Upselling</li>
+    <li>Data-Driven Problem Solving</li>
+    <li>Campaign Strategy & Customer Retention</li>
+    <li>Leadership & Training</li>
+    <li>Technical Support</li>
+  </ul>
+</section>
 
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:chakusaprince@gmail.com">chakusaprince@gmail.com</a></p>
-    <p>Phone: <a href="tel:+971581852582">+971 58 185 2582</a></p>
-    <p>LinkedIn: <a href="https://linkedin.com/in/prince-chakusa-44430230a" target="_blank">linkedin.com/in/prince-chakusa</a></p>
-  </section>
+<footer>
+  <p>© 2025 Prince Chakusa</p>
+</footer>
 
-  <footer>
-    <p>© 2025 Prince Chakusa. All Rights Reserved.</p>
-  </footer>
 </body>
 </html>
