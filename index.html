@@ -2,21 +2,27 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Prince Chakusa | Portfolio</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
   <style>
+    html {
+      scroll-behavior: smooth;
+    }
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
       background-color: #f7f7f7;
       color: #333;
+      line-height: 1.6;
     }
     header {
       background-color: #24292e;
       color: white;
       padding: 20px;
       text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
     nav ul {
       display: flex;
@@ -31,35 +37,60 @@
     nav ul li a {
       color: white;
       text-decoration: none;
-      font-weight: bold;
+      font-weight: 600;
+      font-size: 16px;
+      transition: color 0.3s ease;
+    }
+    nav ul li a:hover {
+      color: #1db954;
     }
     .container {
       max-width: 900px;
-      margin: auto;
-      padding: 20px;
+      margin: 30px auto;
+      padding: 0 20px 40px 20px;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
     }
     img.profile {
       display: block;
-      margin: 20px auto;
+      margin: 30px auto 40px auto;
       border-radius: 10px;
       width: 200px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
     section {
-      margin-bottom: 40px;
+      margin-bottom: 50px;
     }
     h2 {
-      border-bottom: 2px solid #ddd;
-      padding-bottom: 5px;
+      border-bottom: 3px solid #1db954;
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+      font-weight: 700;
+      color: #24292e;
+    }
+    ul {
+      padding-left: 20px;
+    }
+    ul li {
+      margin-bottom: 10px;
     }
     a {
-      color: #007acc;
+      color: #1db954;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    p {
+      font-size: 16px;
     }
   </style>
 </head>
 <body>
   <header>
     <h1>Prince Chakusa</h1>
-    <p>Customer Experience Specialist | Tech Enthusiast | Dubai</p>
+    <p>Customer Experience Specialist | Technology Enthusiast | Dubai, UAE</p>
     <nav>
       <ul>
         <li><a href="#about">About</a></li>
@@ -76,7 +107,12 @@
 
     <section id="about">
       <h2>About Me</h2>
-      <p>Adaptable and results-oriented customer service professional with 5+ years of experience delivering exceptional service across hospitality and support roles. Skilled in conflict resolution, CRM, and customer retention, currently pursuing a Computer Science degree to merge tech and service delivery.</p>
+      <p>
+        I am an adaptable and results-driven customer experience specialist with over five years of progressive expertise in hospitality and client support sectors. Skilled in leveraging CRM systems, conflict resolution, and team leadership to deliver exceptional guest service and enhance operational efficiency. Currently advancing my knowledge through a Computer Science degree, I aim to integrate technology-driven solutions with customer service excellence to innovate and optimize user experiences in dynamic environments.
+      </p>
+      <p>
+        My experience ranges from managing large-scale apartment service operations with multi-disciplinary teams to implementing digital concierge solutions that reduce response times and improve guest satisfaction. I am passionate about continuous learning, problem-solving, and driving customer retention through personalized and empathetic engagement.
+      </p>
     </section>
 
     <section id="experience">
@@ -84,22 +120,22 @@
 
       <p><strong>Customer Care Specialist – STONETREE HOLDING (UAE)</strong><br>Nov 2024 – Present</p>
       <ul>
-        <li>Managed customer service operations for 350+ apartments, ensuring smooth guest experiences across all properties.</li>
-        <li>Handled cleaning schedules and coordinated with housekeeping teams to guarantee apartments are spotless before guest move-ins.</li>
-        <li>Trained and supervised new team members in concierge coordination, elevating team performance and service quality.</li>
-        <li>Resolved conflicts and guest complaints efficiently, maintaining high satisfaction and retention rates.</li>
-        <li>Processed 300+ service tickets monthly with 98% accuracy using CRM and real-time escalation tools.</li>
-        <li>Led guest experience initiatives resulting in an 18% improvement in overall satisfaction within six months.</li>
+        <li>Managed customer service operations for 350+ apartments, ensuring exceptional guest experiences across diverse properties.</li>
+        <li>Oversaw cleaning schedules and coordinated with housekeeping teams to guarantee apartments are pristine before guest move-ins.</li>
+        <li>Trained and supervised concierge coordinators and new team members, boosting overall team performance and service quality.</li>
+        <li>Handled conflict resolution and guest complaints efficiently, maintaining high satisfaction and retention rates.</li>
+        <li>Processed over 300 service tickets monthly with 98% accuracy utilizing CRM and real-time escalation systems.</li>
+        <li>Led initiatives to improve guest experience, resulting in an 18% satisfaction increase within six months.</li>
       </ul>
 
       <p><strong>Guest Relations Officer – Daniels Holiday Homes (UAE)</strong><br>Jan 2023 – Nov 2024</p>
       <ul>
-        <li>Managed check-ins and check-outs for 50+ clients weekly, increasing 5-star guest reviews by 25%.</li>
-        <li>Introduced and implemented a digital concierge system, reducing front desk workload by 40% and improving response time.</li>
-        <li>Analyzed guest feedback surveys to identify service gaps and led training sessions to address them.</li>
-        <li>Collaborated with housekeeping and maintenance teams to ensure all properties met high standards of cleanliness and functionality.</li>
-        <li>Handled escalated guest complaints with professionalism, successfully resolving conflicts and enhancing guest loyalty.</li>
-        <li>Trained 4 new hires on guest service protocols, reducing onboarding time by 20% and improving team efficiency.</li>
+        <li>Managed check-ins and check-outs for 50+ clients weekly, contributing to a 25% increase in 5-star guest reviews.</li>
+        <li>Implemented a digital concierge platform, reducing front desk workload by 40% and enhancing response efficiency.</li>
+        <li>Analyzed guest feedback and led targeted training programs to continuously improve service standards.</li>
+        <li>Collaborated closely with housekeeping and maintenance teams to uphold rigorous cleanliness and functionality standards.</li>
+        <li>Expertly handled escalated guest complaints, turning challenges into loyalty-building opportunities.</li>
+        <li>Mentored four new hires, shortening onboarding time by 20% and improving team cohesion.</li>
       </ul>
     </section>
 
@@ -114,10 +150,11 @@
       <ul>
         <li>Guest Experience Optimization</li>
         <li>CRM & Ticketing Systems</li>
-        <li>Conflict Resolution</li>
-        <li>Upselling & Retention</li>
-        <li>Leadership & Training</li>
-        <li>Tech Support</li>
+        <li>Conflict Resolution & Customer Retention</li>
+        <li>Leadership & Team Training</li>
+        <li>Sales & Upselling Techniques</li>
+        <li>Technical Support & Troubleshooting</li>
+        <li>Data Analysis & Service Improvement</li>
       </ul>
     </section>
 
@@ -125,7 +162,7 @@
       <h2>Contact</h2>
       <p><strong>Email:</strong> <a href="mailto:chakusaprince@gmail.com">chakusaprince@gmail.com</a></p>
       <p><strong>Phone:</strong> +971 58 185 2582</p>
-      <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/prince-chakusa-44430230a" target="_blank">linkedin.com/in/prince-chakusa</a></p>
+      <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/prince-chakusa-44430230a" target="_blank" rel="noopener noreferrer">linkedin.com/in/prince-chakusa</a></p>
     </section>
   </div>
 </body>
