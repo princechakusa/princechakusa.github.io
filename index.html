@@ -1,198 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Prince Chakusa - Portfolio</title>
-
-<!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
-
-<!-- Font Awesome for icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-
-<style>
-  body {
-    font-family: 'Montserrat', sans-serif;
-    background: #f4f7f8;
-    color: #2c3e50;
-    margin: 0;
-    padding: 0 20px;
-    max-width: 900px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  header {
-    text-align: center;
-    padding: 40px 0 20px 0;
-  }
-  header img {
-    width: 150px;
-    border-radius: 50%;
-    border: 4px solid #2980b9;
-  }
-  header h1 {
-    margin: 15px 0 5px 0;
-    font-weight: 700;
-    font-size: 2.8rem;
-  }
-  header p {
-    font-size: 1.2rem;
-    color: #555;
-    margin-top: 0;
-  }
-  .contact {
-    text-align: center;
-    margin: 15px 0 40px 0;
-  }
-  .contact a {
-    margin: 0 15px;
-    color: #2980b9;
-    font-size: 1.5rem;
-    transition: color 0.3s ease;
-  }
-  .contact a:hover {
-    color: #1c5980;
-  }
-  section {
-    margin-bottom: 40px;
-  }
-  section h2 {
-    border-bottom: 3px solid #2980b9;
-    padding-bottom: 8px;
-    margin-bottom: 20px;
-    font-weight: 700;
-    color: #1c5980;
-  }
-  .experience-item, .education-item {
-    margin-bottom: 20px;
-  }
-  .experience-item h3, .education-item h3 {
-    margin: 0;
-    font-weight: 700;
-    font-size: 1.2rem;
-  }
-  .experience-item span, .education-item span {
-    font-style: italic;
-    color: #777;
-  }
-  .experience-item ul {
-    margin: 8px 0 0 20px;
-    padding: 0;
-  }
-  .experience-item ul li {
-    margin-bottom: 5px;
-    line-height: 1.4;
-  }
-  footer {
-    text-align: center;
-    color: #999;
-    font-size: 0.9rem;
-    padding-bottom: 30px;
-  }
-  @media (max-width: 600px) {
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prince Chakusa | Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <style>
     body {
-      padding: 0 10px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      background-color: #f7f7f7;
+      color: #333;
     }
-    header h1 {
-      font-size: 2rem;
+    header {
+      background-color: #24292e;
+      color: white;
+      padding: 20px;
+      text-align: center;
     }
-  }
-</style>
+    nav ul {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      padding: 0;
+      margin: 10px 0 0;
+    }
+    nav ul li {
+      margin: 0 15px;
+    }
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 20px;
+    }
+    img.profile {
+      display: block;
+      margin: 20px auto;
+      border-radius: 10px;
+      width: 200px;
+    }
+    section {
+      margin-bottom: 40px;
+    }
+    h2 {
+      border-bottom: 2px solid #ddd;
+      padding-bottom: 5px;
+    }
+    a {
+      color: #007acc;
+    }
+  </style>
 </head>
 <body>
+  <header>
+    <h1>Prince Chakusa</h1>
+    <p>Customer Experience Specialist | Tech Enthusiast | Dubai</p>
+    <nav>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-<header>
-  <img src="https://github.com/princechakusa/princechakusa.github.io/blob/master/WhatsApp%20Image%202025-05-17%20at%2010.45.21_7e7d5154.jpg?raw=true" alt="Prince Chakusa" style="width: 200px; border-radius: 10px;" />
-  <h1>Prince Chakusa</h1>
-  <p>Customer Service Specialist | Hospitality & Tech Enthusiast</p>
-  <div class="contact">
-    <a href="mailto:chakusaprince@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
-    <a href="tel:+971581852582" title="Phone"><i class="fas fa-phone"></i></a>
-    <a href="https://linkedin.com/in/prince-chakusa-44430230a" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+  <div class="container">
+    <img src="https://github.com/princechakusa/princechakusa.github.io/blob/master/WhatsApp%20Image%202025-05-17%20at%2010.45.21_7e7d5154.jpg?raw=true" alt="Prince Chakusa" class="profile" />
+
+    <section id="about">
+      <h2>About Me</h2>
+      <p>Adaptable and results-oriented customer service professional with 5+ years of experience delivering exceptional service across hospitality and support roles. Skilled in conflict resolution, CRM, and customer retention, currently pursuing a Computer Science degree to merge tech and service delivery.</p>
+    </section>
+
+    <section id="experience">
+      <h2>Experience</h2>
+
+      <p><strong>Customer Care Specialist – STONETREE HOLDING (UAE)</strong><br>Nov 2024 – Present</p>
+      <ul>
+        <li>Managed customer service operations for 350+ apartments, ensuring smooth guest experiences across all properties.</li>
+        <li>Handled cleaning schedules and coordinated with housekeeping teams to guarantee apartments are spotless before guest move-ins.</li>
+        <li>Trained and supervised new team members in concierge coordination, elevating team performance and service quality.</li>
+        <li>Resolved conflicts and guest complaints efficiently, maintaining high satisfaction and retention rates.</li>
+        <li>Processed 300+ service tickets monthly with 98% accuracy using CRM and real-time escalation tools.</li>
+        <li>Led guest experience initiatives resulting in an 18% improvement in overall satisfaction within six months.</li>
+      </ul>
+
+      <p><strong>Guest Relations Officer – Daniels Holiday Homes (UAE)</strong><br>Jan 2023 – Nov 2024</p>
+      <ul>
+        <li>Managed check-ins and check-outs for 50+ clients weekly, increasing 5-star guest reviews by 25%.</li>
+        <li>Introduced and implemented a digital concierge system, reducing front desk workload by 40% and improving response time.</li>
+        <li>Analyzed guest feedback surveys to identify service gaps and led training sessions to address them.</li>
+        <li>Collaborated with housekeeping and maintenance teams to ensure all properties met high standards of cleanliness and functionality.</li>
+        <li>Handled escalated guest complaints with professionalism, successfully resolving conflicts and enhancing guest loyalty.</li>
+        <li>Trained 4 new hires on guest service protocols, reducing onboarding time by 20% and improving team efficiency.</li>
+      </ul>
+    </section>
+
+    <section id="education">
+      <h2>Education</h2>
+      <p><strong>University of the People</strong><br>Associate of Science in Computer Science (Sep 2024 – Jun 2026, In Progress)</p>
+      <p><strong>Lyceum College, South Africa</strong><br>Diploma in Business Management (Sep 2019 – Jun 2021)</p>
+    </section>
+
+    <section id="skills">
+      <h2>Skills</h2>
+      <ul>
+        <li>Guest Experience Optimization</li>
+        <li>CRM & Ticketing Systems</li>
+        <li>Conflict Resolution</li>
+        <li>Upselling & Retention</li>
+        <li>Leadership & Training</li>
+        <li>Tech Support</li>
+      </ul>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p><strong>Email:</strong> <a href="mailto:chakusaprince@gmail.com">chakusaprince@gmail.com</a></p>
+      <p><strong>Phone:</strong> +971 58 185 2582</p>
+      <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/prince-chakusa-44430230a" target="_blank">linkedin.com/in/prince-chakusa</a></p>
+    </section>
   </div>
-</header>
-
-<section id="about">
-  <h2>About Me</h2>
-  <p>Adaptable and results-oriented hospitality professional with over 5 years of experience improving service standards and boosting guest satisfaction across customer-focused roles. Skilled in resolving complex issues, streamlining guest services, and leading service improvement initiatives. Currently pursuing a Computer Science degree to integrate tech-enabled solutions in guest experience.</p>
-</section>
-
-<section id="experience">
-  <h2>Experience</h2>
-
-  <div class="experience-item">
-    <h3>Customer Care Specialist - STONETREE HOLDING, UAE</h3>
-    <span>Nov 2024 – Present</span>
-    <ul>
-      <li>Resolved 95% of guest complaints on first contact using CRM and real-time escalation.</li>
-      <li>Processed 300+ service tickets monthly with 98% accuracy.</li>
-      <li>Led guest experience initiative improving satisfaction by 18% in 6 months.</li>
-      <li>Collaborated with IT/operations to automate queries, reducing response time by 30%.</li>
-    </ul>
-  </div>
-
-  <div class="experience-item">
-    <h3>Guest Relations Officer - Daniels Holiday Homes, UAE</h3>
-    <span>Jan 2023 – Nov 2024</span>
-    <ul>
-      <li>Managed guest check-ins/outs for 50+ clients weekly, increasing 5-star reviews by 25%.</li>
-      <li>Implemented digital concierge solution, reducing front desk workload by 40%.</li>
-      <li>Analyzed post-stay surveys to improve service, trained 4 new hires reducing onboarding by 20%.</li>
-    </ul>
-  </div>
-
-  <div class="experience-item">
-    <h3>Marketing Manager Specialist - LE MORGAN GROUP, South Africa</h3>
-    <span>2020 – 2021</span>
-    <ul>
-      <li>Executed 5 online campaigns, increasing brand engagement by 40%.</li>
-      <li>Used analytics and CRM for ROI tracking, optimized spend by 18%.</li>
-      <li>Led loyalty strategy growing repeat clients by 35%.</li>
-    </ul>
-  </div>
-
-  <div class="experience-item">
-    <h3>Sales Representative - TFG (The Foschini Group), South Africa</h3>
-    <span>2018 – 2019</span>
-    <ul>
-      <li>Surpassed sales targets 10 months consecutively.</li>
-      <li>Built and retained 100+ client base with personalized service.</li>
-      <li>Increased average transaction value by 15% through upselling.</li>
-    </ul>
-  </div>
-</section>
-
-<section id="education">
-  <h2>Education</h2>
-  <div class="education-item">
-    <h3>Associate of Science in Computer Science (In Progress)</h3>
-    <span>University of the People (Sep 2024 – Jun 2026)</span>
-  </div>
-  <div class="education-item">
-    <h3>Diploma in Business Management</h3>
-    <span>Lyceum College South Africa (Sep 2019 – Jun 2021)</span>
-  </div>
-</section>
-
-<section id="skills">
-  <h2>Skills</h2>
-  <ul>
-    <li>Guest Experience Optimization</li>
-    <li>CRM & Ticketing Systems</li>
-    <li>Hospitality Operations</li>
-    <li>Conflict Resolution</li>
-    <li>Sales & Upselling</li>
-    <li>Data-Driven Problem Solving</li>
-    <li>Campaign Strategy & Customer Retention</li>
-    <li>Leadership & Training</li>
-    <li>Technical Support</li>
-  </ul>
-</section>
-
-<footer>
-  <p>© 2025 Prince Chakusa</p>
-</footer>
-
 </body>
 </html>
