@@ -3,97 +3,82 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Prince Chakusa | Portfolio</title>
+  <title>Prince Chakusa Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
   <style>
+    /* Add this for smooth scrolling */
     html {
       scroll-behavior: smooth;
     }
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0;
-      background-color: #f7f7f7;
-      color: #333;
-      line-height: 1.6;
-    }
+
+    /* Fixed header styles */
     header {
-      background-color: #24292e;
-      color: white;
-      padding: 20px;
-      text-align: center;
-      position: sticky;
+      position: fixed;
       top: 0;
+      width: 100%;
+      background: #005f73;
       z-index: 1000;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
     }
+
+    main {
+      padding-top: 120px; /* space for fixed header */
+      max-width: 900px;
+      margin: 0 auto;
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+
+    section {
+      margin-bottom: 80px;
+      background: white;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    /* Nav styles */
     nav ul {
+      list-style: none;
       display: flex;
       justify-content: center;
-      list-style: none;
-      padding: 0;
-      margin: 10px 0 0;
+      padding: 1rem 0;
+      margin: 0;
+      gap: 2rem;
     }
-    nav ul li {
-      margin: 0 15px;
-    }
+
     nav ul li a {
       color: white;
       text-decoration: none;
       font-weight: 600;
-      font-size: 16px;
-      transition: color 0.3s ease;
+      font-size: 1.1rem;
+      padding: 0.3rem 0.6rem;
+      border-radius: 5px;
+      display: inline-block;
     }
-    nav ul li a:hover {
-      color: #1db954;
+
+    nav ul li a:hover,
+    nav ul li a.active {
+      background-color: #94d2bd;
+      color: #003d33;
     }
-    .container {
-      max-width: 900px;
-      margin: 30px auto;
-      padding: 0 20px 40px 20px;
-      background: white;
-      border-radius: 8px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.1);
-    }
-    img.profile {
+
+    /* Profile image */
+    .profile-img {
       display: block;
-      margin: 30px auto 40px auto;
+      margin: 0 auto 1.5rem auto;
+      width: 180px;
       border-radius: 10px;
-      width: 200px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    }
-    section {
-      margin-bottom: 50px;
-    }
-    h2 {
-      border-bottom: 3px solid #1db954;
-      padding-bottom: 10px;
-      margin-bottom: 20px;
-      font-weight: 700;
-      color: #24292e;
-    }
-    ul {
-      padding-left: 20px;
-    }
-    ul li {
-      margin-bottom: 10px;
-    }
-    a {
-      color: #1db954;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-    p {
-      font-size: 16px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>Prince Chakusa</h1>
-    <p>Customer Experience Specialist | Technology Enthusiast | Dubai, UAE</p>
+    <h1 style="color: white; text-align: center; padding: 0.5rem;">Prince Chakusa</h1>
     <nav>
       <ul>
-        <li><a href="#about">About</a></li>
+        <li><a href="#about" class="active">About</a></li>
         <li><a href="#experience">Experience</a></li>
         <li><a href="#education">Education</a></li>
         <li><a href="#skills">Skills</a></li>
@@ -102,10 +87,9 @@
     </nav>
   </header>
 
-  <div class="container">
-    <img src="https://github.com/princechakusa/princechakusa.github.io/blob/master/WhatsApp%20Image%202025-05-17%20at%2010.45.21_7e7d5154.jpg?raw=true" alt="Prince Chakusa" class="profile" />
-
+  <main>
     <section id="about">
+      <img class="profile-img" src="https://github.com/princechakusa/princechakusa.github.io/blob/master/WhatsApp%20Image%202025-05-17%20at%2010.45.21_7e7d5154.jpg?raw=true" alt="Prince Chakusa" />
       <h2>About Me</h2>
       <p>
         I am an adaptable and results-driven customer experience specialist with over five years of progressive expertise in hospitality and client support sectors. Skilled in leveraging CRM systems, conflict resolution, and team leadership to deliver exceptional guest service and enhance operational efficiency. Currently advancing my knowledge through a Computer Science degree, I aim to integrate technology-driven solutions with customer service excellence to innovate and optimize user experiences in dynamic environments.
@@ -118,31 +102,37 @@
     <section id="experience">
       <h2>Experience</h2>
 
-      <p><strong>Customer Care Specialist – STONETREE HOLDING (UAE)</strong><br>Nov 2024 – Present</p>
+      <h3>Customer Care Specialist – STONETREE HOLDING (UAE)</h3>
+      <p><em>Nov 2024 – Present</em></p>
       <ul>
         <li>Managed customer service operations for 350+ apartments, ensuring exceptional guest experiences across diverse properties.</li>
-        <li>Oversaw cleaning schedules and coordinated with housekeeping teams to guarantee apartments are pristine before guest move-ins.</li>
+        <li>Oversaw cleaning schedules and coordinated housekeeping teams to ensure apartments were pristine before guest move-ins.</li>
         <li>Trained and supervised concierge coordinators and new team members, boosting overall team performance and service quality.</li>
         <li>Handled conflict resolution and guest complaints efficiently, maintaining high satisfaction and retention rates.</li>
-        <li>Processed over 300 service tickets monthly with 98% accuracy utilizing CRM and real-time escalation systems.</li>
-        <li>Led initiatives to improve guest experience, resulting in an 18% satisfaction increase within six months.</li>
+        <li>Processed 300+ service tickets monthly with 98% accuracy using CRM and real-time escalation systems.</li>
+        <li>Led guest experience initiatives, increasing satisfaction by 18% within six months.</li>
       </ul>
 
-      <p><strong>Guest Relations Officer – Daniels Holiday Homes (UAE)</strong><br>Jan 2023 – Nov 2024</p>
+      <h3>Guest Relations Officer – Daniels Holiday Homes (UAE)</h3>
+      <p><em>Jan 2023 – Nov 2024</em></p>
       <ul>
         <li>Managed check-ins and check-outs for 50+ clients weekly, contributing to a 25% increase in 5-star guest reviews.</li>
         <li>Implemented a digital concierge platform, reducing front desk workload by 40% and enhancing response efficiency.</li>
-        <li>Analyzed guest feedback and led targeted training programs to continuously improve service standards.</li>
-        <li>Collaborated closely with housekeeping and maintenance teams to uphold rigorous cleanliness and functionality standards.</li>
-        <li>Expertly handled escalated guest complaints, turning challenges into loyalty-building opportunities.</li>
+        <li>Analyzed guest feedback and led training programs to continuously improve service standards.</li>
+        <li>Coordinated with housekeeping and maintenance to maintain high cleanliness and maintenance standards.</li>
+        <li>Handled escalated guest complaints professionally, turning issues into positive guest experiences.</li>
         <li>Mentored four new hires, shortening onboarding time by 20% and improving team cohesion.</li>
       </ul>
     </section>
 
     <section id="education">
       <h2>Education</h2>
-      <p><strong>University of the People</strong><br>Associate of Science in Computer Science (Sep 2024 – Jun 2026, In Progress)</p>
-      <p><strong>Lyceum College, South Africa</strong><br>Diploma in Business Management (Sep 2019 – Jun 2021)</p>
+
+      <h3>University of the People</h3>
+      <p><em>Associate of Science in Computer Science (Sep 2024 – Jun 2026, In Progress)</em></p>
+
+      <h3>Lyceum College, South Africa</h3>
+      <p><em>Diploma in Business Management (Sep 2019 – Jun 2021)</em></p>
     </section>
 
     <section id="skills">
@@ -150,20 +140,51 @@
       <ul>
         <li>Guest Experience Optimization</li>
         <li>CRM & Ticketing Systems</li>
-        <li>Conflict Resolution & Customer Retention</li>
-        <li>Leadership & Team Training</li>
-        <li>Sales & Upselling Techniques</li>
-        <li>Technical Support & Troubleshooting</li>
-        <li>Data Analysis & Service Improvement</li>
+        <li>Hospitality Operations</li>
+        <li>Conflict Resolution</li>
+        <li>Sales & Upselling</li>
+        <li>Data-Driven Problem Solving</li>
+        <li>Campaign Strategy</li>
+        <li>Customer Retention</li>
+        <li>Leadership & Training</li>
+        <li>Technical Support</li>
       </ul>
     </section>
 
     <section id="contact">
-      <h2>Contact</h2>
-      <p><strong>Email:</strong> <a href="mailto:chakusaprince@gmail.com">chakusaprince@gmail.com</a></p>
-      <p><strong>Phone:</strong> +971 58 185 2582</p>
-      <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/prince-chakusa-44430230a" target="_blank" rel="noopener noreferrer">linkedin.com/in/prince-chakusa</a></p>
+      <h2>Contact Me</h2>
+      <p>Email: <a href="mailto:chakusaprince@gmail.com">chakusaprince@gmail.com</a></p>
+      <p>Phone: <a href="tel:+971581852582">+971 58 185 2582</a></p>
+      <p>LinkedIn: <a href="https://linkedin.com/in/prince-chakusa-44430230a" target="_blank" rel="noopener">linkedin.com/in/prince-chakusa-44430230a</a></p>
     </section>
-  </div>
+  </main>
+
+  <footer style="text-align:center; padding:1rem; background:#005f73; color:white;">
+    &copy; 2025 Prince Chakusa
+  </footer>
+
+  <script>
+    // Highlight active nav link on scroll
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('nav ul li a');
+
+    window.addEventListener('scroll', () => {
+      let current = '';
+
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 130;
+        if(pageYOffset >= sectionTop) {
+          current = section.getAttribute('id');
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if(link.getAttribute('href') === '#' + current) {
+          link.classList.add('active');
+        }
+      });
+    });
+  </script>
 </body>
 </html>
