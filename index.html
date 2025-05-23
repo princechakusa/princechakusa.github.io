@@ -3,177 +3,210 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Prince Chakusa | Portfolio</title>
+  <title>Prince Chakusa Portfolio</title>
   <style>
+    :root {
+      --primary-color: #1e90ff;
+      --secondary-color: #f0f8ff;
+      --text-color: #333;
+      --background-color: #ffffff;
+      --accent-color: #e0f0ff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
-      background-color: #f4f4f4;
-      color: #333;
+      padding: 0;
+      background: var(--secondary-color);
+      color: var(--text-color);
     }
+
     header {
-      background-color: #111;
+      background: var(--primary-color);
       color: white;
-      padding: 40px 20px;
-      display: flex;
-      align-items: center;
+      text-align: center;
+      padding: 40px 20px 20px 20px;
+      position: relative;
     }
+
     header img {
-      border-radius: 10px;
       width: 120px;
       height: 120px;
+      border-radius: 50%;
+      border: 4px solid white;
       object-fit: cover;
-      margin-right: 20px;
+      margin-top: -60px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
-    nav {
-      background-color: #222;
+
+    nav ul {
       display: flex;
       justify-content: center;
+      list-style: none;
+      background: var(--accent-color);
+      margin: 0;
+      padding: 10px 0;
+      gap: 20px;
     }
-    nav a {
-      color: white;
-      padding: 15px 20px;
+
+    nav ul li a {
       text-decoration: none;
-      display: inline-block;
+      color: var(--primary-color);
+      font-weight: bold;
+      transition: color 0.3s;
     }
-    nav a:hover {
-      background-color: #444;
+
+    nav ul li a:hover {
+      color: #0057b8;
     }
+
     section {
       padding: 40px 20px;
       max-width: 900px;
-      margin: auto;
-      background-color: white;
-      margin-top: 10px;
-      border-radius: 8px;
+      margin: 20px auto;
+      background: var(--background-color);
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
     }
+
     h2 {
-      color: #222;
+      color: var(--primary-color);
       border-bottom: 2px solid #ddd;
-      padding-bottom: 8px;
+      padding-bottom: 10px;
+      margin-bottom: 20px;
     }
+
+    h3 {
+      color: #444;
+    }
+
     ul {
       padding-left: 20px;
+    }
+
+    .project img {
+      max-width: 100%;
+      border-radius: 12px;
+      margin: 15px 0;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    footer {
+      background: var(--primary-color);
+      color: white;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9em;
+    }
+
+    a {
+      color: var(--primary-color);
     }
   </style>
 </head>
 <body>
 
 <header>
-  <img src="https://github.com/princechakusa/princechakusa.github.io/blob/master/WhatsApp%20Image%202025-05-17%20at%2010.45.21_7e7d5154.jpg?raw=true" alt="Prince Chakusa" />
-  <div>
-    <h1>Prince Chakusa</h1>
-    <p>Team Leader | Customer Experience Strategist | Hospitality & Tech Integration</p>
-    <p>Dubai, UAE • chakusaprince@gmail.com • ‪+971 58 185 2582‬</p>
-  </div>
+  <img src="https://github.com/princechakusa/princechakusa.github.io/blob/master/WhatsApp%20Image%202025-05-17%20at%2010.45.21_7e7d5154.jpg?raw=true" alt="Prince Chakusa Profile Picture" />
+  <h1>Prince Chakusa</h1>
+  <p>Customer Service & Hospitality Specialist | Dubai, UAE</p>
 </header>
 
 <nav>
-  <a href="#about">About</a>
-  <a href="#experience">Experience</a>
-  <a href="#education">Education</a>
-  <a href="#skills">Skills</a>
-  <a href="#projects">Projects</a>
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
 </nav>
 
 <section id="about">
   <h2>About</h2>
-  <p>I’m a results-driven professional with over 5 years of cross-functional experience in hospitality, customer support, team leadership, and tech-integrated operations. Passionate about delivering memorable guest experiences while solving complex service problems. Promoted to Team Leader for consistently exceeding performance metrics and spearheading key operational innovations. Always eager to learn, lead, and optimize for better service delivery and satisfaction.</p>
+  <p>
+    I'm Prince Chakusa, a results-driven customer service and hospitality professional with over 5 years of international experience. I specialize in guest satisfaction, problem-solving, conflict resolution, and team leadership. I have a passion for technology and am currently pursuing a Computer Science degree to integrate smart solutions into guest and customer experiences. Fluent in English and based in Dubai, I bring dedication and innovation to every role.
+  </p>
 </section>
 
 <section id="experience">
   <h2>Experience</h2>
 
-  <h3>Team Leader – STONETREE HOLDING, UAE (May 2025 – Present)</h3>
+  <h3>Customer Care Specialist – Stonetree Holding, UAE (Nov 2024 – Present)</h3>
   <ul>
-    <li>Lead operations for over 350+ serviced apartments across Cleaning, Maintenance, and Concierge Coordination departments.</li>
-    <li>Manage team schedules, daily briefings, and monitor cleaning standards prior to guest or tenant move-ins.</li>
-    <li>Train and mentor new hires in both concierge and cleaning divisions to ensure operational excellence.</li>
-    <li>Resolve interdepartmental conflicts and client escalations swiftly and professionally.</li>
-    <li>Collaborate with Operations Managers to implement and review process improvement plans.</li>
-    <li>Oversee digital reporting tools and help implement structured SOPs across teams.</li>
-  </ul>
-
-  <h3>Customer Care Specialist – STONETREE HOLDING, UAE (Nov 2024 – May 2025)</h3>
-  <ul>
-    <li>Resolved 95% of guest complaints on first contact using CRM systems and escalation protocols.</li>
-    <li>Processed 300+ monthly service tickets with 98% accuracy and tracked resolution KPIs.</li>
-    <li>Launched a digital cleaning and maintenance tracking tool improving team efficiency by 30%.</li>
-    <li>Initiated service improvement plans resulting in an 18% rise in guest satisfaction scores.</li>
-    <li>Worked closely with IT and Ops to automate queries and service request workflows.</li>
-    <li>Contributed key metrics to management for operational decision-making.</li>
+    <li>Managing 350+ apartments while coordinating concierge and cleaning teams to ensure units are move-in ready.</li>
+    <li>Led implementation of a digital cleaning & maintenance tracking system, improving operational efficiency.</li>
+    <li>Resolved 95% of guest complaints on first contact via CRM tools and real-time escalation.</li>
+    <li>Processed 300+ service tickets monthly with 98% accuracy.</li>
+    <li>Trained new concierge staff and supervised cleaning schedule enforcement across all properties.</li>
   </ul>
 
   <h3>Guest Relations Officer – Daniels Holiday Homes, UAE (Jan 2023 – Nov 2024)</h3>
   <ul>
-    <li>Managed check-ins and check-outs for 50+ weekly clients, raising 5-star reviews by 25%.</li>
-    <li>Led daily guest interactions and personalized service requests across platforms.</li>
-    <li>Implemented a digital concierge system reducing front desk workload by 40%.</li>
-    <li>Analyzed guest feedback for continuous improvement; helped onboard 4 new team members.</li>
-    <li>Launched a Cadillac transportation service to boost guest convenience and company revenue.</li>
-    <li>Collaborated with management to resolve escalations and ensure guest loyalty.</li>
+    <li>Managed weekly check-ins/outs for 50+ clients, increasing 5-star reviews by 25%.</li>
+    <li>Launched Cadillac transportation service for tenants, generating additional revenue.</li>
+    <li>Implemented digital concierge tools, reducing front desk workload by 40%.</li>
+    <li>Trained 4 new hires, reducing onboarding time by 20%.</li>
+    <li>Analyzed post-stay surveys and led service enhancements based on feedback.</li>
   </ul>
 
   <h3>Marketing Manager Specialist – LE MORGAN GROUP, South Africa (2020 – 2021)</h3>
   <ul>
-    <li>Executed 5 digital campaigns resulting in 40% brand engagement growth.</li>
-    <li>Used analytics and CRM to optimize marketing ROI and reduced costs by 18%.</li>
-    <li>Led client loyalty strategy, growing repeat customer base by 35%.</li>
+    <li>Developed and executed innovative digital marketing campaigns to elevate brand presence and drive customer engagement.</li>
+    <li>Collaborated with cross-functional teams to analyze data-driven insights and optimize marketing strategies for maximum impact.</li>
+    <li>Coordinated execution of marketing initiatives aligned with organizational goals.</li>
+    <li>Analyzed market trends and customer data to identify opportunities and improve campaign effectiveness.</li>
   </ul>
 
   <h3>Sales Representative – TFG (The Foschini Group), South Africa (2018 – 2019)</h3>
   <ul>
-    <li>Consistently surpassed monthly sales targets for 10 straight months.</li>
-    <li>Built and retained a loyal customer base of over 100 clients through tailored service.</li>
-    <li>Increased average transaction value by 15% via targeted upselling techniques.</li>
+    <li>Exceeded sales targets by 20% through strategic prospecting, negotiation, and closing techniques.</li>
+    <li>Built strong client relationships, increasing repeat business by 30%.</li>
+    <li>Presented and demonstrated products tailored to client needs, driving revenue growth.</li>
+    <li>Provided high-level customer service and maintained long-term client satisfaction.</li>
   </ul>
 </section>
 
 <section id="education">
   <h2>Education</h2>
   <ul>
-    <li>Associate of Science in Computer Science – University of the People (2024–2026, In Progress)</li>
-    <li>Diploma in Business Management – Lyceum College South Africa (2019–2021)</li>
+    <li><strong>University of the People</strong> – Associate of Science in Computer Science (In Progress)</li>
+    <li><strong>Lyceum College South Africa</strong> – Diploma in Business Management</li>
   </ul>
 </section>
 
 <section id="skills">
   <h2>Skills</h2>
   <ul>
-    <li>Customer Experience Optimization</li>
-    <li>Team Leadership & Training</li>
-    <li>Conflict Resolution & Escalation</li>
-    <li>Hospitality Operations & CRM</li>
-    <li>Digital Process Implementation</li>
-    <li>Technical Support & Admin</li>
-    <li>Sales Strategy & Upselling</li>
-    <li>Data-Driven Service Improvement</li>
+    <li>Guest Experience Optimization</li>
+    <li>CRM & Ticketing Systems</li>
+    <li>Hospitality Operations</li>
+    <li>Conflict Resolution</li>
+    <li>Sales & Upselling</li>
+    <li>Customer Retention</li>
+    <li>Leadership & Team Training</li>
+    <li>Data-Driven Problem Solving</li>
+    <li>Technical Support</li>
   </ul>
 </section>
-
-</body>
-</html>
-
-
 
 <section id="projects">
   <h2>Projects</h2>
 
   <div class="project">
-    <h3>Daniels Holiday Homes</h3>
-    <h4>Project launched by Prince at Daniels Holiday Homes</h4>
     <h3>Cadillac Tenant Transportation Service</h3>
-    <img src="https://github.com/princechakusa/princechakusa.github.io/blob/master/princeportifolio.jpg?raw=true"
-         alt="Prince Chakusa - Cadillac Project"
-         style="width: 100%; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);" />
+    <img src="https://github.com/princechakusa/princechakusa.github.io/blob/master/princeportifolio.jpg?raw=true" alt="Prince Chakusa - Cadillac Project" />
     <p>
       Launched a Cadillac transportation service for tenant transfers at Daniels Holiday Homes. This service improved convenience, tenant loyalty, and generated extra revenue for the business.
     </p>
   </div>
 
   <div class="project">
-    <h3>Stonetree Holding</h3>
-    <h4>Project launched by Prince at Stonetree Holding</h4>
     <h3>Digital Cleaning & Maintenance Tracking</h3>
     <p>
       Developed and implemented a digital system at Stonetree Holding for managing cleaning schedules and maintenance. Helped coordinate over 350 apartments, streamlining operations and reducing move-in delays.
@@ -183,8 +216,8 @@
 
 <section id="contact">
   <h2>Contact</h2>
-  <p>Email: chakusaprince@gmail.com</p>
-  <p>Phone: +971 58 185 2582</p>
+  <p>Email: <a href="mailto:chakusaprince@gmail.com">chakusaprince@gmail.com</a></p>
+  <p>Phone: <a href="tel:+971581852582">+971 58 185 2582</a></p>
   <p>LinkedIn: <a href="https://linkedin.com/in/prince-chakusa-44430230a" target="_blank">linkedin.com/in/prince-chakusa-44430230a</a></p>
 </section>
 
