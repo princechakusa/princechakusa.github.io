@@ -3,193 +3,553 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Prince Chakusa Portfolio</title>
+  <title>Prince Chakusa | Customer Experience Leader & Tech Enthusiast</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --primary-color: #0ef;
+      --primary: #00c6ff;
+      --secondary: #0072ff;
+      --dark: #0a192f;
+      --light: #ccd6f6;
+      --accent: #64ffda;
+      --gray: #8892b0;
+      --card-bg: #112240;
     }
-    body {
+    
+    * {
+      box-sizing: border-box;
       margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(to bottom, #0a0a0a, #121212);
-      color: #fff;
-      scroll-behavior: smooth;
+      padding: 0;
     }
+    
+    body {
+      font-family: 'Poppins', sans-serif;
+      scroll-behavior: smooth;
+      background-color: var(--dark);
+      color: var(--light);
+      line-height: 1.6;
+    }
+    
+    h1, h2, h3 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+    }
+    
     header {
+      background-color: rgba(10, 25, 47, 0.9);
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 20px 40px;
-      background-color: #0d0d0d;
-      position: sticky;
+      padding: 20px 5%;
+      position: fixed;
+      width: 100%;
       top: 0;
       z-index: 1000;
-      animation: slideDown 0.5s ease-out;
+      backdrop-filter: blur(10px);
+      transition: all 0.3s ease;
     }
-    @keyframes slideDown {
-      from { transform: translateY(-100%); opacity: 0; }
-      to { transform: translateY(0); opacity: 1; }
+    
+    header.scrolled {
+      padding: 15px 5%;
+      box-shadow: 0 10px 30px -10px rgba(2, 12, 27, 0.7);
     }
+    
     header h1 {
-      margin: 0;
       font-size: 24px;
-      color: var(--primary-color);
+      color: var(--accent);
+      letter-spacing: 1px;
     }
+    
     nav {
       display: flex;
-      align-items: center;
+      gap: 30px;
     }
+    
     nav a {
-      margin-left: 20px;
-      color: #ccc;
+      color: var(--light);
       text-decoration: none;
-      font-weight: bold;
+      font-weight: 500;
+      font-size: 16px;
       position: relative;
+      transition: color 0.3s ease;
     }
+    
+    nav a:hover {
+      color: var(--accent);
+    }
+    
     nav a::after {
       content: '';
       position: absolute;
-      bottom: -4px;
+      bottom: -5px;
       left: 0;
-      width: 0%;
+      width: 0;
       height: 2px;
-      background: var(--primary-color);
-      transition: 0.3s;
+      background: var(--accent);
+      transition: width 0.3s ease;
     }
+    
     nav a:hover::after {
       width: 100%;
     }
-
-    /* Mobile nav: stack links vertically on small screens */
-    @media (max-width: 600px) {
-      nav {
-        flex-direction: column;
-        align-items: center;
-      }
-      nav a {
-        margin: 10px 0 0 0;
-      }
-    }
-
-    .section {
-      padding: 60px 20px;
-      text-align: center;
-      animation: fadeInUp 1s ease;
-    }
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(40px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
+    
     .hero {
-      background: linear-gradient(to right, #1a1a2e, #16213e);
-      color: white;
-      min-height: 100vh;
       display: flex;
-      flex-direction: column;
-      justify-content: center;
+      flex-wrap: wrap;
+      justify-content: space-between;
       align-items: center;
-      text-align: center;
-      padding: 40px 20px;
-      animation: fadeIn 2s ease;
+      padding: 180px 10% 100px;
+      min-height: 100vh;
+      background: linear-gradient(135deg, var(--dark) 0%, #0a1a3a 100%);
+      position: relative;
+      overflow: hidden;
     }
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
+    
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -50px;
+      right: -50px;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(100, 255, 218, 0.1) 0%, rgba(100, 255, 218, 0) 70%);
+      z-index: 0;
     }
-    .hero img {
-      width: 150px;
-      height: 150px;
+    
+    .hero-text {
+      flex: 1;
+      padding: 20px;
+      position: relative;
+      z-index: 1;
+      max-width: 600px;
+    }
+    
+    .hero-text h2 {
+      font-size: clamp(36px, 5vw, 64px);
+      color: var(--light);
+      margin-bottom: 10px;
+      line-height: 1.1;
+    }
+    
+    .hero-text h2 span {
+      color: var(--accent);
+    }
+    
+    .hero-text p {
+      font-size: 20px;
+      color: var(--gray);
+      margin-bottom: 30px;
+      max-width: 540px;
+    }
+    
+    .animated-roles {
+      font-size: clamp(18px, 3vw, 24px);
+      margin: 20px 0;
+      height: 30px;
+      overflow: hidden;
+      color: var(--accent);
+    }
+    
+    .animated-roles span {
+      display: inline-block;
+      animation: animateRoles 8s infinite;
+    }
+    
+    @keyframes animateRoles {
+      0% { transform: translateY(0); }
+      25% { transform: translateY(-30px); }
+      50% { transform: translateY(-60px); }
+      75% { transform: translateY(-90px); }
+      100% { transform: translateY(0); }
+    }
+    
+    .btn {
+      display: inline-block;
+      padding: 12px 28px;
+      background-color: transparent;
+      color: var(--accent);
+      border: 1px solid var(--accent);
+      border-radius: 4px;
+      font-weight: 500;
+      text-decoration: none;
+      margin-top: 20px;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+    }
+    
+    .btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 100%;
+      background-color: rgba(100, 255, 218, 0.1);
+      transition: width 0.3s ease;
+      z-index: -1;
+    }
+    
+    .btn:hover::before {
+      width: 100%;
+    }
+    
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(100, 255, 218, 0.2);
+    }
+    
+    .hero-img {
+      width: 300px;
+      height: 300px;
       border-radius: 50%;
       object-fit: cover;
-      border: 4px solid var(--primary-color);
-      margin-bottom: 20px;
-      box-shadow: 0 0 20px var(--primary-color)33;
+      border: 2px solid var(--accent);
+      box-shadow: 0 0 30px rgba(100, 255, 218, 0.3);
+      transition: all 0.3s ease;
     }
-    .hero h2 {
-      font-size: 38px;
-      margin: 15px 0;
-      border-right: 2px solid var(--primary-color);
-      white-space: nowrap;
-      overflow: hidden;
-      width: 0;
-      animation: typing 3s steps(30, end) forwards;
-    }
-    @keyframes typing {
-      from { width: 0 }
-      to { width: 100% }
-    }
-    .hero p {
-      font-size: 20px;
-      margin-bottom: 30px;
-      color: #ccc;
-    }
-    .hero .btn {
-      padding: 12px 25px;
-      background-color: var(--primary-color);
-      color: #000;
-      border: none;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: bold;
-      box-shadow: 0 5px 15px var(--primary-color)cc;
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-    .hero .btn:hover {
+    
+    .hero-img:hover {
       transform: scale(1.05);
-      box-shadow: 0 8px 25px var(--primary-color)ff;
+      box-shadow: 0 0 40px rgba(100, 255, 218, 0.4);
     }
-    .contact-form input, .contact-form textarea {
-      width: 100%;
-      padding: 12px;
-      margin: 10px 0;
-      border-radius: 6px;
-      border: none;
+    
+    .section {
+      padding: 100px 10%;
+      position: relative;
     }
-    .contact-form button {
-      background-color: var(--primary-color);
-      color: #000;
+    
+    .section-title {
+      font-size: clamp(28px, 5vw, 40px);
+      margin-bottom: 40px;
+      color: var(--light);
+      position: relative;
+      display: inline-block;
+    }
+    
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 70px;
+      height: 3px;
+      background: var(--accent);
+    }
+    
+    .section:nth-child(even) {
+      background-color: rgba(10, 25, 47, 0.5);
+    }
+    
+    /* About Section */
+    .about-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+    
+    .about-card {
+      background-color: var(--card-bg);
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7);
+      transition: all 0.3s ease;
+    }
+    
+    .about-card:hover {
+      transform: translateY(-5px);
+    }
+    
+    .about-card h3 {
+      color: var(--accent);
+      margin-bottom: 15px;
+      font-size: 22px;
+    }
+    
+    .about-card p {
+      margin-bottom: 10px;
+      color: var(--gray);
+    }
+    
+    .about-card p strong {
+      color: var(--light);
+    }
+    
+    /* Qualifications Section */
+    .tree {
+      background-color: var(--card-bg);
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7);
+      margin-top: 30px;
+    }
+    
+    .tree ul {
+      list-style: none;
+      padding-left: 20px;
+      position: relative;
+    }
+    
+    .tree ul::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 10px;
+      height: 100%;
+      width: 2px;
+      background: var(--accent);
+    }
+    
+    .tree li {
+      margin-bottom: 20px;
+      position: relative;
+      padding-left: 30px;
+      color: var(--light);
+    }
+    
+    .tree li::before {
+      content: '';
+      position: absolute;
+      top: 8px;
+      left: 0;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--accent);
+      border: 2px solid var(--card-bg);
+    }
+    
+    .tree ul ul li {
+      color: var(--gray);
+    }
+    
+    /* Services Section */
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+    
+    .service-box {
+      background: var(--card-bg);
+      padding: 30px;
+      border-radius: 8px;
+      text-align: center;
+      transition: all 0.3s ease;
+      box-shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7);
+    }
+    
+    .service-box:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 30px -15px rgba(2, 12, 27, 0.7);
+    }
+    
+    .service-box i {
+      font-size: 40px;
+      color: var(--accent);
+      margin-bottom: 20px;
+    }
+    
+    .service-box h3 {
+      color: var(--light);
+      margin-bottom: 15px;
+      font-size: 22px;
+    }
+    
+    .service-box p {
+      color: var(--gray);
+      font-size: 16px;
+    }
+    
+    /* Skills Section */
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-top: 30px;
+    }
+    
+    .skill-tag {
+      background: rgba(100, 255, 218, 0.1);
+      color: var(--accent);
       padding: 10px 20px;
-      border: none;
-      border-radius: 6px;
-      font-weight: bold;
+      border-radius: 4px;
+      font-weight: 500;
+      font-size: 14px;
+      transition: all 0.3s ease;
+    }
+    
+    .skill-tag:hover {
+      background: rgba(100, 255, 218, 0.2);
+      transform: translateY(-3px);
+    }
+    
+    /* Contact Section */
+    .contact-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 50px;
+      margin-top: 40px;
+    }
+    
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+    
+    .contact-item i {
+      font-size: 24px;
+      color: var(--accent);
+      width: 50px;
+      height: 50px;
+      background: rgba(100, 255, 218, 0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .contact-item div h3 {
+      color: var(--light);
+      margin-bottom: 5px;
+      font-size: 18px;
+    }
+    
+    .contact-item div p {
+      color: var(--gray);
+      font-size: 16px;
+    }
+    
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    
+    form input, form textarea {
+      padding: 15px;
+      border: 1px solid var(--gray);
+      border-radius: 4px;
+      background: transparent;
+      color: var(--light);
+      font-family: 'Poppins', sans-serif;
+      transition: all 0.3s ease;
+    }
+    
+    form input:focus, form textarea:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 2px rgba(100, 255, 218, 0.2);
+    }
+    
+    form button {
+      background-color: transparent;
+      color: var(--accent);
+      padding: 15px;
+      border: 1px solid var(--accent);
+      border-radius: 4px;
+      font-weight: 500;
       cursor: pointer;
-      transition: background 0.3s;
+      transition: all 0.3s ease;
+      align-self: flex-start;
     }
-    .contact-form button:hover {
-      background-color: #00cfcf;
+    
+    form button:hover {
+      background-color: rgba(100, 255, 218, 0.1);
+      transform: translateY(-3px);
     }
+    
     iframe {
       width: 100%;
       height: 300px;
       border: none;
-      margin-top: 20px;
+      margin-top: 40px;
+      border-radius: 8px;
+      box-shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7);
     }
+    
     .social-links {
-      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 40px;
     }
+    
     .social-links a {
-      color: var(--primary-color);
+      color: var(--light);
       font-size: 24px;
-      margin: 0 10px;
-      text-decoration: none;
-      transition: color 0.3s;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
     }
+    
     .social-links a:hover {
-      color: #00cfcf;
+      color: var(--accent);
+      transform: translateY(-5px);
+      background: rgba(100, 255, 218, 0.1);
+    }
+    
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: rgba(10, 25, 47, 0.8);
+      color: var(--gray);
+      font-size: 14px;
+    }
+    
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        padding: 15px;
+      }
+      
+      nav {
+        margin-top: 15px;
+        gap: 15px;
+      }
+      
+      .hero {
+        flex-direction: column-reverse;
+        text-align: center;
+        padding: 150px 20px 80px;
+      }
+      
+      .hero-text {
+        margin-top: 40px;
+      }
+      
+      .hero-img {
+        width: 200px;
+        height: 200px;
+      }
+      
+      .section {
+        padding: 80px 20px;
+      }
     }
   </style>
 </head>
 <body>
-  <header>
+  <header id="header">
     <h1>Prince Chakusa</h1>
-    <nav aria-label="Primary navigation">
+    <nav>
       <a href="#home">Home</a>
       <a href="#about">About</a>
       <a href="#qualifications">Qualifications</a>
@@ -199,55 +559,176 @@
   </header>
 
   <section id="home" class="hero">
-    <img src="https://github.com/princechakusa/princechakusa.github.io/blob/master/profilepicture.jpg?raw=true" alt="Prince Chakusa">
-    <h2>Hello, It’s Prince</h2>
-    <p>Operations Team Leader → Customer Care Specialist → Tech Enthusiast</p>
-    <a class="btn" href="https://github.com/princechakusa/princechakusa.github.io/blob/master/Prince_Chakusa_Customer_Experience_Leader.pdf?raw=true" download>Download CV</a>
+    <div class="hero-text">
+      <h2>Hello, I'm <span>Prince Chakusa</span></h2>
+      <p>Operations Team Leader | Customer Care Specialist | Tech Enthusiast</p>
+      <div class="animated-roles">
+        <span>Operations Team Leader<br>Customer Care Specialist<br>Tech Enthusiast<br>Future Developer</span>
+      </div>
+      <a class="btn" href="https://github.com/princechakusa/princechakusa.github.io/raw/master/Prince_Chakusa_Customer_Experience_Leader.pdf" download>Download CV</a>
+    </div>
+    <img src="https://github.com/princechakusa/princechakusa.github.io/raw/master/profilepicture.jpg" alt="Prince Chakusa" class="hero-img">
   </section>
 
   <section id="about" class="section">
-    <h2>About Me</h2>
-    <p>Birthday: 23/07/1995</p>
-    <p>Phone: +971 58 185 2582</p>
-    <p>Nationality: Zimbabwean</p>
-    <p>Degree: Associate in Computer Science (in progress)</p>
-    <p>Email: chakusaprince@gmail.com</p>
-    <p>Availability: Immediate</p>
-    <p>Interests: Music, Hiking, Reading, Beach Walks, Fitness, Photography</p>
+    <h2 class="section-title">About Me</h2>
+    <div class="about-content">
+      <div class="about-card">
+        <h3>Personal Info</h3>
+        <p><strong>Birthday:</strong> 23/07/1995</p>
+        <p><strong>Phone:</strong> +971 58 185 2582</p>
+        <p><strong>Nationality:</strong> Zimbabwean</p>
+        <p><strong>Degree:</strong> Associate in Computer Science (in progress)</p>
+        <p><strong>Email:</strong> chakusaprince@gmail.com</p>
+        <p><strong>Availability:</strong> Immediate</p>
+      </div>
+      <div class="about-card">
+        <h3>Interests & Hobbies</h3>
+        <p><i class="fas fa-music"></i> Music</p>
+        <p><i class="fas fa-mountain"></i> Hiking</p>
+        <p><i class="fas fa-book"></i> Reading</p>
+        <p><i class="fas fa-umbrella-beach"></i> Beach Walks</p>
+        <p><i class="fas fa-dumbbell"></i> Fitness</p>
+        <p><i class="fas fa-camera"></i> Photography</p>
+      </div>
+    </div>
   </section>
 
   <section id="qualifications" class="section">
-    <h2>Qualifications</h2>
-    <ul>
-      <li>Diploma in Business Management - Lyceum College</li>
-      <li>Associate of Science in Computer Science - University of the People (in progress)</li>
-    </ul>
-    <h3>Skills</h3>
-    <ul>
-      <li>Rapid Problem Solving, Time Management, Team Leadership</li>
-      <li>CRM (Bitrix24, Slack), Power BI, Microsoft Office, Hostaway, Custom Tools</li>
-    </ul>
+    <h2 class="section-title">Qualifications</h2>
+    <div class="tree">
+      <ul>
+        <li>Diploma in Business Management
+          <ul>
+            <li>Lyceum College</li>
+          </ul>
+        </li>
+        <li>Associate of Science in Computer Science
+          <ul>
+            <li>University of the People (in progress)</li>
+          </ul>
+        </li>
+        <li>Skills
+          <ul>
+            <li>Problem Solving</li>
+            <li>CRM Tools (Bitrix24, Slack)</li>
+            <li>Data Tools (Power BI, Microsoft Office)</li>
+            <li>Operations Systems (Hostaway, Custom Platforms)</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
   </section>
 
   <section id="services" class="section">
-    <h2>Services</h2>
-    <p>Customer Support Specialist | Operations Leader | Property Manager | Tech Enthusiast</p>
+    <h2 class="section-title">My Services</h2>
+    <div class="services">
+      <div class="service-box">
+        <i class="fas fa-headset"></i>
+        <h3>Customer Support</h3>
+        <p>Expert in delivering top-tier guest experiences and handling escalations effectively.</p>
+      </div>
+      <div class="service-box">
+        <i class="fas fa-cogs"></i>
+        <h3>Operations Management</h3>
+        <p>Skilled in process improvement, team leadership, and cross-functional coordination.</p>
+      </div>
+      <div class="service-box">
+        <i class="fas fa-home"></i>
+        <h3>Property Oversight</h3>
+        <p>Managed premium short-stay rentals and implemented maintenance systems.</p>
+      </div>
+      <div class="service-box">
+        <i class="fas fa-laptop-code"></i>
+        <h3>Tech Initiatives</h3>
+        <p>Launching software tools and learning full-stack development.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">Skills</h2>
+    <div class="skills">
+      <span class="skill-tag">Problem Solving</span>
+      <span class="skill-tag">CRM: Bitrix24, Slack</span>
+      <span class="skill-tag">Microsoft Office</span>
+      <span class="skill-tag">Power BI</span>
+      <span class="skill-tag">Team Leadership</span>
+      <span class="skill-tag">Project Planning</span>
+      <span class="skill-tag">Hostaway</span>
+      <span class="skill-tag">Communication</span>
+      <span class="skill-tag">Process Improvement</span>
+      <span class="skill-tag">Data Analysis</span>
+      <span class="skill-tag">Customer Experience</span>
+      <span class="skill-tag">HTML/CSS</span>
+    </div>
   </section>
 
   <section id="contact" class="section">
-    <h2>Contact Me</h2>
-    <form class="contact-form" action="https://formspree.io/f/mayrkbgk" method="POST">
-      <input type="text" name="name" placeholder="Your Name" required />
-      <input type="email" name="email" placeholder="Your Email" required />
-      <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
-    <h3>Location: Al Furjan, Discovery Gardens, Dubai</h3>
+    <h2 class="section-title">Get In Touch</h2>
+    <div class="contact-container">
+      <div class="contact-info">
+        <div class="contact-item">
+          <i class="fas fa-map-marker-alt"></i>
+          <div>
+            <h3>Location</h3>
+            <p>Al Furjan, Discovery Gardens, Dubai</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <i class="fas fa-envelope"></i>
+          <div>
+            <h3>Email</h3>
+            <p>chakusaprince@gmail.com</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <i class="fas fa-phone"></i>
+          <div>
+            <h3>Phone</h3>
+            <p>+971 58 185 2582</p>
+          </div>
+        </div>
+      </div>
+      <form action="https://formspree.io/f/mayrkbgk" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="email" placeholder="Your Email" required />
+        <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
     <iframe src="https://www.google.com/maps?q=25.0278383,55.1275262&z=15&output=embed"></iframe>
     <div class="social-links">
-      <a href="https://www.linkedin.com/in/princechakusa" target="_blank" rel="noopener noreferrer" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-      <a href="https://github.com/princechakusa" target="_blank" rel="noopener noreferrer" title="GitHub"><i class="fab fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/princechakusa" target="_blank" rel="noopener" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+      <a href="https://github.com/princechakusa" target="_blank" rel="noopener" title="GitHub"><i class="fab fa-github"></i></a>
+      <a href="mailto:chakusaprince@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
     </div>
   </section>
+
+  <footer>
+    <p>&copy; 2023 Prince Chakusa. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Header scroll effect
+    window.addEventListener('scroll', function() {
+      const header = document.getElementById('header');
+      if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+    
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+  </script>
 </body>
 </html>
