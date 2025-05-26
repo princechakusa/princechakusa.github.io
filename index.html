@@ -1,640 +1,535 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Prince Chakusa | Portfolio</title>
-<style>
-  /* ====== Reset and base ====== */
-  *, *::before, *::after {
-    box-sizing: border-box;
-  }
-  body, html {
-    margin: 0; padding: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: #121212;
-    color: #f5f5f5;
-    min-height: 100vh;
-  }
-  a {
-    color: #d4af37; /* gold */
-    text-decoration: none;
-  }
-  a:hover {
-    text-decoration: underline;
-  }
-  button {
-    cursor: pointer;
-    border: none;
-    background: #d4af37;
-    color: #121212;
-    font-weight: 600;
-    padding: 10px 18px;
-    border-radius: 25px;
-    transition: background-color 0.3s ease;
-  }
-  button:hover {
-    background: #b38b22;
-  }
-
-  /* ====== Navigation ====== */
-  nav {
-    background: #1e1e1e;
-    padding: 12px 24px;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    box-shadow: 0 2px 8px rgb(0 0 0 / 0.7);
-    display: flex;
-    justify-content: center;
-  }
-  nav ul {
-    list-style: none;
-    display: flex;
-    gap: 28px;
-    margin: 0; padding: 0;
-  }
-  nav ul li {
-    font-weight: 600;
-    font-size: 1.1rem;
-  }
-  nav ul li a.active, nav ul li a:hover {
-    color: #d4af37;
-    border-bottom: 2px solid #d4af37;
-    padding-bottom: 2px;
-  }
-
-  /* ====== Container ====== */
-  .container {
-    max-width: 900px;
-    margin: 40px auto;
-    padding: 0 20px 60px 20px;
-  }
-
-  /* ====== Home Page ====== */
-  #home .intro {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 30px;
-    align-items: center;
-    justify-content: space-between;
-  }
-  #home .left {
-    flex: 1 1 300px;
-  }
-  #home .left h1 {
-    font-size: 3.8rem;
-    font-weight: 900;
-    letter-spacing: 0.04em;
-    color: #d4af37;
-    margin: 0 0 10px 0;
-    font-family: 'Georgia', serif;
-  }
-  #home .left h2 {
-    font-size: 1.8rem;
-    font-weight: 500;
-    color: #eee;
-    margin: 0 0 20px 0;
-    font-style: italic;
-  }
-  #home .typing {
-    font-size: 1.6rem;
-    font-weight: 600;
-    height: 28px;
-    color: #f0d884;
-    min-height: 30px;
-  }
-  #home .right {
-    flex: 0 0 260px;
-    position: relative;
-    border-radius: 50%;
-    overflow: hidden;
-    box-shadow: 0 0 18px 4px #d4af37aa;
-    max-width: 260px;
-    max-height: 260px;
-    aspect-ratio: 1 / 1;
-  }
-  #home .right img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-  }
-  #home .right::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: rgba(18, 18, 18, 0.5);
-  }
-  #home .links {
-    margin-top: 22px;
-    display: flex;
-    gap: 18px;
-  }
-  #home .links a {
-    color: #d4af37;
-    font-size: 1.8rem;
-    transition: color 0.3s ease;
-  }
-  #home .links a:hover {
-    color: #fff;
-  }
-  #home .buttons {
-    margin-top: 28px;
-    display: flex;
-    gap: 18px;
-  }
-
-  /* ====== About Page ====== */
-  #about .countdown {
-    font-size: 2rem;
-    font-weight: 700;
-    color: #d4af37;
-    margin-bottom: 18px;
-  }
-  #about .roles {
-    font-style: italic;
-    font-weight: 600;
-    margin-bottom: 30px;
-    color: #f0d884;
-  }
-  #about .info-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px 40px;
-    font-size: 1.1rem;
-  }
-  #about .info-grid div {
-    margin-bottom: 10px;
-  }
-  #about .info-grid span.label {
-    font-weight: 700;
-    color: #d4af37;
-  }
-  #about .interests {
-    margin-top: 30px;
-    font-style: italic;
-    color: #ccc;
-  }
-  #about .links-section {
-    margin-top: 40px;
-  }
-  #about .links-section a {
-    display: inline-block;
-    margin-right: 20px;
-    font-weight: 600;
-    color: #d4af37;
-  }
-
-  /* ====== Qualifications Page ====== */
-  #qualifications h2 {
-    text-align: center;
-    margin-bottom: 20px;
-    color: #d4af37;
-  }
-  .education-tree ul {
-    list-style: none;
-    padding-left: 20px;
-    font-size: 1.1rem;
-    max-width: 600px;
-    margin: 0 auto 40px;
-  }
-  .education-tree ul li {
-    padding: 8px 0;
-    position: relative;
-  }
-  .education-tree ul li::before {
-    content: "🎓";
-    position: absolute;
-    left: -25px;
-    font-size: 1.2rem;
-  }
-
-  .skills-grid {
-    display: flex;
-    justify-content: center;
-    gap: 50px;
-    max-width: 900px;
-    margin: 0 auto;
-    flex-wrap: wrap;
-  }
-  .skill-group {
-    background: #1c1c1c;
-    border: 1px solid #d4af37;
-    border-radius: 10px;
-    padding: 20px 28px;
-    min-width: 280px;
-    box-shadow: 0 0 12px #d4af3733;
-  }
-  .skill-group h3 {
-    color: #d4af37;
-    margin-bottom: 14px;
-    text-align: center;
-  }
-  .skill-group ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  .skill-group ul li {
-    margin-bottom: 10px;
-    padding-left: 28px;
-    position: relative;
-    font-size: 1rem;
-  }
-  .skill-group ul li::before {
-    position: absolute;
-    left: 0;
-    top: 3px;
-    font-size: 1.2rem;
-  }
-  .skill-group ul li:nth-child(n)::before {
-    content: "✅";
-  }
-  .skill-group ul li:nth-child(1)::before {
-    content: "✅";
-  }
-  .skill-group ul li:nth-child(2)::before {
-    content: "✅";
-  }
-  .skill-group ul li:nth-child(3)::before {
-    content: "✅";
-  }
-  .skill-group ul li:nth-child(4)::before {
-    content: "✅";
-  }
-  .skill-group ul li:nth-child(5)::before {
-    content: "✅";
-  }
-  /* For Technical Skills with different emojis */
-  .skill-group ul li:nth-child(1)::before {
-    content: "🛠️";
-  }
-  .skill-group ul li:nth-child(2)::before {
-    content: "🧠";
-  }
-  .skill-group ul li:nth-child(3)::before {
-    content: "🏠";
-  }
-  .skill-group ul li:nth-child(4)::before {
-    content: "📊";
-  }
-  .skill-group ul li:nth-child(5)::before {
-    content: "🧰";
-  }
-  .skill-group ul li:nth-child(6)::before {
-    content: "📱";
-  }
-
-  /* ====== Services Page ====== */
-  #services {
-    max-width: 900px;
-    margin: 40px auto;
-    padding: 0 20px 60px 20px;
-  }
-  #services h2 {
-    text-align: center;
-    color: #d4af37;
-    margin-bottom: 40px;
-  }
-  .services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
-    gap: 28px;
-  }
-  .service-block {
-    background: #1c1c1c;
-    border-radius: 12px;
-    padding: 25px 20px;
-    box-shadow: 0 0 20px #d4af3722;
-    transition: transform 0.3s ease;
-    border: 1px solid #d4af37;
-  }
-  .service-block:hover {
-    transform: scale(1.03);
-    box-shadow: 0 0 24px #d4af37cc;
-  }
-  .service-block h3 {
-    color: #d4af37;
-    margin-bottom: 16px;
-    font-size: 1.4rem;
-    font-weight: 700;
-  }
-  .service-block p {
-    color: #eee;
-    font-size: 1rem;
-    line-height: 1.5;
-  }
-
-  /* ====== Contact Page ====== */
-  #contact {
-    max-width: 700px;
-    margin: 40px auto 60px;
-    padding: 0 20px;
-  }
-  #contact h2 {
-    text-align: center;
-    color: #d4af37;
-    margin-bottom: 30px;
-  }
-  form {
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
-  }
-  form label {
-    font-weight: 600;
-    color: #d4af37;
-  }
-  form input, form textarea {
-    padding: 10px 14px;
-    font-size: 1rem;
-    border-radius: 8px;
-    border: 1px solid #444;
-    background: #222;
-    color: #eee;
-    resize: vertical;
-    min-height: 36px;
-  }
-  form textarea {
-    min-height: 100px;
-  }
-  form button {
-    align-self: flex-start;
-  }
-  #contact .contact-info {
-    margin-top: 40px;
-    color: #eee;
-    font-size: 1rem;
-    line-height: 1.5;
-  }
-  #contact .contact-info p {
-    margin: 8px 0;
-  }
-  #contact .location {
-    margin-top: 18px;
-    font-style: italic;
-    color: #d4af37;
-  }
-
-  /* ====== Responsive ====== */
-  @media (max-width: 768px) {
-    #home .intro {
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Prince Chakusa - Portfolio</title>
+  <style>
+    /* Basic Reset & Styling */
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0; padding: 0;
+      background-color: #121212;
+      color: #eee;
+      display: flex;
       flex-direction: column;
-      text-align: center;
+      min-height: 100vh;
     }
-    #home .right {
+    header {
+      background: #0d0d0d;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 5px rgba(255 255 255 / 0.1);
+    }
+    header a {
+      color: #c0a060; /* gold accent */
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.1rem;
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+      transition: background 0.3s;
+    }
+    header a.active, header a:hover {
+      background: #c0a060;
+      color: #121212;
+    }
+    main {
+      flex-grow: 1;
+      padding: 2rem;
+      max-width: 900px;
       margin: 0 auto;
+      width: 100%;
     }
-    #about .info-grid {
-      grid-template-columns: 1fr;
+    section {
+      display: none;
+      animation: fadeIn 0.6s ease forwards;
     }
-  }
-</style>
+    section.active {
+      display: block;
+    }
+    h1, h2, h3 {
+      color: #c0a060;
+      margin-bottom: 1rem;
+    }
+    h1 {
+      font-size: 3rem;
+      font-weight: 900;
+    }
+    /* Home Section */
+    #home {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+    #home-text {
+      flex: 1 1 300px;
+    }
+    #home-photo {
+      flex: 1 1 200px;
+      max-width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      background: url('https://i.imgur.com/7v7bXfl.jpg') center center/cover no-repeat;
+      box-shadow: 0 0 15px #c0a060aa;
+      position: relative;
+      overflow: hidden;
+    }
+    #home-photo::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.6);
+      border-radius: 50%;
+    }
+    #typing {
+      color: #f0d27a;
+      font-weight: 700;
+      font-size: 1.25rem;
+      min-height: 1.5rem;
+      font-family: monospace;
+      margin-bottom: 1rem;
+    }
+    .social-links {
+      margin-top: 1rem;
+      display: flex;
+      gap: 1rem;
+    }
+    .social-links a svg {
+      fill: #c0a060;
+      transition: fill 0.3s;
+    }
+    .social-links a:hover svg {
+      fill: #f0d27a;
+    }
+    .buttons {
+      margin-top: 1.5rem;
+    }
+    .buttons button {
+      background: #c0a060;
+      border: none;
+      padding: 0.6rem 1.5rem;
+      font-weight: 700;
+      color: #121212;
+      cursor: pointer;
+      margin-right: 1rem;
+      border-radius: 4px;
+      transition: background 0.3s;
+    }
+    .buttons button:hover {
+      background: #f0d27a;
+    }
+    /* About Section */
+    #about .countdown {
+      font-weight: 700;
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+      color: #f0d27a;
+    }
+    #about .snapshot {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
+    #about .snapshot > div {
+      background: #292929;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      flex: 1 1 200px;
+    }
+    #about .more-info p {
+      margin-bottom: 1rem;
+      line-height: 1.5;
+    }
+    #about .links-section a {
+      color: #c0a060;
+      text-decoration: none;
+      margin-right: 1rem;
+      font-weight: 700;
+    }
+    #about .links-section a:hover {
+      text-decoration: underline;
+    }
+    /* Qualifications */
+    #qualifications ul {
+      list-style: none;
+      padding-left: 0;
+      margin-bottom: 2rem;
+      font-weight: 600;
+    }
+    #qualifications ul li {
+      margin-bottom: 0.8rem;
+      padding-left: 1.5rem;
+      position: relative;
+    }
+    #qualifications ul li::before {
+      content: "🎓";
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+    .skills-grid {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+    .skill-group {
+      flex: 1 1 250px;
+      background: #292929;
+      padding: 1rem;
+      border-radius: 8px;
+    }
+    .skill-group h3 {
+      margin-bottom: 1rem;
+    }
+    .skill-group ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    .skill-group ul li {
+      margin-bottom: 0.6rem;
+      position: relative;
+      padding-left: 1.5rem;
+      font-weight: 500;
+    }
+    .skill-group ul li::before {
+      content: "✅";
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+    /* Services Section */
+    #services .services-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+    .service-block {
+      background: #292929;
+      flex: 1 1 200px;
+      border-radius: 8px;
+      padding: 1rem;
+      box-shadow: 0 0 10px #c0a060aa;
+    }
+    .service-block h3 {
+      margin-bottom: 0.8rem;
+      color: #f0d27a;
+    }
+    /* Contact Section */
+    #contact form {
+      display: flex;
+      flex-direction: column;
+      max-width: 500px;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+    #contact label {
+      font-weight: 600;
+    }
+    #contact input, #contact textarea {
+      padding: 0.5rem;
+      border-radius: 4px;
+      border: none;
+      font-size: 1rem;
+      resize: vertical;
+    }
+    #contact input:focus, #contact textarea:focus {
+      outline: 2px solid #c0a060;
+      background: #1a1a1a;
+      color: #fff;
+    }
+    #contact button {
+      background: #c0a060;
+      border: none;
+      padding: 0.75rem;
+      font-weight: 700;
+      cursor: pointer;
+      border-radius: 4px;
+      transition: background 0.3s;
+    }
+    #contact button:hover {
+      background: #f0d27a;
+    }
+    #contact .contact-info {
+      font-weight: 600;
+      color: #f0d27a;
+      min-height: 1.5rem;
+    }
+    #contact .location {
+      font-weight: 600;
+      margin-top: 1rem;
+      color: #eee;
+    }
+    /* Animations */
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+    /* Responsive */
+    @media (max-width: 700px) {
+      #home {
+        flex-direction: column;
+        align-items: center;
+      }
+      #home-photo {
+        max-width: 150px;
+        height: 150px;
+      }
+      .skills-grid {
+        flex-direction: column;
+      }
+      .services-grid {
+        flex-direction: column;
+      }
+    }
+  </style>
 </head>
 <body>
 
-<!-- Navigation -->
-<nav>
-  <ul>
-    <li><a href="#" data-page="home" class="nav-link active">Home</a></li>
-    <li><a href="#" data-page="about" class="nav-link">About</a></li>
-    <li><a href="#" data-page="qualifications" class="nav-link">Qualifications</a></li>
-    <li><a href="#" data-page="services" class="nav-link">Services</a></li>
-    <li><a href="#" data-page="contact" class="nav-link">Contact</a></li>
-  </ul>
-</nav>
+<header role="navigation" aria-label="Primary Navigation">
+  <a href="#" class="nav-link active" data-target="home">Home</a>
+  <a href="#" class="nav-link" data-target="about">About</a>
+  <a href="#" class="nav-link" data-target="qualifications">Qualifications</a>
+  <a href="#" class="nav-link" data-target="services">Services</a>
+  <a href="#" class="nav-link" data-target="contact">Contact</a>
+</header>
 
-<!-- Pages container -->
-<div class="container">
+<main>
 
-  <!-- Home Page -->
-  <section id="home" class="page">
-    <div class="intro">
-      <div class="left">
-        <h1>Prince Chakusa</h1>
-        <h2>Hello, it’s Prince</h2>
-        <div class="typing" id="typing"></div>
-        <div class="links">
-          <a href="https://www.linkedin.com/in/princechakusa" target="_blank" aria-label="LinkedIn Profile" title="LinkedIn">
-            <svg style="width:24px;height:24px;fill:#d4af37;" viewBox="0 0 24 24"><path d="M19 3A2 2 0 0 1 21 5v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14M8.5 19V10.75H6.25V19H8.5m-1.13-10.5c.79 0 1.28-.52 1.28-1.17-.01-.67-.5-1.18-1.27-1.18-.78 0-1.28.51-1.28 1.18 0 .65.5 1.17 1.26 1.17h.01zm6.63 10.5v-4.85c0-1.26-.67-1.85-1.55-1.85-.8 0-1.15.46-1.35.79v-0.67H10.7v8.56h2.25v-4.42c0-.23.02-.46.08-.62.17-.46.55-.93 1.18-.93.83 0 1.16.7 1.16 1.73v4.23H17z"/></svg>
-          </a>
-          <a href="mailto:chakusaprince@gmail.com" aria-label="Send Email" title="Email">
-            <svg style="width:24px;height:24px;fill:#d4af37;" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12a2 2 0 0 0 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2m0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-          </a>
-        </div>
-        <div class="buttons" style="margin-top: 24px;">
-          <a href="#" download="Prince_Chakusa_CV.pdf"><button>Download CV</button></a>
-          <button id="contactBtnHome">Contact</button>
-        </div>
+  <!-- Home -->
+  <section id="home" class="active" tabindex="0" aria-label="Home introduction">
+    <div id="home-text">
+      <h1>Prince Chakusa</h1>
+      <p>Hello, it’s Prince</p>
+      <div id="typing" aria-live="polite" aria-atomic="true"></div>
+      <div class="social-links" aria-label="Social media links">
+        <a href="https://www.linkedin.com/in/princechakusa" target="_blank" title="LinkedIn" rel="noopener noreferrer" aria-label="LinkedIn">
+          <svg width="20" height="20" fill="#c0a060" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.2c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm13.5 11.2h-3v-5.5c0-1.104-.896-2-2-2s-2 .896-2 2v5.5h-3v-10h3v1.3c.833-1.255 2.17-2.3 4-2.3 2.485 0 4.5 2.015 4.5 4.5v6.5z"/></svg>
+        </a>
+        <a href="mailto:chakusaprince@gmail.com" title="Email" aria-label="Email">
+          <svg width="20" height="20" fill="#c0a060" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4c-1.104 0-2 .896-2 2v12c0 1.104.896 2 2 2h16c1.104 0 2-.896 2-2V6c0-1.104-.896-2-2-2zm0 2v.511l-8 5.333-8-5.333V6h16zM4 18V8.589l7.516 5.006a1 1 0 0 0 1.002 0L20 8.588V18H4z"/></svg>
+        </a>
       </div>
-      <div class="right" aria-label="Prince Chakusa Photo">
-        <img src="https://i.imgur.com/HLv82YN.jpg" alt="Prince Chakusa Photo" />
+      <div class="buttons">
+        <button onclick="window.open('https://example.com/PrinceChakusa_CV.pdf','_blank')">Download CV</button>
+        <button onclick="document.querySelector('a[data-target=contact]').click()">Contact</button>
       </div>
     </div>
+    <div id="home-photo" role="img" aria-label="Prince Chakusa photo"></div>
   </section>
 
-  <!-- About Page -->
-  <section id="about" class="page" style="display:none;">
-    <div class="countdown" id="countdown"></div>
-    <div class="roles">Property Management → Operations Team Leader → Customer Care Specialist</div>
-    <div class="info-grid">
-      <div><span class="label">Birthday:</span> 23/07/1995</div>
-      <div><span class="label">Phone:</span> +971 58 185 2582</div>
-      <div><span class="label">Nationality:</span> Zimbabwean</div>
-      <div><span class="label">Degree:</span> Associate in Computer Science (in progress)</div>
-      <div><span class="label">Email:</span> chakusaprince@gmail.com</div>
-      <div><span class="label">Availability:</span> Immediate</div>
+  <!-- About -->
+  <section id="about" tabindex="0" aria-label="About Prince Chakusa">
+    <h2>About Me</h2>
+    <div class="countdown" aria-live="polite" aria-atomic="true" id="countdown"></div>
+    <div class="snapshot" role="list">
+      <div role="listitem">Property Management</div>
+      <div role="listitem">Operations Team Leader</div>
+      <div role="listitem">Customer Care Specialist</div>
     </div>
-    <div class="interests"><strong>Interests:</strong> Music, Hiking, Reading, Beach Walks, Fitness, Photography</div>
-    <div class="links-section">
-      <a href="https://www.linkedin.com/in/princechakusa" target="_blank">LinkedIn</a>
+    <div class="more-info">
+      <p><strong>Birthday:</strong> 23/07/1995</p>
+      <p><strong>Phone:</strong> +971 58 185 2582</p>
+      <p><strong>Nationality:</strong> Zimbabwean</p>
+      <p><strong>Degree:</strong> Associate in Computer Science (in progress)</p>
+      <p><strong>Email:</strong> chakusaprince@gmail.com</p>
+      <p><strong>Availability:</strong> Immediate</p>
+      <p><strong>Interests:</strong> Music, Hiking, Reading, Beach Walks, Fitness, Photography</p>
+    </div>
+    <div class="links-section" aria-label="Useful Links">
+      <a href="https://www.linkedin.com/in/princechakusa" target="_blank" rel="noopener noreferrer">LinkedIn</a>
       <a href="mailto:chakusaprince@gmail.com">Email</a>
     </div>
   </section>
 
-  <!-- Qualifications Page -->
-  <section id="qualifications" class="page" style="display:none;">
+  <!-- Qualifications -->
+  <section id="qualifications" tabindex="0" aria-label="Qualifications and Skills">
     <h2>Qualifications</h2>
-    <div class="education-tree">
-      <ul>
-        <li>Diploma in Business Management - Lyceum College</li>
-        <li>Associate of Science in Computer Science - University of the People (in progress)</li>
-      </ul>
-    </div>
+    <ul>
+      <li>Diploma in Business Management - Lyceum College</li>
+      <li>Associate of Science in Computer Science - University of the People (in progress)</li>
+    </ul>
 
+    <h2>Key Skills</h2>
     <div class="skills-grid">
       <div class="skill-group">
         <h3>Soft Skills</h3>
         <ul>
           <li>Rapid Problem Solving</li>
-          <li>Self-Discipline & Organization</li>
-          <li>Adaptability & Multitasking</li>
-          <li>Team Leadership & Communication</li>
-          <li>Interpersonal Skills & Customer Focus</li>
+          <li>Time Management</li>
+          <li>Team Leadership</li>
+          <li>Effective Communication</li>
+          <li>Multicultural Adaptability</li>
         </ul>
       </div>
       <div class="skill-group">
         <h3>Technical Skills</h3>
         <ul>
-          <li>Guest Experience & CRM</li>
-          <li>Property Management Systems</li>
-          <li>Microsoft Office Suite & Google Workspace</li>
-          <li>Data Analysis & Statistics</li>
-          <li>Basic Coding & Web Development</li>
-          <li>Computer Science Fundamentals</li>
+          <li>CRM Systems – Bitrix24, Slack</li>
+          <li>Power BI – Entry-level dashboards and KPI reporting</li>
+          <li>Property Management Systems – Maintenance, readiness, guest tracking</li>
+          <li>Microsoft Office Suite – Excel, Word, Outlook</li>
+          <li>Custom Reporting & Digital Tools</li>
+          <li>WhatsApp, Hostaway for team & guest coordination</li>
         </ul>
       </div>
     </div>
   </section>
 
-  <!-- Services Page -->
-  <section id="services" class="page" style="display:none;">
+  <!-- Services -->
+  <section id="services" tabindex="0" aria-label="Services Offered">
     <h2>Services</h2>
     <div class="services-grid">
       <div class="service-block">
-        <h3>Property Operations Management</h3>
-        <p>Leading teams and coordinating property maintenance and guest services to ensure smooth operations.</p>
+        <h3>Customer Support Specialist</h3>
+        <p>Expert in delivering outstanding guest experiences and managing customer inquiries efficiently.</p>
       </div>
       <div class="service-block">
-        <h3>Customer Experience & Support</h3>
-        <p>Delivering outstanding customer care and solving guest issues promptly with empathy and professionalism.</p>
+        <h3>Operations Leader</h3>
+        <p>Proven leadership in coordinating teams and streamlining property operations for maximum efficiency.</p>
       </div>
       <div class="service-block">
-        <h3>Data Analysis & Reporting</h3>
-        <p>Utilizing data tools and statistics knowledge to optimize property management decisions and business insights.</p>
+        <h3>Property Management Expert</h3>
+        <p>Skilled in property maintenance, readiness, and guest tracking to ensure smooth rental operations.</p>
       </div>
       <div class="service-block">
-        <h3>Digital Systems Implementation</h3>
-        <p>Developing and implementing digital solutions to improve maintenance workflows and tenant services.</p>
+        <h3>Tech Enthusiast / Problem Solver</h3>
+        <p>Passionate about leveraging technology and custom digital tools to solve operational challenges.</p>
       </div>
     </div>
   </section>
 
-  <!-- Contact Page -->
-  <section id="contact" class="page" style="display:none;">
+  <!-- Contact -->
+  <section id="contact" tabindex="0" aria-label="Contact Form">
     <h2>Contact Me</h2>
-    <form id="contactForm" aria-label="Contact form">
+    <form id="contact-form" novalidate>
       <label for="name">Name</label>
-      <input type="text" id="name" name="name" placeholder="Your full name" required />
+      <input id="name" name="name" type="text" required aria-required="true" />
 
       <label for="email">Email</label>
-      <input type="email" id="email" name="email" placeholder="Your email address" required />
+      <input id="email" name="email" type="email" required aria-required="true" />
 
       <label for="message">Message</label>
-      <textarea id="message" name="message" placeholder="Your message here..." required></textarea>
+      <textarea id="message" name="message" rows="5" required aria-required="true"></textarea>
 
       <button type="submit">Send Message</button>
+      <div class="contact-info" aria-live="polite" aria-atomic="true"></div>
     </form>
-    <div class="contact-info">
-      <p><strong>Phone:</strong> +971 58 185 2582</p>
-      <p><strong>Email:</strong> chakusaprince@gmail.com</p>
-      <p class="location"><strong>Location:</strong> Dubai, United Arab Emirates</p>
-    </div>
+    <p class="location" aria-label="Location">Location: Dubai, Al Furjan, Discovery Gardens</p>
+    <p><strong>Phone:</strong> +971 58 185 2582</p>
+    <p><strong>Email:</strong> chakusaprince@gmail.com</p>
+    <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/princechakusa" target="_blank" rel="noopener noreferrer">princechakusa</a></p>
   </section>
-</div>
+
+</main>
 
 <script>
-  // Navigation page switching
-  const navLinks = document.querySelectorAll('.nav-link');
-  const pages = document.querySelectorAll('.page');
+  // Navigation functionality
+  const navLinks = document.querySelectorAll('header a.nav-link');
+  const sections = document.querySelectorAll('main section');
 
   navLinks.forEach(link => {
     link.addEventListener('click', e => {
       e.preventDefault();
-      const target = e.target.dataset.page;
-
+      const target = link.getAttribute('data-target');
       navLinks.forEach(l => l.classList.remove('active'));
-      e.target.classList.add('active');
-
-      pages.forEach(page => {
-        if (page.id === target) {
-          page.style.display = 'block';
+      link.classList.add('active');
+      sections.forEach(section => {
+        if (section.id === target) {
+          section.classList.add('active');
+          section.focus();
         } else {
-          page.style.display = 'none';
+          section.classList.remove('active');
         }
       });
     });
   });
 
-  // Typing animation for home page
+  // Typing animation on home
   const typingEl = document.getElementById('typing');
-  const typingStrings = [
-    "I'm a Team Leader & Problem Solver.",
-    "Skilled in Property Operations & Customer Care.",
-    "Passionate about Tech & Data Analysis.",
-    "Currently studying Computer Science.",
-  ];
-  let typingIndex = 0;
+  const roles = ['Operations Team Leader', 'Customer Care Specialist', 'Tech Enthusiast'];
+  let roleIndex = 0;
   let charIndex = 0;
-  let isDeleting = false;
-  let wait = 1500;
+  let typing = true;
 
-  function type() {
-    const current = typingStrings[typingIndex];
-    if (!isDeleting) {
-      typingEl.textContent = current.slice(0, charIndex + 1);
-      charIndex++;
-      if (charIndex === current.length) {
-        isDeleting = true;
-        setTimeout(type, wait);
-        return;
+  function typeRole() {
+    if (typing) {
+      if (charIndex < roles[roleIndex].length) {
+        typingEl.textContent += roles[roleIndex][charIndex];
+        charIndex++;
+        setTimeout(typeRole, 120);
+      } else {
+        typing = false;
+        setTimeout(typeRole, 1200);
       }
     } else {
-      typingEl.textContent = current.slice(0, charIndex - 1);
-      charIndex--;
-      if (charIndex === 0) {
-        isDeleting = false;
-        typingIndex = (typingIndex + 1) % typingStrings.length;
+      if (charIndex > 0) {
+        typingEl.textContent = roles[roleIndex].substring(0, charIndex - 1);
+        charIndex--;
+        setTimeout(typeRole, 70);
+      } else {
+        typing = true;
+        roleIndex = (roleIndex + 1) % roles.length;
+        setTimeout(typeRole, 300);
       }
     }
-    setTimeout(type, isDeleting ? 70 : 130);
   }
-  type();
+  typeRole();
 
-  // Countdown to graduation (assuming graduation date is 30 Dec 2025)
-  const countdownEl = document.getElementById('countdown');
-  const graduationDate = new Date('2025-12-30T00:00:00');
-
+  // Countdown timer for graduation (assuming mid 2026 - June 30, 2026)
   function updateCountdown() {
     const now = new Date();
-    let diff = graduationDate - now;
+    const gradDate = new Date('2026-06-30T00:00:00');
+    const diff = gradDate - now;
 
-    if (diff <= 0) {
-      countdownEl.textContent = "Graduated!";
+    if(diff <= 0) {
+      document.getElementById('countdown').textContent = 'Graduated! 🎓';
       return;
     }
 
     const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-    diff -= days * (1000 * 60 * 60 * 24);
-    const hours = Math.floor(diff / (1000 * 60 * 60));
-    diff -= hours * (1000 * 60 * 60);
-    const minutes = Math.floor(diff / (1000 * 60));
-    diff -= minutes * (1000 * 60);
-    const seconds = Math.floor(diff / 1000);
-
-    countdownEl.textContent = `Graduation Countdown: ${days}d ${hours}h ${minutes}m ${seconds}s`;
+    document.getElementById('countdown').textContent = `Days until graduation: ${days}`;
   }
-  setInterval(updateCountdown, 1000);
   updateCountdown();
+  setInterval(updateCountdown, 1000 * 60 * 60); // update every hour
 
-  // Contact button on home page scroll to contact
-  document.getElementById('contactBtnHome').addEventListener('click', () => {
-    navLinks.forEach(l => {
-      l.classList.remove('active');
-      if (l.dataset.page === 'contact') l.classList.add('active');
-    });
-    pages.forEach(page => {
-      page.style.display = page.id === 'contact' ? 'block' : 'none';
-    });
-    window.scrollTo({top: 0, behavior: 'smooth'});
-  });
+  // Contact form validation and simulation
+  const form = document.getElementById('contact-form');
+  const contactInfo = form.querySelector('.contact-info');
 
-  // Simple form submission alert (replace with real backend or mail service)
-  document.getElementById('contactForm').addEventListener('submit', e => {
+  form.addEventListener('submit', e => {
     e.preventDefault();
-    alert('Thank you for your message! I will get back to you shortly.');
-    e.target.reset();
+    const name = form.name.value.trim();
+    const email = form.email.value.trim();
+    const message = form.message.value.trim();
+
+    if (!name || !email || !message) {
+      contactInfo.textContent = 'Please fill in all fields.';
+      return;
+    }
+    // Simple email validation
+    const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,6}$/i;
+    if (!emailPattern.test(email)) {
+      contactInfo.textContent = 'Please enter a valid email address.';
+      return;
+    }
+
+    contactInfo.textContent = 'Sending message...';
+
+    // Simulate sending message (replace with real backend logic)
+    setTimeout(() => {
+      contactInfo.textContent = `Thank you, ${name}! Your message has been sent.`;
+      form.reset();
+    }, 1500);
   });
 </script>
 
