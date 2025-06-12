@@ -1,6 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- [Previous head content remains exactly the same] -->
+</head>
+<body>
+  <!-- [Header and Hero sections remain exactly the same] -->
+
+  <section id="about" class="section">
+    <h2 class="section-title">About Me</h2>
+    
+    <!-- Enhanced Video Introduction Section -->
+    <div class="video-intro-card">
+      <h3 style="color: var(--accent); margin-bottom: 20px;">
+        <i class="fas fa-play-circle" style="margin-right: 10px;"></i> My Professional Story
+      </h3>
+      <div class="video-glow-container">
+        <iframe 
+          src="https://www.youtube.com/embed/rg1hqzK7nyQ" 
+          frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+          allowfullscreen>
+        </iframe>
+        <div class="video-glows">
+          <div class="glow-1"></div>
+          <div class="glow-2"></div>
+        </div>
+      </div>
+      <p class="video-description">
+        In this video, I share my journey from customer experience leadership to tech enthusiast. 
+        You'll see my passion for <span style="color: var(--accent)">problem-solving</span>, 
+        <span style="color: var(--primary)">team development</span>, and 
+        <span style="color: #ff6b6b">technology innovation</span>.
+      </p>
+    </div>
+
+    <!-- [Rest of your existing About section content remains exactly the same] -->
+  </section>
+
+  <!-- Add this CSS to your style section -->
+  <style>
+    /* Video Introduction Card */
+    .video-intro-card {
+      background: var(--card-bg);
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7);
+      margin-bottom: 40px;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(100, 255, 218, 0.1);
+    }
+
+    .video-glow-container {
+      position: relative;
+      border-radius: 8px;
+      overflow: hidden;
+      margin: 20px 0;
+      box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.3);
+    }
+
+    .video-glow-container iframe {
+      width: 100%;
+      height: 400px;
+      display: block;
+      position: relative;
+      z-index: 2;
+      border: none;
+    }
+
+    .video-glows {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    .glow-1, .glow-2 {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(60px);
+      opacity: 0.3;
+    }
+
+    .glow-1 {
+      width: 200px;
+      height: 200px;
+      background: var(--primary);
+      top: -50px;
+      left: -50px;
+    }
+
+    .glow-2 {
+      width: 150px;
+      height: 150px;
+      background: #ff6b6b;
+      bottom: -30px;
+      right: -30px;
+    }
+
+    .video-description {
+      color: var(--gray);
+      line-height: 1.7;
+      margin-top: 20px;
+      font-size: 17px;
+    }
+
+    @media (max-width: 768px) {
+      .video-glow-container iframe {
+        height: 220px;
+      }
+    }
+  </style>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Prince Chakusa | Customer Experience Leader & Tech Enthusiast</title>
