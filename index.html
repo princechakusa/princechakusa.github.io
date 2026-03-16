@@ -1180,18 +1180,18 @@ function downloadCV(){var l=document.createElement('a');l.href='data:application
 
   /* ── CONFIG ── */
   var CFG = {
-    count:        90,      // number of particles
-    baseRadius:   1.8,     // particle dot size
-    connectDist:  160,     // max distance to draw a line
-    mouseRadius:  180,     // magnetic pull radius
-    pullStrength: 0.012,   // how hard particles chase mouse
-    repelStrength:0.04,    // push on click
-    baseSpeed:    0.4,     // idle drift speed
-    tealColor:    '13,122,101',   // --teal rgb
-    lineOpacity:  0.18,    // base line opacity
-    pulseOpacity: 0.55,    // line opacity when hovering interactive
-    dotOpacity:   0.55,    // base particle dot opacity
-    pulseDotOp:   1.0,     // dot opacity when active
+    count:        55,
+    baseRadius:   1.4,
+    connectDist:  110,
+    mouseRadius:  140,
+    pullStrength: 0.006,
+    repelStrength:0.018,
+    baseSpeed:    0.35,
+    tealColor:    '13,122,101',
+    lineOpacity:  0.06,
+    pulseOpacity: 0.22,
+    dotOpacity:   0.25,
+    pulseDotOp:   0.7,
   };
 
   /* ── STATE ── */
@@ -1244,9 +1244,13 @@ function downloadCV(){var l=document.createElement('a');l.href='data:application
     }
 
     /* friction */
-    var friction = active ? 0.92 : 0.96;
+    var friction = active ? 0.94 : 0.97;
     this.vx *= friction;
     this.vy *= friction;
+
+    /* hard speed cap - prevents snowball clustering */
+    var speed = Math.sqrt(this.vx*this.vx+this.vy*this.vy);
+    if(speed > 2.5){ this.vx=(this.vx/speed)*2.5; this.vy=(this.vy/speed)*2.5; }
 
     /* drift nudge so they never freeze */
     if(Math.abs(this.vx)<0.05) this.vx += (Math.random()-0.5)*0.1;
