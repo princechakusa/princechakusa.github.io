@@ -1,717 +1,847 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>Prince Chakusa — Property Operations & Guest Experience</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
-<style>
-/* ── RESET ── */
-*{margin:0;padding:0;box-sizing:border-box}
-a,a:visited,a:link{color:inherit;text-decoration:none}
-img{display:block}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prince Chakusa | Operations Director & Systems Architect</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=Montserrat:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* 01. GLOBAL ARCHITECTURE (Lines 15-200) */
+        :root {
+            --bg: #FFFFFF;
+            --surface: #F9F8F6;
+            --accent: #B8860B; 
+            --ink: #121212;
+            --ink-light: #555555;
+            --border: #E8E4DE;
+            --transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
 
-/* ── TOKENS ── */
-:root{
-  --teal:      #0d7a65;
-  --teal-mid:  #11a688;
-  --teal-lite: #e4f4f1;
-  --coral:     #d95f3b;
-  --coral-lite:#fceee9;
-  --navy:      #0e1f3d;
-  --ink:       #1a2035;
-  --ink2:      #3d4460;
-  --muted:     #7b84a3;
-  --border:    #dde1ee;
-  --bg-page:   #f0f2f8;
-  --bg-card:   #ffffff;
-  --white:     #ffffff;
-  --shadow-sm: 0 2px 8px rgba(14,31,61,.07);
-  --shadow-md: 0 6px 24px rgba(14,31,61,.10);
-  --shadow-lg: 0 14px 48px rgba(14,31,61,.14);
-}
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { 
+            background: var(--bg); color: var(--ink); 
+            font-family: 'Montserrat', sans-serif; line-height: 1.8;
+            overflow-x: hidden;
+        }
 
-/* ── BODY / LAYOUT ── */
-body{
-  font-family:'Outfit',sans-serif;
-  background:var(--bg-page);
-  color:var(--ink);
-  min-height:100vh;
-}
+        /* 02. NAVIGATION (Lines 201-300) */
+        nav {
+            position: fixed; width: 100%; top: 0;
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 2.5rem 5%; background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(15px); z-index: 1000;
+            border-bottom: 1px solid var(--border);
+        }
+        .logo { font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 600; }
+        .logo span { color: var(--accent); }
+        .nav-links { display: flex; gap: 3.5rem; }
+        .nav-links a { 
+            text-decoration: none; color: var(--ink); font-size: 0.75rem; 
+            text-transform: uppercase; letter-spacing: 3px; font-weight: 600;
+            transition: 0.3s;
+        }
+        .nav-links a:hover { color: var(--accent); }
 
-/* ── SIDEBAR NAV ── */
-.sidebar{
-  position:fixed;top:0;left:0;bottom:0;
-  width:240px;
-  background:var(--navy);
-  display:flex;flex-direction:column;
-  z-index:200;
-  box-shadow:4px 0 24px rgba(14,31,61,.18);
-}
-.sidebar-logo{
-  padding:2rem 1.8rem 1.5rem;
-  border-bottom:1px solid rgba(255,255,255,.08);
-}
-.logo-name{
-  font-family:'Playfair Display',serif;
-  font-size:1.15rem;font-weight:700;
-  color:#fff;line-height:1.2;
-}
-.logo-title{
-  font-size:0.68rem;font-weight:500;
-  letter-spacing:.12em;text-transform:uppercase;
-  color:var(--teal-mid);margin-top:.4rem;
-}
-.nav-items{
-  flex:1;padding:1.5rem 0;overflow-y:auto;
-}
-.nav-item{
-  display:flex;align-items:center;gap:.85rem;
-  padding:.75rem 1.8rem;
-  font-size:.82rem;font-weight:500;
-  letter-spacing:.04em;
-  color:rgba(255,255,255,.5);
-  cursor:pointer;
-  transition:all .2s;
-  border-left:3px solid transparent;
-  position:relative;
-}
-.nav-item:hover{
-  color:#fff;
-  background:rgba(255,255,255,.05);
-}
-.nav-item.active{
-  color:#fff;
-  background:rgba(13,122,101,.2);
-  border-left-color:var(--teal-mid);
-}
-.nav-icon{font-size:1rem;width:20px;text-align:center;}
-.nav-sidebar-footer{
-  padding:1.5rem 1.8rem;
-  border-top:1px solid rgba(255,255,255,.08);
-}
-.avail-pill{
-  display:flex;align-items:center;gap:.6rem;
-  padding:.55rem 1rem;
-  background:rgba(13,122,101,.25);
-  border:1px solid rgba(17,166,136,.3);
-  border-radius:100px;
-  font-size:.7rem;font-weight:600;
-  letter-spacing:.06em;
-  color:var(--teal-mid);
-}
-.pulse{
-  width:7px;height:7px;border-radius:50%;
-  background:#2ecc71;
-  animation:pulse 2s infinite;
-}
-@keyframes pulse{0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(46,204,113,.5)}50%{opacity:.7;box-shadow:0 0 0 5px rgba(46,204,113,0)}}
+        /* 03. HERO SECTION (Lines 301-450) */
+        .hero {
+            height: 100vh; display: flex; flex-direction: column;
+            justify-content: center; align-items: center; text-align: center;
+            padding: 0 10%; background: var(--surface);
+        }
+        .hero-label { font-size: 0.8rem; letter-spacing: 6px; color: var(--accent); text-transform: uppercase; margin-bottom: 2rem; font-weight: 700; }
+        .hero h1 { 
+            font-family: 'Cormorant Garamond', serif; font-size: clamp(3.5rem, 9vw, 8rem); 
+            font-weight: 300; line-height: 0.9; margin-bottom: 3rem;
+        }
+        .hero h1 i { color: var(--accent); font-style: italic; }
+        .hero p { max-width: 800px; font-size: 1.2rem; font-weight: 300; color: var(--ink-light); }
 
-/* ── TOPBAR (mobile) ── */
-.topbar{
-  display:none;
-  position:fixed;top:0;left:0;right:0;height:60px;
-  background:var(--navy);
-  align-items:center;justify-content:space-between;
-  padding:0 1.2rem;
-  z-index:300;
-  box-shadow:0 2px 12px rgba(14,31,61,.2);
-}
-.topbar-logo{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:#fff;}
-.hamburger{background:none;border:none;cursor:pointer;display:flex;flex-direction:column;gap:5px;}
-.hamburger span{width:22px;height:2px;background:#fff;border-radius:2px;display:block;transition:.3s;}
+        /* 04. CASE STUDY GRID (Lines 451-750) */
+        section { padding: 12rem 10%; }
+        .section-tag { font-size: 0.7rem; letter-spacing: 4px; text-transform: uppercase; color: var(--accent); margin-bottom: 1.5rem; display: block; font-weight: 700; }
+        .section-title { font-family: 'Cormorant Garamond', serif; font-size: 4rem; font-weight: 300; line-height: 1.1; margin-bottom: 6rem; }
 
-/* mobile drawer */
-.drawer{
-  display:none;position:fixed;inset:0;
-  background:var(--navy);z-index:250;
-  flex-direction:column;padding:5rem 2rem 2rem;
-  gap:1rem;
-}
-.drawer.open{display:flex}
-.drawer-close{position:absolute;top:1rem;right:1.5rem;background:none;border:none;color:#fff;font-size:1.5rem;cursor:pointer;}
-.drawer a{font-size:1.2rem;font-weight:500;color:rgba(255,255,255,.7);padding:.5rem 0;border-bottom:1px solid rgba(255,255,255,.08);}
-.drawer a:hover{color:#fff}
+        .case-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 4rem; }
+        .case-card { padding: 4rem; background: var(--surface); border: 1px solid var(--border); transition: var(--transition); }
+        .case-card:hover { background: #fff; transform: translateY(-10px); box-shadow: 0 30px 60px rgba(0,0,0,0.05); }
+        .case-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; margin-bottom: 1.5rem; font-weight: 400; }
+        .case-card .focus { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 2px; color: var(--accent); font-weight: 700; display: block; margin-bottom: 2rem; }
+        .case-card .result-pill { display: inline-block; padding: 0.8rem 1.5rem; background: var(--accent); color: #fff; font-weight: 700; font-size: 1.2rem; margin-bottom: 2rem; }
+        .case-card p { color: var(--ink-light); font-size: 1rem; line-height: 1.8; }
 
-/* ── MAIN CONTENT ── */
-.main{
-  margin-left:240px;
-  min-height:100vh;
-}
+        /* 05. SOP TECHNICAL LIBRARY (Lines 751-1000) */
+        .sop-library { background: var(--ink); color: #fff; padding: 10rem 10%; }
+        .sop-library .section-title { color: #fff; }
+        .sop-row { display: grid; grid-template-columns: 0.5fr 1.5fr; gap: 4rem; border-bottom: 1px solid #333; padding: 3rem 0; }
+        .sop-row:last-child { border: none; }
+        .sop-id { font-family: 'Cormorant Garamond', serif; font-size: 3rem; color: var(--accent); }
+        .sop-content h4 { font-size: 1rem; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 1rem; }
+        .sop-content ul { list-style: none; color: #aaa; }
+        .sop-content ul li { margin-bottom: 0.5rem; position: relative; padding-left: 1.5rem; }
+        .sop-content ul li::before { content: '>'; position: absolute; left: 0; color: var(--accent); }
 
-/* ── PAGES ── */
-.page{display:none;min-height:100vh;padding:3rem 3.5rem 4rem;}
-.page.active{display:block}
+        /* 06. FOOTER (Lines 1001-1100) */
+        .footer { padding: 10rem 10% 5rem; text-align: center; }
+        .footer h2 { font-family: 'Cormorant Garamond', serif; font-size: 4.5rem; font-weight: 300; margin-bottom: 4rem; }
+        .btn { padding: 1.5rem 4rem; background: var(--ink); color: #fff; text-decoration: none; text-transform: uppercase; letter-spacing: 3px; font-size: 0.8rem; font-weight: 700; transition: var(--transition); display: inline-block; }
+        .btn:hover { background: var(--accent); transform: translateY(-5px); }
 
-/* ── PAGE HEADER STRIP ── */
-.page-header{
-  display:flex;align-items:center;gap:1rem;
-  margin-bottom:2.5rem;
-  padding-bottom:1.5rem;
-  border-bottom:2px solid var(--border);
-}
-.page-header-icon{
-  width:48px;height:48px;border-radius:12px;
-  background:var(--teal);
-  display:flex;align-items:center;justify-content:center;
-  font-size:1.4rem;
-  box-shadow:0 4px 12px rgba(13,122,101,.3);
-}
-.page-header-text h1{
-  font-family:'Playfair Display',serif;
-  font-size:1.8rem;font-weight:700;
-  color:var(--ink);line-height:1;
-}
-.page-header-text p{
-  font-size:.82rem;color:var(--muted);
-  margin-top:.25rem;letter-spacing:.04em;
-}
-
-/* ── CARDS ── */
-.card{
-  background:var(--bg-card);
-  border:1.5px solid var(--border);
-  border-radius:16px;
-  box-shadow:var(--shadow-sm);
-  overflow:hidden;
-}
-.card:hover{box-shadow:var(--shadow-md);}
-.card-head{
-  padding:1.4rem 1.8rem;
-  background:var(--bg-page);
-  border-bottom:1.5px solid var(--border);
-  display:flex;align-items:center;gap:.8rem;
-}
-.card-head-icon{
-  width:34px;height:34px;border-radius:8px;
-  background:var(--teal-lite);
-  display:flex;align-items:center;justify-content:center;
-  font-size:1rem;
-}
-.card-head-title{font-size:.9rem;font-weight:700;color:var(--ink);}
-.card-head-sub{font-size:.75rem;color:var(--muted);margin-top:.1rem;}
-.card-body{padding:1.8rem;}
-
-/* ── SECTION LABELS ── */
-.sec-label{
-  display:inline-flex;align-items:center;gap:.5rem;
-  font-size:.7rem;font-weight:700;
-  letter-spacing:.16em;text-transform:uppercase;
-  color:var(--teal);margin-bottom:.7rem;
-}
-.sec-label::before{content:'';width:18px;height:2.5px;background:var(--teal);border-radius:2px;}
-
-/* ── BADGE ── */
-.badge{
-  display:inline-block;
-  padding:.25rem .75rem;
-  border-radius:100px;
-  font-size:.7rem;font-weight:700;
-  letter-spacing:.06em;text-transform:uppercase;
-}
-.badge-teal{background:var(--teal-lite);color:var(--teal);}
-.badge-coral{background:var(--coral-lite);color:var(--coral);}
-.badge-navy{background:rgba(14,31,61,.08);color:var(--navy);}
-.badge-green{background:rgba(46,204,113,.12);color:#1a9952;}
-
-/* ══════════════════════════════════
-   HOME PAGE
-══════════════════════════════════ */
-#home.page{padding:0;display:none;}
-#home.page.active{display:flex;flex-direction:column;}
-
-.home-hero{
-  background:var(--navy);
-  padding:4rem 3.5rem 3.5rem;
-  position:relative;overflow:hidden;
-}
-.home-hero::before{
-  content:'';position:absolute;
-  top:-120px;right:-120px;
-  width:400px;height:400px;border-radius:50%;
-  background:radial-gradient(circle,rgba(13,122,101,.25) 0%,transparent 70%);
-}
-.home-hero::after{
-  content:'';position:absolute;
-  bottom:-80px;left:20%;
-  width:300px;height:300px;border-radius:50%;
-  background:radial-gradient(circle,rgba(217,95,59,.12) 0%,transparent 70%);
-}
-.home-hero-inner{
-  display:grid;grid-template-columns:1fr auto;
-  gap:3rem;align-items:center;
-  position:relative;z-index:2;
-  max-width:1100px;
-}
-.hero-eyebrow{
-  display:inline-flex;align-items:center;gap:.6rem;
-  padding:.4rem .9rem;
-  background:rgba(13,122,101,.2);
-  border:1px solid rgba(17,166,136,.3);
-  border-radius:100px;
-  font-size:.7rem;font-weight:700;
-  letter-spacing:.1em;color:var(--teal-mid);
-  margin-bottom:1.4rem;
-}
-.hero-name{
-  font-family:'Playfair Display',serif;
-  font-size:clamp(2.6rem,4vw,4.2rem);
-  font-weight:900;line-height:.95;
-  color:#fff;margin-bottom:.6rem;
-}
-.hero-name .accent{color:var(--teal-mid);}
-.hero-role{
-  font-size:.82rem;font-weight:600;
-  letter-spacing:.14em;text-transform:uppercase;
-  color:rgba(255,255,255,.45);
-  margin-bottom:1.4rem;
-}
-.hero-desc{
-  font-size:1rem;line-height:1.8;
-  color:rgba(255,255,255,.65);
-  max-width:520px;margin-bottom:2.2rem;
-}
-.hero-btns{display:flex;flex-wrap:wrap;gap:.8rem;}
-.btn-primary{
-  padding:.8rem 1.8rem;
-  background:var(--teal);color:#fff;
-  font-size:.78rem;font-weight:700;
-  letter-spacing:.08em;text-transform:uppercase;
-  border-radius:8px;border:none;cursor:pointer;
-  transition:all .2s;display:inline-block;
-}
-.btn-primary:hover{background:var(--teal-mid);transform:translateY(-2px);box-shadow:0 6px 18px rgba(13,122,101,.4);}
-.btn-ghost{
-  padding:.8rem 1.8rem;
-  border:2px solid rgba(255,255,255,.2);
-  color:rgba(255,255,255,.75);
-  font-size:.78rem;font-weight:600;
-  letter-spacing:.08em;text-transform:uppercase;
-  border-radius:8px;cursor:pointer;
-  transition:all .2s;display:inline-block;
-  background:none;
-}
-.btn-ghost:hover{border-color:var(--teal-mid);color:#fff;}
-
-.hero-photo-wrap{position:relative;}
-.hero-photo{
-  width:220px;height:280px;
-  object-fit:cover;object-position:center top;
-  border-radius:16px;
-  border:3px solid rgba(255,255,255,.12);
-  box-shadow:var(--shadow-lg);
-}
-.hero-photo-badge{
-  position:absolute;bottom:-1rem;left:-1rem;
-  background:var(--coral);
-  color:#fff;border-radius:10px;
-  padding:.6rem .9rem;
-  font-size:.7rem;font-weight:700;
-  letter-spacing:.06em;text-transform:uppercase;
-  box-shadow:0 4px 14px rgba(217,95,59,.4);
-}
-
-/* Stats strip */
-.home-stats{
-  display:grid;grid-template-columns:repeat(4,1fr);
-  background:var(--bg-card);
-  border-bottom:3px solid var(--border);
-}
-.hstat{
-  padding:1.6rem 1.4rem;
-  border-right:1.5px solid var(--border);
-  text-align:center;
-}
-.hstat:last-child{border-right:none;}
-.hstat-num{
-  font-family:'Playfair Display',serif;
-  font-size:2.2rem;font-weight:700;
-  color:var(--teal);line-height:1;
-  display:block;
-}
-.hstat-lbl{
-  font-size:.68rem;font-weight:600;
-  letter-spacing:.1em;text-transform:uppercase;
-  color:var(--muted);margin-top:.3rem;
-}
-
-/* Quick nav cards */
-.home-nav-grid{
-  display:grid;grid-template-columns:repeat(3,1fr);
-  gap:1.5rem;
-  padding:3rem 3.5rem;
-}
-.home-nav-card{
-  background:var(--bg-card);
-  border:1.5px solid var(--border);
-  border-radius:16px;
-  padding:1.8rem;
-  cursor:pointer;
-  transition:all .25s;
-  display:flex;flex-direction:column;gap:.8rem;
-  box-shadow:var(--shadow-sm);
-}
-.home-nav-card:hover{
-  border-color:var(--teal);
-  box-shadow:var(--shadow-md);
-  transform:translateY(-3px);
-}
-.hnc-icon{
-  width:48px;height:48px;border-radius:12px;
-  display:flex;align-items:center;justify-content:center;
-  font-size:1.4rem;
-}
-.hnc-title{font-size:1rem;font-weight:700;color:var(--ink);}
-.hnc-desc{font-size:.82rem;color:var(--muted);line-height:1.6;}
-.hnc-arrow{
-  font-size:.8rem;font-weight:700;
-  color:var(--teal);letter-spacing:.06em;
-  text-transform:uppercase;
-  margin-top:auto;
-}
-
-/* ══════════════════════════════════
-   ABOUT PAGE
-══════════════════════════════════ */
-.about-grid{display:grid;grid-template-columns:280px 1fr;gap:2rem;align-items:start;}
-.about-photo-card{
-  background:var(--bg-card);border:1.5px solid var(--border);
-  border-radius:16px;overflow:hidden;
-  box-shadow:var(--shadow-sm);
-}
-.about-photo-img{
-  width:100%;aspect-ratio:3/4;
-  object-fit:cover;object-position:center top;
-}
-.about-photo-info{padding:1.4rem;}
-.about-info-row{
-  display:flex;justify-content:space-between;align-items:center;
-  padding:.55rem 0;
-  border-bottom:1px solid var(--border);
-  font-size:.82rem;
-}
-.about-info-row:last-child{border-bottom:none;}
-.info-label{color:var(--muted);font-weight:500;}
-.info-val{color:var(--ink);font-weight:600;text-align:right;}
-
-.about-content{display:flex;flex-direction:column;gap:1.5rem;}
-.bio-text{font-size:1rem;line-height:1.85;color:var(--ink2);}
-.bio-text strong{color:var(--teal);font-weight:700;}
-
-.skill-chips{display:flex;flex-wrap:wrap;gap:.5rem;}
-.chip{
-  padding:.35rem .9rem;
-  background:var(--bg-page);
-  border:1.5px solid var(--border);
-  border-radius:100px;
-  font-size:.76rem;font-weight:500;
-  color:var(--ink2);
-  transition:all .2s;cursor:default;
-}
-.chip:hover{border-color:var(--teal);color:var(--teal);background:var(--teal-lite);}
-
-/* ══════════════════════════════════
-   SKILLS PAGE
-══════════════════════════════════ */
-.skills-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;}
-
-/* ══════════════════════════════════
-   EXPERIENCE PAGE
-══════════════════════════════════ */
-.exp-timeline{display:flex;flex-direction:column;gap:1.5rem;}
-.exp-card-outer{
-  background:var(--bg-card);
-  border:1.5px solid var(--border);
-  border-radius:16px;
-  overflow:hidden;
-  box-shadow:var(--shadow-sm);
-  transition:box-shadow .2s;
-}
-.exp-card-outer:hover{box-shadow:var(--shadow-md);}
-.exp-card-header{
-  display:grid;grid-template-columns:auto 1fr auto;
-  gap:1.2rem;align-items:center;
-  padding:1.4rem 1.8rem;
-  background:var(--bg-page);
-  border-bottom:1.5px solid var(--border);
-}
-.exp-company-logo{
-  width:48px;height:48px;border-radius:12px;
-  background:var(--navy);
-  display:flex;align-items:center;justify-content:center;
-  font-family:'Playfair Display',serif;
-  font-size:1.1rem;font-weight:700;color:#fff;
-  flex-shrink:0;
-}
-.exp-header-meta{}
-.exp-company{font-size:1rem;font-weight:700;color:var(--ink);}
-.exp-location{font-size:.76rem;color:var(--muted);margin-top:.15rem;}
-.exp-date-badge{
-  padding:.4rem .9rem;
-  background:var(--bg-card);
-  border:1.5px solid var(--border);
-  border-radius:8px;
-  font-size:.72rem;font-weight:700;
-  color:var(--ink2);white-space:nowrap;
-  text-align:center;
-}
-.exp-card-body{padding:1.8rem;}
-.exp-role-title{
-  font-family:'Playfair Display',serif;
-  font-size:1.25rem;font-weight:700;font-style:italic;
-  color:var(--teal);margin-bottom:1rem;
-}
-.exp-bullets{list-style:none;display:flex;flex-direction:column;gap:.5rem;}
-.exp-bullets li{
-  display:flex;gap:.75rem;align-items:flex-start;
-  font-size:.88rem;color:var(--ink2);line-height:1.65;
-}
-.bullet-dot{
-  width:8px;height:8px;border-radius:50%;
-  background:var(--teal);margin-top:.45rem;flex-shrink:0;
-}
-.exp-note-txt{font-size:.82rem;color:var(--coral);font-style:italic;font-weight:500;}
-
-/* ══════════════════════════════════
-   WORK PAGE
-══════════════════════════════════ */
-.works-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;}
-.work-featured{grid-column:1/-1;}
-.work-inner{
-  display:grid;grid-template-columns:1fr 1fr;
-  gap:2rem;align-items:start;
-}
-.work-num-badge{
-  width:40px;height:40px;border-radius:10px;
-  background:var(--teal-lite);
-  display:flex;align-items:center;justify-content:center;
-  font-family:'Playfair Display',serif;
-  font-size:1.1rem;font-weight:700;color:var(--teal);
-  margin-bottom:1rem;
-}
-.work-title{
-  font-family:'Playfair Display',serif;
-  font-size:1.3rem;font-weight:700;
-  color:var(--ink);margin-bottom:.6rem;line-height:1.2;
-}
-.work-desc{font-size:.86rem;color:var(--muted);line-height:1.75;margin-bottom:1rem;}
-.work-feats{list-style:none;display:flex;flex-direction:column;gap:.4rem;margin-bottom:1.2rem;}
-.work-feats li{
-  display:flex;gap:.6rem;align-items:flex-start;
-  font-size:.84rem;color:var(--ink2);line-height:1.5;
-}
-.feat-check{color:var(--teal);font-weight:700;font-size:.8rem;margin-top:.1rem;}
-.stack-row{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:1.2rem;}
-.stack-tag{
-  padding:.2rem .65rem;
-  background:var(--bg-page);
-  border:1px solid var(--border);
-  border-radius:6px;
-  font-size:.7rem;font-weight:500;color:var(--muted);
-}
-.work-link-btn{
-  display:inline-flex;align-items:center;gap:.4rem;
-  font-size:.76rem;font-weight:700;
-  letter-spacing:.06em;text-transform:uppercase;
-  color:var(--teal);
-  transition:gap .2s;
-}
-.work-link-btn:hover{gap:.7rem;}
-.work-link-btn.na{color:var(--coral);pointer-events:none;}
-.dash-frame{
-  border:2px solid var(--border);
-  border-radius:12px;overflow:hidden;
-  box-shadow:var(--shadow-md);
-}
-.dash-bar{
-  background:var(--bg-page);padding:.55rem .9rem;
-  display:flex;align-items:center;gap:.4rem;
-  border-bottom:1.5px solid var(--border);
-}
-.dash-dot{width:10px;height:10px;border-radius:50%;}
-.dash-lbl{font-size:.65rem;color:var(--muted);margin-left:.5rem;letter-spacing:.06em;}
-
-/* ══════════════════════════════════
-   CONTACT PAGE
-══════════════════════════════════ */
-.contact-layout{
-  display:grid;grid-template-columns:1fr 1fr;
-  gap:2rem;align-items:start;
-}
-.contact-card{
-  background:var(--bg-card);
-  border:1.5px solid var(--border);
-  border-radius:16px;
-  box-shadow:var(--shadow-sm);
-  overflow:hidden;
-}
-.cc-header{
-  padding:1.8rem;
-  background:var(--navy);
-  position:relative;overflow:hidden;
-}
-.cc-header::before{
-  content:'';position:absolute;
-  top:-60px;right:-60px;width:200px;height:200px;
-  border-radius:50%;
-  background:radial-gradient(circle,rgba(13,122,101,.3) 0%,transparent 70%);
-}
-.cc-header h2{
-  font-family:'Playfair Display',serif;
-  font-size:1.5rem;font-weight:700;
-  color:#fff;line-height:1.2;
-  position:relative;z-index:1;
-}
-.cc-header h2 em{font-style:italic;color:var(--teal-mid);}
-.cc-header p{
-  font-size:.85rem;color:rgba(255,255,255,.55);
-  line-height:1.7;margin-top:.6rem;
-  position:relative;z-index:1;
-}
-.cc-links{padding:1.5rem;display:flex;flex-direction:column;gap:1rem;}
-.cc-link{
-  display:flex;align-items:center;gap:1rem;
-  padding:1rem 1.2rem;
-  background:var(--bg-page);
-  border:1.5px solid var(--border);
-  border-radius:12px;
-  transition:all .2s;
-}
-.cc-link:hover{border-color:var(--teal);background:var(--teal-lite);}
-.cc-icon{font-size:1.4rem;flex-shrink:0;}
-.cc-label{font-size:.65rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);}
-.cc-val{font-size:.9rem;font-weight:600;color:var(--ink);}
-
-.cv-download-card{
-  background:var(--bg-card);
-  border:1.5px solid var(--border);
-  border-radius:16px;
-  padding:2rem;
-  box-shadow:var(--shadow-sm);
-}
-.cv-download-card h3{
-  font-family:'Playfair Display',serif;
-  font-size:1.4rem;font-weight:700;
-  color:var(--ink);margin-bottom:.5rem;
-}
-.cv-download-card p{font-size:.88rem;color:var(--muted);line-height:1.7;margin-bottom:1.5rem;}
-
-.avail-card{
-  background:linear-gradient(135deg,var(--teal) 0%,#0d9e84 100%);
-  border-radius:16px;padding:2rem;
-  box-shadow:0 8px 28px rgba(13,122,101,.3);
-  margin-top:1.5rem;
-}
-.avail-card h3{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;color:#fff;margin-bottom:.5rem;}
-.avail-card p{font-size:.85rem;color:rgba(255,255,255,.75);line-height:1.7;}
-
-/* ── RESPONSIVE ── */
-@media(max-width:1024px){
-  .sidebar{display:none;}
-  .topbar{display:flex;}
-  .main{margin-left:0;}
-  .page{padding:1.5rem;}
-  #home.page .home-nav-grid,
-  .home-nav-grid{grid-template-columns:1fr 1fr;padding:2rem 1.5rem;}
-  .home-hero{padding:2rem 1.5rem;}
-  .home-hero-inner{grid-template-columns:1fr;}
-  .hero-photo-wrap{display:none;}
-  .home-stats{grid-template-columns:repeat(2,1fr);}
-  .about-grid{grid-template-columns:1fr;}
-  .skills-grid{grid-template-columns:1fr;}
-  .works-grid{grid-template-columns:1fr;}
-  .work-featured .work-inner{grid-template-columns:1fr;}
-  .contact-layout{grid-template-columns:1fr;}
-  .exp-card-header{grid-template-columns:auto 1fr;}
-  .exp-date-badge{display:none;}
-  #home.page{padding-top:60px;}
-  .page{padding-top:calc(60px + 1.5rem);}
-}
-@media(max-width:600px){
-  .home-nav-grid{grid-template-columns:1fr;}
-  .home-stats{grid-template-columns:repeat(2,1fr);}
-}
-</style>
+    </style>
 </head>
 <body>
 
-<!-- TOPBAR (mobile) -->
-<div class="topbar" id="topbar">
-  <span class="topbar-logo">Prince Chakusa</span>
-  <button class="hamburger" id="hamburger">
-    <span></span><span></span><span></span>
-  </button>
-</div>
-
-<!-- MOBILE DRAWER -->
-<div class="drawer" id="drawer">
-  <button class="drawer-close" id="drawerClose">✕</button>
-  <a onclick="showPage('home');closeDrawer()">🏠 Home</a>
-  <a onclick="showPage('about');closeDrawer()">👤 About</a>
-  <a onclick="showPage('skills');closeDrawer()">⚡ Skills</a>
-  <a onclick="showPage('experience');closeDrawer()">💼 Experience</a>
-  <a onclick="showPage('work');closeDrawer()">🚀 Work</a>
-  <a onclick="showPage('contact');closeDrawer()">✉️ Contact</a>
-</div>
-
-<!-- SIDEBAR -->
-<nav class="sidebar">
-  <div class="sidebar-logo">
-    <div class="logo-name">Prince Chakusa</div>
-    <div class="logo-title">STR Operations Leader</div>
-  </div>
-  <div class="nav-items">
-    <div class="nav-item active" onclick="showPage('home')" data-page="home">
-      <span class="nav-icon">🏠</span> Home
+<nav>
+    <div class="logo">Prince <span>Chakusa</span></div>
+    <div class="nav-links">
+        <a href="#cases">Case Studies</a>
+        <a href="#sop">SOP Systems</a>
+        <a href="#contact">Contact</a>
     </div>
-    <div class="nav-item" onclick="showPage('about')" data-page="about">
-      <span class="nav-icon">👤</span> About Me
-    </div>
-    <div class="nav-item" onclick="showPage('skills')" data-page="skills">
-      <span class="nav-icon">⚡</span> Skills
-    </div>
-    <div class="nav-item" onclick="showPage('experience')" data-page="experience">
-      <span class="nav-icon">💼</span> Experience
-    </div>
-    <div class="nav-item" onclick="showPage('work')" data-page="work">
-      <span class="nav-icon">🚀</span> Work Examples
-    </div>
-    <div class="nav-item" onclick="showPage('contact')" data-page="contact">
-      <span class="nav-icon">✉️</span> Contact
-    </div>
-  </div>
-  <div class="nav-sidebar-footer">
-    <div class="avail-pill"><span class="pulse"></span>Available Now · Dubai</div>
-  </div>
 </nav>
 
-<!-- MAIN -->
-<div class="main">
+<header class="hero">
+    <span class="hero-label">Strategic Operations Dossier</span>
+    <h1>Engineering <i>Precision</i> <br>In UAE Hospitality.</h1>
+    <p>A data-driven approach to property operations across Abu Dhabi and Dubai. Transforming 400+ unit portfolios through algorithmic maintenance and 5-star service standard scaling.</p>
+</header>
 
-  <!-- ══ HOME ══ -->
-  <div class="page active" id="home">
-    <!-- all your home content stays exactly like you had it -->
-    <!-- ... (keeping it short here but the full original home hero, stats, etc. is still inside) ... -->
-  </div>
+<section id="cases">
+    <span class="section-tag">Proven Results</span>
+    <h2 class="section-title">Operational <span>Impact</span> Analysis</h2>
+    
+    <div class="case-grid">
+        <div class="case-card">
+            <span class="focus">Efficiency Architecture</span>
+            <div class="result-pill">40% Faster Response</div>
+            <h3>Maintenance Response <br>Optimization</h3>
+            <p>By implementing a custom SQL-based dispatching engine, I reduced the average response time from 65 minutes to under 39 minutes portfolio-wide. This included automated vendor prioritization and real-time SLA escalation alerts for the on-ground MEP teams in Abu Dhabi.</p>
+        </div>
 
-  <!-- other pages (about, skills, experience, work, contact) stay untouched -->
+        <div class="case-card">
+            <span class="focus">Service Quality Hub</span>
+            <div class="result-pill">+25% Satisfaction</div>
+            <h3>Guest Experience <br>Transformation</h3>
+            <p>Revolutionized the communication lifecycle using a multi-channel digital concierge system. By centralizing guest touchpoints and automating sentiment analysis, we achieved a record-breaking 25% increase in online reputation scores within 12 months.</p>
+        </div>
+    </div>
+</section>
 
-</div>
+<section class="sop-library" id="sop">
+    <span class="section-tag" style="color: var(--accent);">Systemic Compliance</span>
+    <h2 class="section-title">SOP Implementation <span>Framework</span></h2>
+    
+    <div class="sop-row">
+        <div class="sop-id">01.</div>
+        <div class="sop-content">
+            <h4>Personnel Training & Onboarding</h4>
+            <p style="color: #888; margin-bottom: 1.5rem;">Achieved 100% team compliance through a modular training system.</p>
+            <ul>
+                <li>Phase 1: Technical Competency Audit (Baseline Assessment).</li>
+                <li>Phase 2: Digital SOP Immersion (Interactive Scenarios).</li>
+                <li>Phase 3: Real-time Performance Shadowing.</li>
+            </ul>
+        </div>
+    </div>
 
-<script>
-// ALL YOUR ORIGINAL JS (hamburger, drawer, showPage functions, etc.) stays the same
-// ONLY CHANGE IS RIGHT HERE ↓↓↓
+    <div class="sop-row">
+        <div class="sop-id">02.</div>
+        <div class="sop-content">
+            <h4>Enforcement & QA Logic</h4>
+            <p style="color: #888; margin-bottom: 1.5rem;">Closing the loop on service failure through automated auditing.</p>
+            <ul>
+                <li>Bi-weekly blind audits for 100% of the Abu Dhabi portfolio.</li>
+                <li>Automated disciplinary triggers for repeated SLA breaches.</li>
+                <li>Performance-based incentive structures tied to "Zero-Defect" arrivals.</li>
+            </ul>
+        </div>
+    </div>
+</section>
 
-var resumeB64 = 'NEW_RESUME_BASE64_HERE';  // ← PASTE YOUR NEW PDF BASE64 RIGHT HERE (the one from PrinceChakusa_Operations_resume.pdf)
+<footer class="footer" id="contact">
+    <h2>Available for <span>Strategic</span> Appointments.</h2>
+    <a href="mailto:chakusaprince@gmail.com" class="btn">Inquire for Collaboration</a>
+    <p style="margin-top: 8rem; font-size: 0.65rem; letter-spacing: 3px; color: #888;">© 2026 PRINCE CHAKUSA — ABU DHABI | DUBAI — BUILT FOR PERFORMANCE</p>
+</footer>
 
-function downloadCV(){
-  var l = document.createElement('a');
-  l.href = 'data:application/pdf;base64,' + resumeB64;
-  l.download = 'Prince_Chakusa_CV.pdf';
-  document.body.appendChild(l);
-  l.click();
-  document.body.removeChild(l);
-}
-</script>
+</body>
+</html>
+    <section id="portfolio" style="background: #fff; padding: 12rem 10%;">
+        <span class="section-tag">Market Footprint</span>
+        <h2 class="section-title">UAE High-Yield <span>Portfolios</span></h2>
+        
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.5rem;">
+            <div class="case-card" style="padding: 2.5rem;">
+                <h4 style="font-size: 0.7rem; color: var(--gold); letter-spacing: 2px; margin-bottom: 1rem;">ABU DHABI PORTFOLIO</h4>
+                <h3 style="font-size: 1.8rem; margin-bottom: 1rem;">Luxury Villa Scaling</h3>
+                <p style="font-size: 0.85rem; color: var(--slate);">Managed the operational integration of 50+ high-end villas. Implemented bespoke DCT-compliant check-in flows and private butler SOPs.</p>
+            </div>
+
+            <div class="case-card" style="padding: 2.5rem;">
+                <h4 style="font-size: 0.7rem; color: var(--gold); letter-spacing: 2px; margin-bottom: 1rem;">DUBAI MARINA / JBR</h4>
+                <h3 style="font-size: 1.8rem; margin-bottom: 1rem;">High-Volume Keys</h3>
+                <p style="font-size: 0.85rem; color: var(--slate);">Overlooked 150+ units in prime Dubai locations. Optimized housekeeping rotation to handle 95% occupancy during peak seasons.</p>
+            </div>
+
+            <div class="case-card" style="padding: 2.5rem;">
+                <h4 style="font-size: 0.7rem; color: var(--gold); letter-spacing: 2px; margin-bottom: 1rem;">DOWNTOWN DUBAI</h4>
+                <h3 style="font-size: 1.8rem; margin-bottom: 1rem;">Corporate Executive Stays</h3>
+                <p style="font-size: 0.85rem; color: var(--slate);">Developed the "Executive Arrival" SOP for corporate travelers, achieving a 4.9/5 star average on business-traveler review platforms.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="tech-stack" style="background: var(--ink); color: #fff; padding: 10rem 10%;">
+        <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+            <span class="section-tag" style="color: var(--gold);">The Digital Backbone</span>
+            <h2 style="font-family:'Cormorant Garamond',serif; font-size: 3.5rem; font-weight: 300; margin-bottom: 3rem;">Full-Stack <span>Operational Logic</span></h2>
+            
+            <div style="text-align: left; background: #1e1e1e; padding: 3rem; border: 1px solid #333; font-family: 'Courier New', Courier, monospace; color: #00ffcc; font-size: 0.9rem;">
+                <p style="color: #888;">// Strategic Dispatch Algorithm</p>
+                <p>function calculatePriority(incident) {</p>
+                <p>&nbsp;&nbsp;if (incident.type === 'AC_FAILURE' && location === 'DUBAI') {</p>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;return SLA_EMERGENCY; // 40-min Response Trigger</p>
+                <p>&nbsp;&nbsp;}</p>
+                <p>&nbsp;&nbsp;return SOP_STANDARD_QUEUE;</p>
+                <p>}</p>
+                <p style="color: #888; margin-top: 1rem;">// Result: 40% Efficiency Gain in UAE Heat Cycles</p>
+            </div>
+            <p style="margin-top: 3rem; color: #aaa; font-size: 0.95rem;">This is how I think. I don't just "fix things"—I build the code that ensures they stay fixed across 400 properties simultaneously.</p>
+        </div>
+    </section>
+
+    <footer style="padding: 12rem 10% 5rem; text-align: center; border-top: 1px solid var(--border);">
+        <h4 style="color: var(--gold); letter-spacing: 5px; text-transform: uppercase; margin-bottom: 2.5rem;">Leadership Inquiry</h4>
+        <h2 style="font-family: 'Cormorant Garamond', serif; font-size: clamp(3rem, 8vw, 5.5rem); font-weight: 300; line-height: 1.1; margin-bottom: 5rem;">Architecting <span>Success</span> <br>In Abu Dhabi & Dubai.</h2>
+        
+        <div style="display: flex; justify-content: center; gap: 2rem; margin-bottom: 6rem;">
+            <a href="mailto:chakusaprince@gmail.com" style="padding: 1.5rem 4rem; background: var(--ink); color: #fff; text-decoration: none; font-size: 0.75rem; letter-spacing: 3px; text-transform: uppercase; font-weight: 700; transition: 0.4s;">Direct Email</a>
+            <a href="https://linkedin.com/in/princechakusa" target="_blank" style="padding: 1.5rem 4rem; border: 1px solid var(--ink); color: var(--ink); text-decoration: none; font-size: 0.75rem; letter-spacing: 3px; text-transform: uppercase; font-weight: 700; transition: 0.4s;">LinkedIn Profile</a>
+        </div>
+
+        <div style="display: flex; justify-content: space-between; align-items: center; padding-top: 4rem; border-top: 1px solid var(--border);">
+            <p style="font-size: 0.6rem; letter-spacing: 3px; color: var(--slate); text-transform: uppercase;">Prince Chakusa | Portfolio 2026</p>
+            <p style="font-size: 0.6rem; letter-spacing: 3px; color: var(--gold); text-transform: uppercase;">Operations • Data • Excellence</p>
+        </div>
+    </footer>
+
+    <script>
+        const observerOptions = { threshold: 0.1 };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal, .case-card, .sop-row').forEach(el => observer.observe(el));
+    </script>
+
+</body>
+</html>
+    <section id="risk" style="background: var(--off-white); padding: 12rem 10%;">
+        <span class="section-tag">Governance & Asset Security</span>
+        <h2 class="section-title">Mitigating Risk in <span>High-Value Portfolios</span></h2>
+        
+        <div class="strategy-grid">
+            <div class="strategy-card">
+                <h3>Regulatory Shield</h3>
+                <p>Operating in Dubai and Abu Dhabi requires constant vigilance. I automate the synchronization between our PMS and <strong>DTCM/DCT portals</strong>, ensuring 100% compliance with guest data laws and tourism tax remittances, eliminating the risk of municipal fines.</p>
+                <ul style="margin-top: 1.5rem; font-size: 0.85rem; color: var(--slate); list-style: circle; padding-left: 1rem;">
+                    <li>Zero-Error Tourism Dirham Filings</li>
+                    <li>Automated CID/Passport Registration</li>
+                </ul>
+            </div>
+            <div class="strategy-card">
+                <h3>Preventative MEP Logic</h3>
+                <p>I transition maintenance from "Reactive" to "Predictive." By tracking the lifecycle of AC compressors and water heaters across 400 units, we schedule interventions <em>before</em> a guest experiences a failure, protecting the asset's long-term valuation.</p>
+                <ul style="margin-top: 1.5rem; font-size: 0.85rem; color: var(--slate); list-style: circle; padding-left: 1rem;">
+                    <li>40% Reduction in Emergency Call-outs</li>
+                    <li>Extended FF&E Lifecycle by 2.5 Years</li>
+                </ul>
+            </div>
+            <div class="strategy-card">
+                <h3>Crisis Management SOP</h3>
+                <p>From flood mitigation to emergency relocations, I have authored a 15-scenario crisis manual. My team is trained to handle "Force Majeure" events with a focus on guest safety and brand reputation preservation.</p>
+                <ul style="margin-top: 1.5rem; font-size: 0.85rem; color: var(--slate); list-style: circle; padding-left: 1rem;">
+                    <li>Documented 15-Point Crisis Protocol</li>
+                    <li>24/7 Rapid Response Coordination</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="recovery" style="padding: 10rem 10%; background: #fff;">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center;">
+            <div class="reveal">
+                <span class="section-tag">Sentiment Engineering</span>
+                <h2 style="font-family:'Cormorant Garamond',serif; font-size: 3.5rem; font-weight: 300; margin-bottom: 2rem;">Turning Friction into <span>Loyalty</span></h2>
+                <p style="font-size: 1.1rem; color: var(--slate); margin-bottom: 2.5rem;">A 4-star review is a failure of process. I use a <strong>Sentiment Trigger System</strong> that alerts leadership the moment a negative keyword appears in a guest chat, allowing for "In-Stay Recovery" before the guest even checks out.</p>
+                
+                <div style="padding: 2rem; border-left: 2px solid var(--accent); background: var(--surface);">
+                    <p style="font-style: italic; color: var(--ink);">"The goal isn't just to resolve the complaint—it's to use the resolution to turn a critic into a brand advocate who books directly for their next UAE visit."</p>
+                </div>
+            </div>
+            <div class="reveal" style="background: var(--ink); padding: 4rem; color: #fff; border-radius: 2px;">
+                <h4 style="color: var(--accent); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 2rem; font-size: 0.8rem;">The 25% Growth Formula</h4>
+                <div style="margin-bottom: 1.5rem; border-bottom: 1px solid #333; padding-bottom: 1rem;">
+                    <span style="display: block; font-size: 0.7rem; color: #888;">Step 01</span>
+                    <p>Real-time Keyword Monitoring (React/Supabase)</p>
+                </div>
+                <div style="margin-bottom: 1.5rem; border-bottom: 1px solid #333; padding-bottom: 1rem;">
+                    <span style="display: block; font-size: 0.7rem; color: #888;">Step 02</span>
+                    <p>SLA-Bound Management Intervention (< 15 Mins)</p>
+                </div>
+                <div style="margin-bottom: 1.5rem; border-bottom: 1px solid #333; padding-bottom: 1rem;">
+                    <span style="display: block; font-size: 0.7rem; color: #888;">Step 03</span>
+                    <p>Post-Resolution Loop & Quality Audit</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="philosophy" style="text-align: center; padding: 15rem 15%; background: var(--surface);">
+        <h2 style="font-family: 'Cormorant Garamond', serif; font-size: 4rem; font-weight: 300; line-height: 1.2; margin-bottom: 4rem;">"Hospitality is a <span>Feeling</span>, <br>Operations is a <span>Science</span>."</h2>
+        <p style="max-width: 700px; margin: 0 auto; color: var(--slate); font-size: 1.1rem; font-weight: 300;">I bridge these two worlds. By building the science (the code, the SOPs, the SLAs), I provide the space for your team to deliver the feeling (the luxury, the care, the experience).</p>
+    </section>
+
+    <footer style="padding: 10rem 10% 5rem; text-align: center; background: #fff;">
+        <div style="margin-bottom: 5rem;">
+            <p style="font-size: 0.75rem; letter-spacing: 5px; color: var(--accent); text-transform: uppercase; font-weight: 700;">Executive Correspondence</p>
+        </div>
+        <a href="mailto:chakusaprince@gmail.com" style="font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 5vw, 4rem); color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--accent); transition: 0.3s;">chakusaprince@gmail.com</a>
+        
+        <div style="margin-top: 10rem; display: flex; justify-content: space-between; align-items: center; opacity: 0.6;">
+            <p style="font-size: 0.6rem; letter-spacing: 2px;">PRINCE CHAKUSA — LEADERSHIP DOSSIER</p>
+            <p style="font-size: 0.6rem; letter-spacing: 2px;">ABU DHABI / DUBAI — 2026</p>
+        </div>
+    </footer>
+
+    <script>
+        // Final smooth scroll and activation logic
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
+    <section id="portfolio" style="background: #fff; padding: 12rem 10%;">
+        <span class="section-tag">Market Footprint</span>
+        <h2 class="section-title">UAE High-Yield <span>Portfolios</span></h2>
+        
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.5rem;">
+            <div class="case-card" style="padding: 2.5rem;">
+                <h4 style="font-size: 0.7rem; color: var(--gold); letter-spacing: 2px; margin-bottom: 1rem;">ABU DHABI PORTFOLIO</h4>
+                <h3 style="font-size: 1.8rem; margin-bottom: 1rem;">Luxury Villa Scaling</h3>
+                <p style="font-size: 0.85rem; color: var(--slate);">Managed the operational integration of 50+ high-end villas. Implemented bespoke DCT-compliant check-in flows and private butler SOPs.</p>
+            </div>
+
+            <div class="case-card" style="padding: 2.5rem;">
+                <h4 style="font-size: 0.7rem; color: var(--gold); letter-spacing: 2px; margin-bottom: 1rem;">DUBAI MARINA / JBR</h4>
+                <h3 style="font-size: 1.8rem; margin-bottom: 1rem;">High-Volume Keys</h3>
+                <p style="font-size: 0.85rem; color: var(--slate);">Overlooked 150+ units in prime Dubai locations. Optimized housekeeping rotation to handle 95% occupancy during peak seasons.</p>
+            </div>
+
+            <div class="case-card" style="padding: 2.5rem;">
+                <h4 style="font-size: 0.7rem; color: var(--gold); letter-spacing: 2px; margin-bottom: 1rem;">DOWNTOWN DUBAI</h4>
+                <h3 style="font-size: 1.8rem; margin-bottom: 1rem;">Corporate Executive Stays</h3>
+                <p style="font-size: 0.85rem; color: var(--slate);">Developed the "Executive Arrival" SOP for corporate travelers, achieving a 4.9/5 star average on business-traveler review platforms.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="tech-stack" style="background: var(--ink); color: #fff; padding: 10rem 10%;">
+        <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+            <span class="section-tag" style="color: var(--gold);">The Digital Backbone</span>
+            <h2 style="font-family:'Cormorant Garamond',serif; font-size: 3.5rem; font-weight: 300; margin-bottom: 3rem;">Full-Stack <span>Operational Logic</span></h2>
+            
+            <div style="text-align: left; background: #1e1e1e; padding: 3rem; border: 1px solid #333; font-family: 'Courier New', Courier, monospace; color: #00ffcc; font-size: 0.9rem;">
+                <p style="color: #888;">// Strategic Dispatch Algorithm</p>
+                <p>function calculatePriority(incident) {</p>
+                <p>&nbsp;&nbsp;if (incident.type === 'AC_FAILURE' && location === 'DUBAI') {</p>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;return SLA_EMERGENCY; // 40-min Response Trigger</p>
+                <p>&nbsp;&nbsp;}</p>
+                <p>&nbsp;&nbsp;return SOP_STANDARD_QUEUE;</p>
+                <p>}</p>
+                <p style="color: #888; margin-top: 1rem;">// Result: 40% Efficiency Gain in UAE Heat Cycles</p>
+            </div>
+            <p style="margin-top: 3rem; color: #aaa; font-size: 0.95rem;">This is how I think. I don't just "fix things"—I build the code that ensures they stay fixed across 400 properties simultaneously.</p>
+        </div>
+    </section>
+
+    <footer style="padding: 12rem 10% 5rem; text-align: center; border-top: 1px solid var(--border);">
+        <h4 style="color: var(--gold); letter-spacing: 5px; text-transform: uppercase; margin-bottom: 2.5rem;">Leadership Inquiry</h4>
+        <h2 style="font-family: 'Cormorant Garamond', serif; font-size: clamp(3rem, 8vw, 5.5rem); font-weight: 300; line-height: 1.1; margin-bottom: 5rem;">Architecting <span>Success</span> <br>In Abu Dhabi & Dubai.</h2>
+        
+        <div style="display: flex; justify-content: center; gap: 2rem; margin-bottom: 6rem;">
+            <a href="mailto:chakusaprince@gmail.com" style="padding: 1.5rem 4rem; background: var(--ink); color: #fff; text-decoration: none; font-size: 0.75rem; letter-spacing: 3px; text-transform: uppercase; font-weight: 700; transition: 0.4s;">Direct Email</a>
+            <a href="https://linkedin.com/in/princechakusa" target="_blank" style="padding: 1.5rem 4rem; border: 1px solid var(--ink); color: var(--ink); text-decoration: none; font-size: 0.75rem; letter-spacing: 3px; text-transform: uppercase; font-weight: 700; transition: 0.4s;">LinkedIn Profile</a>
+        </div>
+
+        <div style="display: flex; justify-content: space-between; align-items: center; padding-top: 4rem; border-top: 1px solid var(--border);">
+            <p style="font-size: 0.6rem; letter-spacing: 3px; color: var(--slate); text-transform: uppercase;">Prince Chakusa | Portfolio 2026</p>
+            <p style="font-size: 0.6rem; letter-spacing: 3px; color: var(--gold); text-transform: uppercase;">Operations • Data • Excellence</p>
+        </div>
+    </footer>
+
+    <script>
+        const observerOptions = { threshold: 0.1 };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal, .case-card, .sop-row').forEach(el => observer.observe(el));
+    </script>
+
+</body>
+</html>
+    <section id="vendors" style="background: #fff; padding: 12rem 10%;">
+        <span class="section-tag">P&L Optimization</span>
+        <h2 class="section-title">Global Standards, <span>Local Scale</span></h2>
+        
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6rem;">
+            <div class="reveal">
+                <h3 style="font-family:'Cormorant Garamond',serif; font-size: 2.5rem; margin-bottom: 2rem;">Consolidated Procurement</h3>
+                <p style="color: var(--slate); margin-bottom: 2rem;">I leveraged the scale of 400+ units to renegotiate master service agreements with UAE's leading laundry, cleaning, and MEP providers. By centralizing the supply chain, I achieved a 12-15% reduction in consumable costs without compromising on the "Luxury Linen" standards expected in Abu Dhabi villas.</p>
+                
+                <table style="width: 100%; border-collapse: collapse; margin-top: 2rem; font-size: 0.85rem;">
+                    <tr style="border-bottom: 1px solid var(--border);">
+                        <td style="padding: 1rem 0; font-weight: 700;">Linen Lifecycle</td>
+                        <td style="padding: 1rem 0; color: var(--gold); text-align: right;">+30% Durability via RFID tracking</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid var(--border);">
+                        <td style="padding: 1rem 0; font-weight: 700;">Consumables</td>
+                        <td style="padding: 1rem 0; color: var(--gold); text-align: right;">Bulk-Buy Savings: 12% YoY</td>
+                    </tr>
+                </table>
+            </div>
+            
+            <div class="reveal" style="padding: 3rem; background: var(--surface); border: 1px solid var(--border);">
+                <h4 style="font-size: 0.7rem; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 1.5rem; color: var(--gold);">The Audit Protocol</h4>
+                <p style="font-size: 0.9rem; line-height: 2; color: var(--ink);">I don't trust—I verify. Every vendor in my ecosystem is subject to a <strong>Bi-Weekly Performance Scorecard</strong>. 
+                <br><br>
+                Failure to meet the <span style="color: var(--accent);">40-minute response SLA</span> or the <span style="color: var(--accent);">7-step cleaning standard</span> results in an automated "Quality Warning" via the Performance Hub. This keeps the supply chain lean and hyper-responsive.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="audit" style="background: var(--off-white); padding: 10rem 10%;">
+        <div style="text-align: center; margin-bottom: 6rem;">
+            <span class="section-tag">Data Visualization</span>
+            <h2 style="font-family:'Cormorant Garamond',serif; font-size: 3.5rem; font-weight: 300;">The <span>"Health Check"</span> Engine</h2>
+        </div>
+
+        <div style="display: flex; justify-content: center; gap: 4rem; flex-wrap: wrap;">
+            <div style="text-align: center; width: 200px;">
+                <div style="width: 150px; height: 150px; border-radius: 50%; border: 2px solid var(--gold); display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem;">
+                    <span style="font-family:'Cormorant Garamond',serif; font-size: 2.5rem; color: var(--gold);">98%</span>
+                </div>
+                <h4 style="font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase;">Inventory Uptime</h4>
+            </div>
+
+            <div style="text-align: center; width: 200px;">
+                <div style="width: 150px; height: 150px; border-radius: 50%; border: 2px solid var(--ink); display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem;">
+                    <span style="font-family:'Cormorant Garamond',serif; font-size: 2.5rem; color: var(--ink);">0</span>
+                </div>
+                <h4 style="font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase;">Regulatory Fines</h4>
+            </div>
+
+            <div style="text-align: center; width: 200px;">
+                <div style="width: 150px; height: 150px; border-radius: 50%; border: 2px solid var(--gold); display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem;">
+                    <span style="font-family:'Cormorant Garamond',serif; font-size: 2.5rem; color: var(--gold);">4.8</span>
+                </div>
+                <h4 style="font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase;">Review Average</h4>
+            </div>
+        </div>
+    </section>
+
+    <section id="summary" style="padding: 12rem 15%; text-align: center; background: #fff;">
+        <h3 style="font-family:'Cormorant Garamond',serif; font-size: 2.8rem; font-weight: 300; margin-bottom: 3rem;">"I don't just fill a role; I <span>optimize an ecosystem</span>."</h3>
+        <p style="font-size: 1.1rem; color: var(--slate); max-width: 800px; margin: 0 auto; line-height: 2;">
+            Whether it's navigating the complexities of <strong>Abu Dhabi DCT circulars</strong> or scaling <strong>Dubai DTCM holiday homes</strong>, my focus remains singular: maximizing the yield of the asset while delivering a frictionless guest journey through code and SOPs.
+        </p>
+    </section>
+    <section id="scaling" style="background: var(--surface); padding: 12rem 10%;">
+        <span class="section-tag">Expansion Strategy</span>
+        <h2 class="section-title">From 400 to 1,000+: <span>The Roadmap</span></h2>
+        
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8rem; align-items: flex-start;">
+            <div class="reveal">
+                <h3 style="font-family:'Cormorant Garamond',serif; font-size: 2.2rem; margin-bottom: 2.5rem;">Automated Market Entry</h3>
+                <p style="color: var(--slate); font-size: 1.1rem; line-height: 2;">
+                    The bottleneck of scaling in the UAE isn't capital; it's <strong>Operational Friction.</strong> Most companies struggle when they cross the 500-unit threshold because their SOPs aren't digitized.
+                    <br><br>
+                    My "Vacation-Perf-Hub" architecture allows for <strong>Instant Unit Onboarding</strong>. By templating the DTCM/DCT regulatory requirements into a digital checklist, we can bring new assets online 50% faster than traditional property management firms.
+                </p>
+                
+                <div style="margin-top: 4rem; display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+                    <div style="padding: 2rem; background: #fff; border: 1px solid var(--border);">
+                        <h5 style="color: var(--gold); font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase;">Phase 1</h5>
+                        <p style="font-weight: 700;">Tech-Stack Integration</p>
+                    </div>
+                    <div style="padding: 2rem; background: #fff; border: 1px solid var(--border);">
+                        <h5 style="color: var(--gold); font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase;">Phase 2</h5>
+                        <p style="font-weight: 700;">Vendor Cluster Mapping</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="reveal" style="position: relative; padding-top: 2rem;">
+                <h3 style="font-family:'Cormorant Garamond',serif; font-size: 2.2rem; margin-bottom: 2.5rem;">Cluster Management Logic</h3>
+                <p style="color: var(--slate); margin-bottom: 2.5rem;">
+                    I implement a "Hub-and-Spoke" model for operations. Instead of dedicated staff per building, I use <strong>Geographic Clusters</strong> managed by a single lead via real-time dashboard tracking. This maximizes staff utility and slashes fixed labor costs.
+                </p>
+                
+                <div style="border: 1px solid var(--border); padding: 3rem; background: #fff;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+                        <div style="width: 40px; height: 40px; background: var(--ink); border-radius: 50%;"></div>
+                        <div style="flex-grow: 1; height: 1px; background: var(--border); margin: 0 1rem;"></div>
+                        <div style="width: 40px; height: 40px; background: var(--gold); border-radius: 50%;"></div>
+                        <div style="flex-grow: 1; height: 1px; background: var(--border); margin: 0 1rem;"></div>
+                        <div style="width: 40px; height: 40px; background: var(--ink); border-radius: 50%;"></div>
+                    </div>
+                    <p style="text-align: center; font-size: 0.7rem; letter-spacing: 3px; color: var(--slate); text-transform: uppercase;">
+                        Integrated Cluster Monitoring System (ICMS)
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="commitment" style="padding: 15rem 10%; background: var(--ink); color: #fff; text-align: center;">
+        <h4 style="color: var(--gold); letter-spacing: 5px; text-transform: uppercase; margin-bottom: 3rem; font-size: 0.8rem;">The Professional Promise</h4>
+        <h2 style="font-family:'Cormorant Garamond',serif; font-size: 3.5rem; font-weight: 300; line-height: 1.3; max-width: 900px; margin: 0 auto 4rem;">
+            "I provide the <span>Architecture</span> that transforms property portfolios into <span>Legacy Assets</span>."
+        </h2>
+        <div style="width: 80px; height: 2px; background: var(--gold); margin: 0 auto;"></div>
+    </section>
+
+    <style>
+        /* MOBILE OPTIMIZATION LOGIC */
+        @media (max-width: 768px) {
+            section { padding: 6rem 5% !important; }
+            .section-title { font-size: 2.5rem !important; }
+            .case-grid, .strategy-grid { grid-template-columns: 1fr !important; }
+            .hero h1 { font-size: 3rem !important; }
+            .hero-meta { flex-direction: column; gap: 2rem; }
+            nav { padding: 1.5rem 5%; }
+            .nav-links { display: none; } /* Mobile Menu would go here */
+        }
+    </style>
+    <section id="reporting" style="background: #fff; padding: 12rem 10%;">
+        <div style="display: grid; grid-template-columns: 1fr 1.2fr; gap: 8rem; align-items: center;">
+            <div class="reveal">
+                <span class="section-tag">Executive Visibility</span>
+                <h2 style="font-family:'Cormorant Garamond',serif; font-size: 3.5rem; font-weight: 300; margin-bottom: 2.5rem;">Board-Ready <span>Analytics</span></h2>
+                <p style="color: var(--slate); font-size: 1.1rem; line-height: 2; margin-bottom: 3rem;">
+                    Owners and stakeholders in the UAE luxury market expect more than just "updates." They require **Data Integrity.** <br><br>
+                    I provide automated, real-time reporting dashboards that track Net Operating Income (NOI), CapEx vs. OpEx distributions, and unit-level performance. This replaces manual spreadsheets with a single "Source of Truth," allowing for faster investment decisions.
+                </p>
+                
+                <div style="border-top: 1px solid var(--border); padding-top: 2rem;">
+                    <p style="font-size: 0.7rem; letter-spacing: 3px; color: var(--gold); text-transform: uppercase; margin-bottom: 1rem;">Reporting Metrics:</p>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; font-size: 0.9rem; font-weight: 600;">
+                        <span>• Yield Per Square Foot</span>
+                        <span>• RevPAR vs. Market Index</span>
+                        <span>• Vendor SLA Compliance %</span>
+                        <span>• Asset Depreciation Tracking</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="reveal" style="background: var(--surface); border: 1px solid var(--border); padding: 4rem;">
+                <div style="height: 10px; width: 100%; background: var(--border); border-radius: 5px; margin-bottom: 3rem; position: relative; overflow: hidden;">
+                    <div style="height: 100%; width: 85%; background: var(--gold); border-radius: 5px;"></div>
+                </div>
+                <h4 style="font-family:'Cormorant Garamond',serif; font-size: 2rem; margin-bottom: 1rem;">Performance Index: 85%</h4>
+                <p style="font-size: 0.8rem; color: var(--slate); text-transform: uppercase; letter-spacing: 2px;">Portfolio Health Score — UAE Q1 2026</p>
+                
+                <div style="margin-top: 3rem; display: flex; gap: 1rem;">
+                    <div style="flex: 1; height: 100px; background: #fff; border: 1px solid var(--border);"></div>
+                    <div style="flex: 1; height: 100px; background: #fff; border: 1px solid var(--border);"></div>
+                    <div style="flex: 1; height: 100px; background: #fff; border: 1px solid var(--border);"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="signature" style="padding: 10rem 10%; text-align: center; background: var(--off-white);">
+        <div style="max-width: 600px; margin: 0 auto;">
+            <h2 style="font-family:'Cormorant Garamond',serif; font-size: 4.5rem; font-weight: 300; margin-bottom: 2rem;">Prince <i>Chakusa</i></h2>
+            <div style="width: 50px; height: 1px; background: var(--gold); margin: 0 auto 3rem;"></div>
+            <p style="font-size: 0.8rem; letter-spacing: 5px; text-transform: uppercase; color: var(--slate);">Architecture • Excellence • Scale</p>
+        </div>
+    </section>
+
+    <style>
+        /* SCROLL REVEAL DELAYS */
+        .reveal:nth-child(2) { transition-delay: 0.2s; }
+        .reveal:nth-child(3) { transition-delay: 0.4s; }
+        
+        /* HOVER EFFECTS FOR CARDS */
+        .strategy-card:hover h3, .case-card:hover h3 {
+            color: var(--gold);
+        }
+        
+        /* GLOBAL TEXT SELECTION COLOR */
+        ::selection {
+            background: var(--gold-soft);
+            color: var(--ink);
+        }
+        
+        /* BUTTON TRANSITION LOGIC */
+        .btn-main, .btn-alt {
+            cursor: pointer;
+            border-radius: 1px; /* Sharp edges for luxury look */
+        }
+    </style>
+    <section id="recovery-ops" style="background: #fff; padding: 12rem 10%;">
+        <span class="section-tag">Rapid Intervention</span>
+        <h2 class="section-title">The 3-Hour <span>Turnover Science</span></h2>
+        
+        <div style="display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 6rem; align-items: start;">
+            <div class="reveal">
+                <h3 style="font-family:'Cormorant Garamond',serif; font-size: 2.5rem; margin-bottom: 2rem;">Optimizing the Critical Path</h3>
+                <p style="color: var(--slate); font-size: 1.1rem; line-height: 2; margin-bottom: 2.5rem;">
+                    In high-ADR markets like Dubai Marina or Saadiyat Island, a "blocked" unit is lost revenue. I implemented a <strong>Parallel Housekeeping & Maintenance</strong> workflow. <br><br>
+                    Instead of sequential tasks, my system triggers a <strong>Real-time Readiness Audit</strong> via the Performance Hub. Housekeeping and MEP teams coordinate via a shared digital checklist, reducing the "Ready-to-Sell" window from 6 hours to just 180 minutes.
+                </p>
+                
+                <div style="background: var(--surface); padding: 3rem; border: 1px solid var(--border);">
+                    <h4 style="font-size: 0.75rem; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 1.5rem; color: var(--gold);">Efficiency Gains:</h4>
+                    <div style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--border); padding-bottom: 1rem; margin-bottom: 1rem;">
+                        <span>Standard Industry Turnover</span>
+                        <span style="font-weight: 700;">360 Mins</span>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; color: var(--gold);">
+                        <span>Prince Chakusa Optimized Logic</span>
+                        <span style="font-weight: 700;">180 Mins</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="reveal" style="background: var(--ink); color: #fff; padding: 4rem; border-radius: 0;">
+                <h4 style="color: var(--gold); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 2rem; font-size: 0.8rem;">SLA Violation Logic</h4>
+                <div style="font-family: 'Courier New', monospace; font-size: 0.85rem; color: #00ffcc;">
+                    <p style="color: #666;">// Triggered when turnover exceeds 180m</p>
+                    <p>if (turnover_time > 180) {</p>
+                    <p>&nbsp;&nbsp;log.alert('SLA_BREACH');</p>
+                    <p>&nbsp;&nbsp;sendToOpsLead('URGENT_INSPECTION');</p>
+                    <p>&nbsp;&nbsp;applyRootCause('LOGISTICS_DELAY');</p>
+                    <p>}</p>
+                    <p style="color: #666; margin-top: 1rem;">// Result: 100% On-Time Check-ins</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="transition" style="padding: 10rem 10%; background: var(--off-white);">
+        <div style="max-width: 900px;">
+            <span class="section-tag">Executive Onboarding</span>
+            <h2 style="font-family:'Cormorant Garamond',serif; font-size: 3.5rem; font-weight: 300; margin-bottom: 4rem;">The <span>90-Day</span> Stabilization Plan</h2>
+            
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem;">
+                <div style="padding: 2rem; border-top: 2px solid var(--gold);">
+                    <h5 style="margin-bottom: 1rem;">Days 1-30</h5>
+                    <p style="font-size: 0.85rem; color: var(--slate);">Audit 400+ units. Map all active SLAs. Identify OpEx leakage and vendor underperformance.</p>
+                </div>
+                <div style="padding: 2rem; border-top: 2px solid var(--gold);">
+                    <h5 style="margin-bottom: 1rem;">Days 31-60</h5>
+                    <p style="font-size: 0.85rem; color: var(--slate);">Deploy "Vacation-Perf-Hub" dashboard. Standardize the 7-step cleaning & room grading SOPs.</p>
+                </div>
+                <div style="padding: 2rem; border-top: 2px solid var(--gold);">
+                    <h5 style="margin-bottom: 1rem;">Days 61-90</h5>
+                    <p style="font-size: 0.85rem; color: var(--slate);">Deliver first Board-Ready ROI report. Scale efficiency gains across Abu Dhabi & Dubai clusters.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        /* LUXURY SCROLLBAR */
+        ::-webkit-scrollbar { width: 4px; }
+        ::-webkit-scrollbar-track { background: var(--off-white); }
+        ::-webkit-scrollbar-thumb { background: var(--gold); }
+
+        /* PRINT STYLES FOR PORTFOLIO */
+        @media print {
+            nav, footer { display: none; }
+            section { page-break-after: always; padding: 2rem !important; }
+            .section-title { font-size: 2.5rem !important; }
+            body { color: #000; }
+        }
+
+        /* FINAL TRANSITIONS */
+        .reveal { transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1), opacity 1.2s ease; }
+    </style>
+    <section id="reporting" style="background: #fff; padding: 12rem 10%;">
+        <div style="display: grid; grid-template-columns: 1fr 1.2fr; gap: 8rem; align-items: center;">
+            <div class="reveal">
+                <span class="section-tag">Executive Visibility</span>
+                <h2 style="font-family:'Cormorant Garamond',serif; font-size: 3.5rem; font-weight: 300; margin-bottom: 2.5rem;">Board-Ready <span>Analytics</span></h2>
+                <p style="color: var(--slate); font-size: 1.1rem; line-height: 2; margin-bottom: 3rem;">
+                    Owners and stakeholders in the UAE luxury market expect more than just "updates." They require **Data Integrity.** <br><br>
+                    I provide automated, real-time reporting dashboards that track Net Operating Income (NOI), CapEx vs. OpEx distributions, and unit-level performance. This replaces manual spreadsheets with a single "Source of Truth," allowing for faster investment decisions.
+                </p>
+                
+                <div style="border-top: 1px solid var(--border); padding-top: 2rem;">
+                    <p style="font-size: 0.7rem; letter-spacing: 3px; color: var(--gold); text-transform: uppercase; margin-bottom: 1rem;">Reporting Metrics:</p>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; font-size: 0.9rem; font-weight: 600;">
+                        <span>• Yield Per Square Foot</span>
+                        <span>• RevPAR vs. Market Index</span>
+                        <span>• Vendor SLA Compliance %</span>
+                        <span>• Asset Depreciation Tracking</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="reveal" style="background: var(--surface); border: 1px solid var(--border); padding: 4rem;">
+                <div style="height: 10px; width: 100%; background: var(--border); border-radius: 5px; margin-bottom: 3rem; position: relative; overflow: hidden;">
+                    <div style="height: 100%; width: 85%; background: var(--gold); border-radius: 5px;"></div>
+                </div>
+                <h4 style="font-family:'Cormorant Garamond',serif; font-size: 2rem; margin-bottom: 1rem;">Performance Index: 85%</h4>
+                <p style="font-size: 0.8rem; color: var(--slate); text-transform: uppercase; letter-spacing: 2px;">Portfolio Health Score — UAE Q1 2026</p>
+                
+                <div style="margin-top: 3rem; display: flex; gap: 1rem;">
+                    <div style="flex: 1; height: 100px; background: #fff; border: 1px solid var(--border);"></div>
+                    <div style="flex: 1; height: 100px; background: #fff; border: 1px solid var(--border);"></div>
+                    <div style="flex: 1; height: 100px; background: #fff; border: 1px solid var(--border);"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="signature" style="padding: 10rem 10%; text-align: center; background: var(--off-white);">
+        <div style="max-width: 600px; margin: 0 auto;">
+            <h2 style="font-family:'Cormorant Garamond',serif; font-size: 4.5rem; font-weight: 300; margin-bottom: 2rem;">Prince <i>Chakusa</i></h2>
+            <div style="width: 50px; height: 1px; background: var(--gold); margin: 0 auto 3rem;"></div>
+            <p style="font-size: 0.8rem; letter-spacing: 5px; text-transform: uppercase; color: var(--slate);">Architecture • Excellence • Scale</p>
+        </div>
+    </section>
+
+    <style>
+        /* SCROLL REVEAL DELAYS */
+        .reveal:nth-child(2) { transition-delay: 0.2s; }
+        .reveal:nth-child(3) { transition-delay: 0.4s; }
+        
+        /* HOVER EFFECTS FOR CARDS */
+        .strategy-card:hover h3, .case-card:hover h3 {
+            color: var(--gold);
+        }
+        
+        /* GLOBAL TEXT SELECTION COLOR */
+        ::selection {
+            background: var(--gold-soft);
+            color: var(--ink);
+        }
+        
+        /* BUTTON TRANSITION LOGIC */
+        .btn-main, .btn-alt {
+            cursor: pointer;
+            border-radius: 1px; /* Sharp edges for luxury look */
+        }
+    </style>
+    <section id="lifecycle" style="background: var(--bg); padding: 12rem 10%; border-top: 1px solid var(--border);">
+        <span class="section-tag">Asset Stewardship</span>
+        <h2 class="section-title">Maximizing <span>Terminal Value</span></h2>
+        
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 3rem;">
+            <div class="reveal" style="padding: 3rem; background: var(--surface); border: 1px solid var(--border);">
+                <h4 style="font-size: 0.7rem; color: var(--accent); letter-spacing: 3px; text-transform: uppercase; margin-bottom: 1.5rem;">FF&E Management</h4>
+                <p style="font-size: 0.95rem; color: var(--ink-light);">By implementing a digital "Furniture & Equipment" health log, I track the wear-and-tear cycles of high-luxury units in <strong>Saadiyat</strong> and <strong>Downtown Dubai</strong>. We pre-schedule refurbishments during low-occupancy windows to ensure 100% premium rate captures during peak Q4 events.</p>
+            </div>
+            
+            <div class="reveal" style="padding: 3rem; background: var(--surface); border: 1px solid var(--border);">
+                <h4 style="font-size: 0.7rem; color: var(--accent); letter-spacing: 3px; text-transform: uppercase; margin-bottom: 1.5rem;">Utility Efficiency</h4>
+                <p style="font-size: 0.95rem; color: var(--ink-light);">Integration with <strong>ADDC (Abu Dhabi)</strong> and <strong>DEWA (Dubai)</strong> monitoring systems allows my team to identify leakage or HVAC inefficiency within 15 minutes of an anomaly. This reduces "Hidden OpEx" by an average of 8% per unit annually.</p>
+            </div>
+
+            <div class="reveal" style="padding: 3rem; background: var(--surface); border: 1px solid var(--border);">
+                <h4 style="font-size: 0.7rem; color: var(--accent); letter-spacing: 3px; text-transform: uppercase; margin-bottom: 1.5rem;">Capex Strategy</h4>
+                <p style="font-size: 0.95rem; color: var(--ink-light);">I provide owners with a 3-year "Capital Expenditure" roadmap. We don't just fix what is broken; we upgrade what is aging to maintain the property's status as a top-tier asset in the <strong>UAE competitive landscape</strong>.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="tech-deep-dive" style="background: var(--ink); color: #fff; padding: 12rem 10%;">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: start;">
+            <div class="reveal">
+                <span class="section-tag" style="color: var(--accent);">Full-Stack Ops</span>
+                <h2 style="font-family:'Cormorant Garamond',serif; font-size: 3.5rem; font-weight: 300; line-height: 1.1; margin-bottom: 3rem;">Digital <span>Differentiator</span></h2>
+                <p style="color: #aaa; margin-bottom: 2rem;">In a market where most use basic spreadsheets, my competitive edge is <strong>Software Sovereignty</strong>. I build the systems that manage the portfolio.</p>
+                
+                <ul style="list-style: none; margin-top: 3rem;">
+                    <li style="margin-bottom: 2rem; border-left: 1px solid var(--accent); padding-left: 2rem;">
+                        <strong style="display: block; color: #fff;">Supabase Real-time Listeners</strong>
+                        <span style="font-size: 0.85rem; color: #888;">Instant alerts for negative guest reviews or critical maintenance failures.</span>
+                    </li>
+                    <li style="margin-bottom: 2rem; border-left: 1px solid var(--accent); padding-left: 2rem;">
+                        <strong style="display: block; color: #fff;">SLA Execution Engine</strong>
+                        <span style="font-size: 0.85rem; color: #888;">Automated task escalation to the on-ground team leader if a ticket isn't resolved in 40 mins.</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="reveal" style="background: #1e1e1e; padding: 3rem; border: 1px solid #333; font-family: 'Courier New', monospace; font-size: 0.85rem; color: #00ffcc; line-height: 1.6;">
+                <p style="color: #666;">// Portfolio Performance Aggregation Logic</p>
+                <p>const getPortfolioROI = async () => {</p>
+                <p>&nbsp;&nbsp;const { data, error } = await supabase</p>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;.from('unit_metrics')</p>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;.select('yield, opex, reviews')</p>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;.filter('region', 'in', '["AD", "DXB"]');</p>
+                <p>&nbsp;&nbsp;</p>
+                <p>&nbsp;&nbsp;return data.reduce((acc, curr) => acc + curr.yield, 0);</p>
+                <p>}</p>
+                <p style="color: #666; margin-top: 1rem;">// Status: Operational Excellence Enabled</p>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact" style="padding: 10rem 10% 5rem; text-align: center; border-top: 1px solid var(--border);">
+        <h4 style="color: var(--accent); letter-spacing: 5px; text-transform: uppercase; font-size: 0.75rem; margin-bottom: 2rem;">Strategic Inquiry</h4>
+        <h2 style="font-family: 'Cormorant Garamond', serif; font-size: 4.5rem; font-weight: 300; line-height: 1.1; margin-bottom: 5rem;">Available for <span>Leadership</span> <br>In Abu Dhabi & Dubai.</h2>
+        
+        <div style="display: flex; justify-content: center; gap: 3rem; margin-bottom: 8rem;">
+            <a href="mailto:chakusaprince@gmail.com" class="btn-main" style="background: var(--ink); color: #fff; padding: 1.5rem 4rem; text-decoration: none; text-transform: uppercase; letter-spacing: 3px; font-weight: 700;">Direct Correspondence</a>
+            <a href="https://linkedin.com/in/princechakusa" class="btn-alt" style="border: 1px solid var(--ink); color: var(--ink); padding: 1.5rem 4rem; text-decoration: none; text-transform: uppercase; letter-spacing: 3px; font-weight: 700;">LinkedIn Executive</a>
+        </div>
+
+        <div style="display: flex; justify-content: space-between; border-top: 1px solid var(--border); padding-top: 4rem; opacity: 0.5; font-size: 0.65rem; letter-spacing: 3px; text-transform: uppercase;">
+            <p>Prince Chakusa | Systems & Operations</p>
+            <p>Abu Dhabi • Dubai • UAE</p>
+        </div>
+    </footer>
+
+    <script>
+        const revealCallback = (entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        };
+
+        const observer = new IntersectionObserver(revealCallback, {
+            threshold: 0.1
+        });
+
+        document.querySelectorAll('.reveal, .case-card, .strategy-card').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+
 </body>
 </html>
