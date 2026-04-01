@@ -1,603 +1,513 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Prince Chakusa | Operations Architect</title>
-  
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  
-  <style>
-    :root {
-      --bg: #09090b; /* Deep Obsidian */
-      --glass: rgba(255, 255, 255, 0.03);
-      --glass-border: rgba(255, 255, 255, 0.08);
-      --accent: #d4af37; /* Champagne Gold */
-      --accent-muted: #8c7326;
-      --text-main: #f4f4f5;
-      --text-dim: #a1a1aa;
-      --radius: 2px; /* Sharp, architectural corners look more custom than rounded ones */
-      --transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+<style>
+    .about-header { margin-bottom: 4rem; max-width: 800px; }
+    .about-header h4 { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 4px; color: var(--accent); margin-bottom: 1rem; }
+    .about-header h2 { font-family: 'Cormorant Garamond', serif; font-size: 3.5rem; font-weight: 300; line-height: 1.1; color: var(--text-dark); }
+
+    .ceo-pitch-grid { 
+        display: grid; 
+        grid-template-columns: repeat(3, 1fr); 
+        gap: 2.5rem; 
+        margin-bottom: 6rem;
     }
 
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      background-color: var(--bg);
-      color: var(--text-main);
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
+    .pitch-card {
+        padding: 3rem 2rem;
+        background: var(--secondary);
+        border-top: 1px solid var(--border);
+        transition: var(--transition);
     }
-
-    /* Custom Scrollbar */
-    ::-webkit-scrollbar { width: 5px; }
-    ::-webkit-scrollbar-track { background: var(--bg); }
-    ::-webkit-scrollbar-thumb { background: var(--glass-border); }
-
-    h1, h2, h3 { font-family: 'Playfair Display', serif; font-weight: 700; }
-
-    /* Layout Structure */
-    .viewport { display: flex; min-height: 100vh; }
+    .pitch-card:hover { border-top-color: var(--accent); background: white; box-shadow: 0 20px 40px rgba(0,0,0,0.05); }
     
-    .side-nav {
-      width: 300px;
-      height: 100vh;
-      position: fixed;
-      padding: 4rem 3rem;
-      border-right: 1px solid var(--glass-border);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      background: var(--bg);
-      z-index: 100;
+    .pitch-num { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; color: var(--accent); margin-bottom: 1.5rem; display: block; }
+    .pitch-card h3 { font-size: 0.9rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 1.5rem; color: var(--text-dark); font-weight: 600; }
+    .pitch-card p { font-size: 0.9rem; color: var(--text-light); line-height: 1.8; }
+
+    .executive-bio { 
+        display: grid; 
+        grid-template-columns: 1fr 1.5fr; 
+        gap: 6rem; 
+        align-items: start; 
+        padding-top: 6rem;
+        border-top: 1px solid var(--border);
+    }
+    .bio-column h3 { font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; margin-bottom: 2rem; }
+    .bio-column p { margin-bottom: 1.5rem; color: var(--text-light); font-size: 1.05rem; }
+    
+    .competency-list { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; list-style: none; margin-top: 2rem; }
+    .competency-list li { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1px; color: var(--accent); font-weight: 700; display: flex; align-items: center; gap: 10px; }
+    .competency-list li::before { content: ''; width: 6px; height: 6px; background: var(--accent); border-radius: 50%; }
+</style>
+
+<section id="about">
+    <div class="about-header">
+        <h4>The Executive Value Proposition</h4>
+        <h2>Architecting the Future of <br><span>Hospitality Operations</span></h2>
+    </div>
+
+    <div class="ceo-pitch-grid">
+        <div class="pitch-card">
+            <span class="pitch-num">01.</span>
+            <h3>Operational <br>Scalability</h3>
+            <p>I specialize in building the infrastructure required to manage 400+ keys without service dilution. I transform manual, error-prone processes into automated, trackable workflows that allow your brand to scale rapidly across new markets.</p>
+        </div>
+        <div class="pitch-card">
+            <span class="pitch-num">02.</span>
+            <h3>Data-Driven <br>Yields</h3>
+            <p>I bridge the gap between BOH operations and financial performance. By leveraging custom-built analytics hubs, I identify service recovery opportunities and cost-leakage in real-time, directly impacting your bottom line and asset valuation.</p>
+        </div>
+        <div class="pitch-card">
+            <span class="pitch-num">03.</span>
+            <h3>Brand <br>Stewardship</h3>
+            <p>In luxury hospitality, consistency is the currency. I implement rigorous digital SOPs and inspection frameworks that guarantee 100% brand compliance, ensuring that every guest experience reflects your company’s highest standards.</p>
+        </div>
+    </div>
+
+    <div class="executive-bio">
+        <div class="bio-column">
+            <h3>Technical <br>Mastery</h3>
+            <p>My unique advantage is the ability to write the code that runs the operation. I am an <strong>Operations Leader</strong> who is also a <strong>Full-Stack Developer</strong>, allowing me to build proprietary tools like <i>FixHub</i> and <i>Guest Analytics</i> in-house.</p>
+            <ul class="competency-list">
+                <li>SOP Development</li>
+                <li>Full-Stack Dev</li>
+                <li>DTCM Compliance</li>
+                <li>SLA Negotiation</li>
+                <li>Data Analytics</li>
+                <li>Asset Mgmt</li>
+            </ul>
+        </div>
+        <div class="bio-column">
+            <h3>Professional Philosophy</h3>
+            <p>Throughout my career in the UAE, I have managed portfolios exceeding <strong>350 luxury units</strong> and directed cross-functional teams of concierge, maintenance, and housekeeping professionals. My mission is to eliminate operational friction.</p>
+            <p>I believe that technology should never replace the human touch in hospitality; it should amplify it. By automating the mundane, I empower my teams to focus on what matters most: <strong>The Guest Journey.</strong></p>
+            <p>Whether it is optimizing check-in flows for a 25% review boost or reducing response times by 40%, my focus is always on <strong>measurable excellence.</strong></p>
+        </div>
+    </div>
+</section>
+<style>
+    /* ── TECHNICAL ECOSYSTEM STYLING ── */
+    .systems-container { background: #FFFFFF; }
+    
+    .system-showcase {
+        display: flex;
+        flex-direction: column;
+        gap: 10rem;
     }
 
-    .main-canvas {
-      flex: 1;
-      margin-left: 300px;
-      padding: 0;
+    .system-entry {
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 6rem;
+        align-items: center;
     }
 
-    /* Navigation Styling */
-    .nav-links { list-style: none; margin-top: 4rem; }
-    .nav-link {
-      font-size: 0.7rem;
-      text-transform: uppercase;
-      letter-spacing: 0.3em;
-      margin-bottom: 2rem;
-      cursor: pointer;
-      color: var(--text-dim);
-      transition: var(--transition);
-      display: flex;
-      align-items: center;
-      gap: 1rem;
+    .system-entry.alt {
+        grid-template-columns: 0.8fr 1.2fr;
     }
-    .nav-link:hover, .nav-link.active { color: var(--accent); }
-    .nav-link span { width: 0; height: 1px; background: var(--accent); transition: var(--transition); }
-    .nav-link.active span { width: 30px; }
+
+    /* The "Hardware" Look for Screenshots */
+    .image-frame {
+        background: #f8f8f8;
+        padding: 2rem;
+        border: 1px solid #eee;
+        position: relative;
+        transition: var(--transition);
+    }
+    .image-frame:hover {
+        transform: scale(1.02);
+        box-shadow: 0 30px 60px rgba(0,0,0,0.05);
+    }
+    .image-frame img {
+        width: 100%;
+        display: block;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+
+    /* Content Styling */
+    .entry-content h4 {
+        font-size: 0.7rem;
+        color: var(--accent);
+        text-transform: uppercase;
+        letter-spacing: 4px;
+        margin-bottom: 1.5rem;
+    }
+    .entry-content h3 {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 3rem;
+        line-height: 1.1;
+        margin-bottom: 2rem;
+        font-weight: 400;
+    }
+    .entry-content p {
+        color: var(--text-light);
+        font-size: 1.05rem;
+        margin-bottom: 2.5rem;
+        line-height: 1.8;
+    }
+
+    /* CEO Data Points */
+    .kpi-badge-group {
+        display: flex;
+        gap: 1.5rem;
+        margin-bottom: 3rem;
+    }
+    .kpi-badge {
+        border-left: 2px solid var(--accent);
+        padding-left: 1rem;
+    }
+    .kpi-badge span {
+        display: block;
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: var(--text-dark);
+    }
+    .kpi-badge label {
+        font-size: 0.6rem;
+        text-transform: uppercase;
+        color: var(--text-light);
+        letter-spacing: 1px;
+    }
+
+    @media (max-width: 1100px) {
+        .system-entry, .system-entry.alt { grid-template-columns: 1fr; gap: 3rem; }
+        .system-entry.alt .entry-content { order: 2; }
+        .system-entry.alt .image-frame { order: 1; }
+    }
+</style>
+
+<section id="systems" class="systems-container">
+    <div class="about-header">
+        <h4>Proprietary Infrastructure</h4>
+        <h2>Custom Built <span>Intelligence</span></h2>
+    </div>
+
+    <div class="system-showcase">
+        
+        <div class="system-entry">
+            <div class="image-frame">
+                <img src="guest-reviews-screenshot.png" alt="Guest Analytics Interface">
+            </div>
+            <div class="entry-content">
+                <h4>Data Architecture</h4>
+                <h3>Guest Sentiment <br>& Reputation Hub</h3>
+                <p>A sophisticated data pipeline that centralizes feedback across 400+ keys. This allows leadership to spot service trends instantly and intervene before guest dissatisfaction impacts RevPAR or Brand Ranking.</p>
+                
+                <div class="kpi-badge-group">
+                    <div class="kpi-badge">
+                        <span>+25%</span>
+                        <label>Review Scores</label>
+                    </div>
+                    <div class="kpi-badge">
+                        <span>100%</span>
+                        <label>Brand Compliance</label>
+                    </div>
+                </div>
+
+                <div class="pitch-num" style="font-size: 0.8rem; letter-spacing: 2px;">Tech Stack: React / Supabase / Real-time SQL</div>
+            </div>
+        </div>
+
+        <div class="system-entry alt">
+            <div class="entry-content">
+                <h4>Operational Efficiency</h4>
+                <h3>FixHub: Automated <br>Maintenance Engine</h3>
+                <p>Designed to solve the "maintenance black hole" in large portfolios. This system automates vendor dispatching, tracks SLA response times, and manages preventive inspections to ensure zero-defect guest arrivals.</p>
+                
+                <div class="kpi-badge-group">
+                    <div class="kpi-badge">
+                        <span>-40%</span>
+                        <label>Response Time</label>
+                    </div>
+                    <div class="kpi-badge">
+                        <span>-15%</span>
+                        <label>OpEx Costs</label>
+                    </div>
+                </div>
+
+                <div class="pitch-num" style="font-size: 0.8rem; letter-spacing: 2px;">Focus: SLA Automation / Asset Preservation</div>
+            </div>
+            <div class="image-frame">
+                <img src="fixhub-screenshot.png" alt="FixHub Operations Interface">
+            </div>
+        </div>
+
+    </div>
+</section>
+<style>
+    /* ── TRAJECTORY STYLING ── */
+    .trajectory-container { 
+        padding: 10rem 10%; 
+        background: var(--secondary); 
+    }
+
+    .milestone-item {
+        display: grid;
+        grid-template-columns: 0.8fr 1.2fr;
+        gap: 8rem;
+        margin-bottom: 10rem;
+        position: relative;
+    }
+
+    .milestone-header h4 {
+        font-size: 0.7rem;
+        color: var(--accent);
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        margin-bottom: 1rem;
+    }
+
+    .milestone-header h3 {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 2.8rem;
+        line-height: 1.1;
+        margin-bottom: 1rem;
+        color: var(--text-dark);
+    }
+
+    .milestone-header .location-tag {
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: var(--text-light);
+        font-weight: 600;
+    }
+
+    /* Achievement Breakdown */
+    .achievement-content h5 {
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-bottom: 2rem;
+        color: var(--text-dark);
+        border-bottom: 1px solid var(--border);
+        padding-bottom: 1rem;
+        display: inline-block;
+    }
+
+    .achievement-list {
+        list-style: none;
+    }
+
+    .achievement-list li {
+        margin-bottom: 2rem;
+        font-size: 1.05rem;
+        color: var(--text-light);
+        display: grid;
+        grid-template-columns: 30px 1fr;
+        gap: 15px;
+    }
+
+    .achievement-list li::before {
+        content: '•';
+        color: var(--accent);
+        font-size: 1.5rem;
+        line-height: 1;
+    }
+
+    .result-callout {
+        margin-top: 3rem;
+        padding: 2.5rem;
+        background: #FFFFFF;
+        border: 1px solid var(--border);
+        border-left: 4px solid var(--accent);
+    }
+
+    .result-callout p {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 1.4rem;
+        font-style: italic;
+        color: var(--text-dark);
+        margin-bottom: 1rem;
+    }
+
+    .result-callout span {
+        font-size: 0.7rem;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        color: var(--accent);
+        font-weight: 700;
+    }
 
     @media (max-width: 1024px) {
-      .side-nav { display: none; }
-      .main-canvas { margin-left: 0; }
+        .milestone-item { grid-template-columns: 1fr; gap: 4rem; }
     }
-  </style>
-</head>
-<body>
+</style>
 
-<div class="viewport">
-  <nav class="side-nav">
-    <div>
-      <h1 style="font-size: 1.8rem; letter-spacing: -0.02em;">Prince<br><span style="color: var(--accent); font-style: italic;">Chakusa</span></h1>
-      <p style="font-size: 0.6rem; letter-spacing: 0.4em; text-transform: uppercase; margin-top: 1.5rem; color: var(--text-dim);">Operations Architect</p>
-      
-      <ul class="nav-links">
-        <li class="nav-link active" onclick="showPage('home')"><span></span>01 Overview</li>
-        <li class="nav-link" onclick="showPage('work')"><span></span>02 Systems</li>
-        <li class="nav-link" onclick="showPage('experience')"><span></span>03 Trajectory</li>
-        <li class="nav-link" onclick="showPage('contact')"><span></span>04 Connect</li>
-      </ul>
+<section id="experience" class="trajectory-container">
+    <div class="about-header" style="text-align: center; margin: 0 auto 10rem;">
+        <h4>Proven Performance</h4>
+        <h2>A Legacy of <span>Operational Scaling</span></h2>
     </div>
 
-    <div class="nav-footer">
-      <div style="display: flex; align-items: center; gap: 0.5rem;">
-        <div style="width: 6px; height: 6px; background: #22c55e; border-radius: 50%;"></div>
-        <span style="font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.1em;">Available for UAE / NZ</span>
-      </div>
-    </div>
-  </nav>
+    <div class="milestone-wrap">
 
-  <main class="main-canvas">
-  <style>
-    .section { display: none; min-height: 100vh; padding: 8rem 6rem; animation: slideIn 0.8s ease-out; }
-    .section.active { display: block; }
-
-    @keyframes slideIn {
-      from { opacity: 0; transform: translateX(20px); }
-      to { opacity: 1; transform: translateX(0); }
-    }
-
-    .hero-content { max-width: 800px; }
-    .hero-headline { font-size: clamp(3.5rem, 8vw, 6rem); line-height: 1; margin-bottom: 3rem; }
-    .hero-headline span { color: var(--accent); }
-    
-    .hero-sub { font-size: 1.2rem; color: var(--text-dim); max-width: 600px; margin-bottom: 4rem; font-weight: 300; }
-    
-    .stats-container {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 4rem;
-      border-top: 1px solid var(--glass-border);
-      padding-top: 4rem;
-    }
-    .stat-item h3 { font-size: 3rem; color: var(--accent); margin-bottom: 0.5rem; }
-    .stat-item p { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.2em; color: var(--text-dim); }
-
-    @media (max-width: 768px) {
-      .section { padding: 4rem 2rem; }
-      .stats-container { grid-template-columns: 1fr; }
-    }
-  </style>
-
-  <section id="home" class="section active">
-    <div class="hero-content">
-      <h2 class="hero-headline">Scaling <span>Elite</span> Portfolios.</h2>
-      <p class="hero-sub">
-        [span_0](start_span)Specializing in the intersection of high-tier property operations and custom technical architecture[span_0](end_span). 
-        [span_1](start_span)[span_2](start_span)I build the digital frameworks that allow portfolios to scale without losing the human touch[span_1](end_span)[span_2](end_span).
-      </p>
-
-      <div class="stats-container">
-        <div class="stat-item">
-          <h3>400+</h3>
-          [span_3](start_span)<p>Units Managed Under Direct Leadership[span_3](end_span)</p>
-        </div>
-        <div class="stat-item">
-          <h3>25%</h3>
-          [span_4](start_span)[span_5](start_span)<p>Improvement in Guest Review Scores[span_4](end_span)[span_5](end_span)</p>
-        </div>
-        <div class="stat-item">
-          <h3>15%</h3>
-          [span_6](start_span)<p>Reduction in Operational Overheads[span_6](end_span)</p>
-        </div>
-        <div class="stat-item">
-          <h3>40%</h3>
-          [span_7](start_span)<p>Reduction in Manual Team Workload[span_7](end_span)</p>
-        </div>
-      </div>
-    </div>
-  </section>
-  <style>
-    /* ── SYSTEMS SECTION STYLING ── */
-    .case-study-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 2px; /* Ultra-thin architectural gap */
-      background-color: var(--glass-border);
-      border: 1px solid var(--glass-border);
-    }
-
-    .case-card {
-      background-color: var(--bg);
-      padding: 5rem 4rem;
-      transition: var(--transition);
-    }
-
-    .case-card:hover {
-      background-color: rgba(255, 255, 255, 0.01);
-    }
-
-    .case-label {
-      font-size: 0.6rem;
-      text-transform: uppercase;
-      letter-spacing: 0.4em;
-      color: var(--accent);
-      margin-bottom: 2rem;
-      display: block;
-    }
-
-    .case-title {
-      font-size: 2.5rem;
-      margin-bottom: 1.5rem;
-      letter-spacing: -0.02em;
-    }
-
-    .case-description {
-      color: var(--text-dim);
-      font-size: 1rem;
-      margin-bottom: 3rem;
-      line-height: 1.8;
-      max-width: 400px;
-    }
-
-    /* Glass Frame for Dashboard Screenshots */
-    .dashboard-preview {
-      width: 100%;
-      position: relative;
-      border: 1px solid var(--glass-border);
-      background: var(--glass);
-      padding: 10px;
-      margin-bottom: 3rem;
-    }
-
-    .dashboard-preview img {
-      width: 100%;
-      display: block;
-      filter: grayscale(10%) contrast(1.1);
-      transition: var(--transition);
-    }
-
-    .case-card:hover .dashboard-preview img {
-      filter: grayscale(0%) contrast(1.05);
-    }
-
-    .tag-cloud {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-    }
-
-    .tag {
-      font-size: 0.6rem;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      padding: 0.5rem 1rem;
-      border: 1px solid var(--glass-border);
-      color: var(--text-dim);
-    }
-
-    @media (max-width: 1200px) {
-      .case-study-grid { grid-template-columns: 1fr; }
-      .case-card { padding: 4rem 2rem; }
-    }
-  </style>
-
-  <section id="work" class="section">
-    <div class="case-study-grid">
-      
-      <div class="case-card">
-        <span class="case-label">Project 01 / Analytics</span>
-        <h3 class="case-title">Guest Review <br><span>Analytics Hub</span></h3>
-        <p class="case-description">
-          [span_1](start_span)A custom-engineered dashboard[span_1](end_span) [span_2](start_span)that aggregates sentiment data from 200+ reviews[span_2](end_span) to identify service bottlenecks. [span_3](start_span)Engineered to maintain 100% brand compliance across luxury portfolios[span_3](end_span).
-        </p>
-        
-        <div class="dashboard-preview">
-          <img src="guest-reviews-screenshot.png" alt="Guest Reviews Dashboard Interface">
+        <div class="milestone-item">
+            <div class="milestone-header">
+                <h4>Nov 2024 — Dec 2025</h4>
+                <h3>Stonetree <br>Vacation Homes</h3>
+                <span class="location-tag">Team Leader | Property Operations</span>
+            </div>
+            <div class="achievement-content">
+                <h5>Executive Deliverables</h5>
+                <ul class="achievement-list">
+                    <li>Directed a massive 400+ unit short-term rental portfolio, overseeing cross-functional teams of 50+ staff across maintenance and housekeeping.</li>
+                    <li>Engineered the end-to-end operational framework for high-volume asset management in the UAE market.</li>
+                    <li>Standardized SLA-driven vendor management to ensure 100% compliance with DTCM luxury standards.</li>
+                </ul>
+                <div class="result-callout">
+                    <p>"Spearheaded the integration of digital tracking that reduced property downtime by 40% across the 400-unit footprint."</p>
+                    <span>Strategic Outcome: Operational Efficiency</span>
+                </div>
+            </div>
         </div>
 
-        <div class="tag-cloud">
-          <span class="tag">React / Supabase</span>
-          <span class="tag">Sentiment Analysis</span>
-          <span class="tag">CX Strategy</span>
+        <div class="milestone-item">
+            <div class="milestone-header">
+                <h4>Jan 2023 — Oct 2024</h4>
+                <h3>Daniels <br>Holiday Homes</h3>
+                <span class="location-tag">Guest Relations Officer</span>
+            </div>
+            <div class="achievement-content">
+                <h5>Strategic Impact</h5>
+                <ul class="achievement-list">
+                    <li>Transformed the guest journey through digital touchpoint optimization, directly leading to a 25% increase in online reputation scores.</li>
+                    <li>Automated the check-in and concierge lifecycle, reducing manual front-desk overheads by 40%.</li>
+                    <li>Implemented data-driven service audits that identified and resolved recurring revenue-leakage points in property turnover.</li>
+                </ul>
+                <div class="result-callout">
+                    <p>"Achieved a record-high satisfaction rate for the portfolio by bridging the gap between digital concierge tools and personalized service."</p>
+                    <span>Strategic Outcome: Brand Reputation</span>
+                </div>
+            </div>
         </div>
-      </div>
-
-      <div class="case-card">
-        <span class="case-label">Project 02 / Operations</span>
-        <h3 class="case-title">FixHub <br><span>Maintenance Engine</span></h3>
-        <p class="case-description">
-          [span_4](start_span)A proprietary maintenance tracking system[span_4](end_span) [span_5](start_span)designed for 400+ unit scale[span_5](end_span). [span_6](start_span)Automates vendor SLAs and property inspections to reduce response times by 40%[span_6](end_span).
-        </p>
-
-        <div class="dashboard-preview">
-          <img src="fixhub-screenshot.png" alt="FixHub Maintenance Interface">
-        </div>
-
-        <div class="tag-cloud">
-          <span class="tag">Operational Tech</span>
-          <span class="tag">SLA Automation</span>
-          <span class="tag">Asset Mgmt</span>
-        </div>
-      </div>
 
     </div>
-  </section>
-  <style>
-    /* ── TRAJECTORY SECTION STYLING ── */
-    .trajectory-container { max-width: 900px; }
-    
-    .timeline {
-      position: relative;
-      padding-left: 3rem;
-      border-left: 1px solid var(--glass-border);
-      margin-top: 4rem;
+</section>
+<style>
+    /* ── CONNECT & FOOTER STYLING ── */
+    .inquiry-section {
+        padding: 12rem 10% 8rem;
+        background: #FFFFFF;
+        text-align: center;
     }
 
-    .milestone {
-      position: relative;
-      margin-bottom: 6rem;
+    .inquiry-header h4 {
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 5px;
+        color: var(--accent);
+        margin-bottom: 2rem;
     }
 
-    .milestone::before {
-      content: '';
-      position: absolute;
-      left: calc(-3rem - 5px);
-      top: 0;
-      width: 9px;
-      height: 9px;
-      background: var(--accent);
-      border-radius: 50%;
+    .inquiry-header h2 {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: clamp(3rem, 6vw, 5rem);
+        font-weight: 300;
+        line-height: 1.1;
+        margin-bottom: 4rem;
+        color: var(--text-dark);
     }
 
-    .m-date {
-      font-size: 0.65rem;
-      text-transform: uppercase;
-      letter-spacing: 0.3em;
-      color: var(--accent);
-      margin-bottom: 1rem;
-      display: block;
+    .action-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+        max-width: 1100px;
+        margin: 0 auto 6rem;
     }
 
-    .m-company {
-      font-size: 2rem;
-      margin-bottom: 0.5rem;
-      color: var(--text-main);
+    .action-card {
+        padding: 4rem 2rem;
+        background: var(--secondary);
+        border: 1px solid var(--border);
+        text-decoration: none;
+        transition: var(--transition);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
-    .m-role {
-      font-size: 0.9rem;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--text-dim);
-      margin-bottom: 2rem;
-      display: block;
+    .action-card:hover {
+        background: white;
+        border-color: var(--accent);
+        transform: translateY(-10px);
+        box-shadow: 0 20px 40px rgba(0,0,0,0.05);
     }
 
-    .m-content {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 3rem;
+    .action-card i {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        color: var(--accent);
+        margin-bottom: 1.5rem;
+        font-style: normal;
+        font-weight: 700;
     }
 
-    .m-list {
-      list-style: none;
+    .action-card span {
+        font-size: 1.1rem;
+        color: var(--text-dark);
+        font-weight: 600;
     }
 
-    .m-list li {
-      font-size: 0.95rem;
-      color: var(--text-dim);
-      margin-bottom: 1rem;
-      position: relative;
-      padding-left: 1.5rem;
+    .footer-minimal {
+        padding: 4rem 10%;
+        border-top: 1px solid var(--border);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
     }
 
-    .m-list li::before {
-      content: '—';
-      position: absolute;
-      left: 0;
-      color: var(--accent-muted);
-    }
-
-    .m-achievement {
-      background: var(--glass);
-      padding: 2rem;
-      border: 1px solid var(--glass-border);
-    }
-
-    .m-achievement h4 {
-      font-size: 0.7rem;
-      text-transform: uppercase;
-      letter-spacing: 0.2em;
-      margin-bottom: 1rem;
-      color: var(--accent);
-    }
-
-    .m-achievement p {
-      font-size: 0.9rem;
-      font-style: italic;
-      color: var(--text-main);
+    .footer-minimal p {
+        font-size: 0.65rem;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        color: var(--text-light);
     }
 
     @media (max-width: 900px) {
-      .m-content { grid-template-columns: 1fr; }
-    }
-  </style>
-
-  <section id="experience" class="section">
-    <div class="trajectory-container">
-      <h2 class="hero-headline" style="font-size: 3.5rem; margin-bottom: 1rem;">Career <span>Trajectory</span></h2>
-      <p class="hero-sub" style="margin-bottom: 4rem;">A decade of scaling operations and redefining guest experiences in the UAE market.</p>
-
-      <div class="timeline">
-        
-        <div class="milestone">
-          <span class="m-date">Jan 2026 — Mar 2026</span>
-          <h3 class="m-company">Luxury Homevy Vacation Homes</h3>
-          [span_0](start_span)[span_1](start_span)<span class="m-role">Guest Experience Lead[span_0](end_span)[span_1](end_span)</span>
-          
-          <div class="m-content">
-            <ul class="m-list">
-              [span_2](start_span)<li>Directing operations for a 40-property luxury portfolio.[span_2](end_span)</li>
-              [span_3](start_span)<li>Overseeing 5-person service team for 100% SLA compliance.[span_3](end_span)</li>
-              [span_4](start_span)<li>Analyzing 200+ guest reviews to refine operational SOPs.[span_4](end_span)</li>
-            </ul>
-            <div class="m-achievement">
-              <h4>Key Impact</h4>
-              [span_5](start_span)<p>"Standardized digital response tracking across Hostaway & WhatsApp, reducing resolution times for high-priority guest issues."[span_5](end_span)</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="milestone">
-          <span class="m-date">Nov 2024 — Dec 2025</span>
-          <h3 class="m-company">Stonetree Vacation Homes</h3>
-          [span_6](start_span)<span class="m-role">Team Leader - Property Operations[span_6](end_span)</span>
-          
-          <div class="m-content">
-            <ul class="m-list">
-              [span_7](start_span)<li>Managed a massive 400+ unit STR portfolio.[span_7](end_span)</li>
-              [span_8](start_span)<li>Directed cross-functional maintenance and housekeeping teams.[span_8](end_span)</li>
-              [span_9](start_span)<li>Ensured full DTCM regulatory compliance and listing integrity.[span_9](end_span)</li>
-            </ul>
-            <div class="m-achievement">
-              <h4>Key Impact</h4>
-              [span_10](start_span)[span_11](start_span)<p>"Developed and launched the proprietary maintenance engine that optimized response times across 400 units."[span_10](end_span)[span_11](end_span)</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="milestone">
-          <span class="m-date">Jan 2023 — Oct 2024</span>
-          <h3 class="m-company">Daniels Holiday Homes</h3>
-          [span_12](start_span)<span class="m-role">Guest Relations Officer[span_12](end_span)</span>
-          
-          <div class="m-content">
-            <ul class="m-list">
-              [span_13](start_span)<li>Boosted check-in efficiency, leading to 25% higher review scores.[span_13](end_span)</li>
-              [span_14](start_span)<li>Integrated digital concierge tools, cutting front-desk load by 40%.[span_14](end_span)</li>
-              [span_15](start_span)<li>Mentored new staff, accelerating onboarding by 20%.[span_15](end_span)</li>
-            </ul>
-            <div class="m-achievement">
-              <h4>Key Impact</h4>
-              [span_16](start_span)<p>"Pioneered the use of guest feedback analytics to drive property-specific service audits."[span_16](end_span)</p>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-  <style>
-    /* ── CONNECT SECTION STYLING ── */
-    .connect-grid {
-      display: grid;
-      grid-template-columns: 1fr 1.2fr;
-      gap: 2px;
-      background-color: var(--glass-border);
-      border: 1px solid var(--glass-border);
+        .action-grid { grid-template-columns: 1fr; }
+        .footer-minimal { flex-direction: column; gap: 2rem; text-align: center; }
     }
 
-    .connect-card {
-      background-color: var(--bg);
-      padding: 5rem 4rem;
-    }
+    /* SMOOTH SCROLLING */
+    html { scroll-behavior: smooth; }
+</style>
 
-    .contact-link {
-      display: block;
-      font-size: 1.5rem;
-      color: var(--text-main);
-      text-decoration: none;
-      margin-bottom: 2rem;
-      transition: var(--transition);
-      font-family: 'Playfair Display', serif;
-    }
-
-    .contact-link:hover {
-      color: var(--accent);
-      transform: translateX(10px);
-    }
-
-    .contact-label {
-      font-size: 0.6rem;
-      text-transform: uppercase;
-      letter-spacing: 0.3em;
-      color: var(--accent);
-      margin-bottom: 0.5rem;
-      display: block;
-    }
-
-    /* Mobile Menu Toggle */
-    .mobile-nav-toggle {
-      display: none;
-      position: fixed;
-      top: 2rem;
-      right: 2rem;
-      z-index: 1000;
-      background: var(--accent);
-      color: var(--bg);
-      border: none;
-      padding: 0.8rem;
-      font-weight: 700;
-      cursor: pointer;
-    }
-
-    @media (max-width: 1024px) {
-      .mobile-nav-toggle { display: block; }
-      .connect-grid { grid-template-columns: 1fr; }
-      .connect-card { padding: 4rem 2rem; }
-    }
-  </style>
-
-  <button class="mobile-nav-toggle" onclick="toggleMenu()">MENU</button>
-
-  <section id="contact" class="section">
-    <div class="hero-content" style="margin-bottom: 4rem;">
-      <h2 class="hero-headline" style="font-size: 3.5rem;">Strategic <span>Inquiry</span></h2>
-      <p class="hero-sub">Currently evaluating leadership opportunities within high-tier property portfolios and asset management firms.</p>
+<section id="contact" class="inquiry-section">
+    <div class="inquiry-header">
+        <h4>Strategic Alignment</h4>
+        <h2>Available for Leadership <br><span>Appointments</span></h2>
     </div>
 
-    <div class="connect-grid">
-      <div class="connect-card">
-        <span class="contact-label">Direct Communication</span>
-        <a href="mailto:chakusaprince@gmail.com" class="contact-link">chakusaprince@gmail.com</a>
-        <a href="tel:+971589772645" class="contact-link">+971 58 977 2645</a>
-      </div>
+    <div class="action-grid">
+        <a href="mailto:chakusaprince@gmail.com" class="action-card">
+            <i>Correspondence</i>
+            <span>chakusaprince@gmail.com</span>
+        </a>
 
-      <div class="connect-card">
-        <span class="contact-label">Professional Networks</span>
-        <a href="https://linkedin.com/in/princechakusa" target="_blank" class="contact-link">LinkedIn Profile</a>
-        <a href="https://github.com/princechakusa" target="_blank" class="contact-link">Technical Repository</a>
-      </div>
+        <a href="https://linkedin.com/in/princechakusa" target="_blank" class="action-card">
+            <i>Professional Network</i>
+            <span>View LinkedIn Profile</span>
+        </a>
 
-      <div class="connect-card" style="grid-column: span 1;">
-         <span class="contact-label">Location Base</span>
-         <h3 style="font-size: 1.5rem; color: var(--text-main);">Abu Dhabi, UAE</h3>
-      </div>
-
-      <div class="connect-card" style="background: var(--accent); color: var(--bg);">
-        <span class="contact-label" style="color: rgba(0,0,0,0.5);">Credentials</span>
-        <a href="PrinceChakusa_Operations_resume.pdf" target="_blank" class="contact-link" style="color: var(--bg); margin-bottom: 0;">Download Executive CV →</a>
-      </div>
+        <a href="PrinceChakusa_Operations_resume.pdf" target="_blank" class="action-card" style="background: var(--accent);">
+            <i style="color: white; opacity: 0.8;">Full Dossier</i>
+            <span style="color: white;">Download Executive CV</span>
+        </a>
     </div>
 
-    <footer style="margin-top: 8rem; padding-bottom: 4rem; border-top: 1px solid var(--glass-border); padding-top: 4rem;">
-      <p style="font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.2em; color: var(--text-dim);">
-        &copy; 2026 Prince Chakusa — Operations Architect. Built for Performance.
-      </p>
-    </footer>
-  </section>
+    <div class="location-callout" style="margin-top: 4rem;">
+        <p style="font-size: 0.8rem; color: var(--text-light); letter-spacing: 1px;">
+            Primary Focus: <strong>Abu Dhabi / UAE</strong> & <strong>New Zealand</strong>
+        </p>
+    </div>
+</section>
 
-</main>
-</div>
-
-<script>
-  // ── CORE NAVIGATION LOGIC ──
-  function showPage(pageId) {
-    // 1. Manage Active Section
-    const sections = document.querySelectorAll('.section');
-    sections.forEach(sec => sec.classList.remove('active'));
-    document.getElementById(pageId).classList.add('active');
-
-    // 2. Manage Nav Links
-    const navLinks = document.querySelectorAll('.nav-link');
-    navLinks.forEach(link => {
-      link.classList.remove('active');
-      if (link.getAttribute('onclick').includes(pageId)) {
-        link.classList.add('active');
-      }
-    });
-
-    // 3. Scroll to top on change
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-    
-    // 4. Close mobile menu if open
-    const nav = document.querySelector('.side-nav');
-    if (window.innerWidth <= 1024) {
-      nav.style.display = 'none';
-    }
-  }
-
-  function toggleMenu() {
-    const nav = document.querySelector('.side-nav');
-    nav.style.display = (nav.style.display === 'flex') ? 'none' : 'flex';
-    nav.style.width = '100%';
-  }
-
-  // Initialize view
-  document.addEventListener('DOMContentLoaded', () => {
-    showPage('home');
-  });
-</script>
+<footer class="footer-minimal">
+    <p>© 2026 Prince Chakusa — Hospitality Intelligence & Operations</p>
+    <p style="color: var(--accent);">Architected for Performance</p>
+</footer>
 
 </body>
 </html>
