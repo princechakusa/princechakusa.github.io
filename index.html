@@ -661,6 +661,7 @@ strong{color:var(--espresso);font-weight:600;}
   background:var(--espresso);
   border-bottom:none;
   position:relative;
+  overflow:hidden;
 }
 .contact-banner h1{color:#fff;}
 .contact-banner h1 em{color:var(--gold);font-style:italic;}
@@ -747,7 +748,7 @@ strong{color:var(--espresso);font-weight:600;}
 /* ═══════ RESPONSIVE ═══════ */
 @media(max-width:960px){
   :root{--sidebar:200px;}
-  .sec,.hero,.contact-banner,.cv-strip{padding-left:2.5rem;padding-right:2.5rem;}
+  .sec,.hero,.contact-banner,.cv-strip,.hybrid-sec,.hnav-grid,.stat-strip,.stat-cell{padding-left:2rem;padding-right:2rem;}
   .hero-inner,.about-grid,.proj-inner,.hybrid-grid,.g2{grid-template-columns:1fr;}
   .hero-photo-col{display:none;}
   .stat-strip{grid-template-columns:1fr 1fr;}
@@ -762,14 +763,20 @@ strong{color:var(--espresso);font-weight:600;}
   .sidebar{transform:translateX(-100%);}
   .sidebar.open{transform:none;}
   .topbar{display:flex;}
-  .main{margin-left:0;}
-  .sec{padding:60px 1.4rem;}
-  .hero{padding:calc(var(--topbar)+2.5rem) 1.4rem 3rem;}
-  .contact-banner{padding:3rem 1.4rem;}
+  .main{margin-left:0; margin-top:var(--topbar);}
+  .sec{padding:52px 1.4rem;}
+  .hero{padding:3rem 1.4rem 3rem;}
+  .contact-banner{padding:3rem 1.4rem 3rem;}
   .cv-strip{padding:2.5rem 1.4rem;}
   .nav-cards{grid-template-columns:1fr;}
   .proj-sm-g,.role-grid{grid-template-columns:1fr;}
   .stat-strip{grid-template-columns:1fr 1fr;}
+  .hero-role{letter-spacing:1px;font-size:10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+  .contact-banner h1{font-size:2.2rem;}
+  .hybrid-sec{padding:3rem 1.4rem;}
+  .hnav-grid{padding:0;}
+  .nc{padding:2rem 1.4rem;}
+  .stat-cell{padding:2rem 1.4rem;}
 }
 </style>
 </head>
@@ -849,7 +856,7 @@ strong{color:var(--espresso);font-weight:600;}
           <span class="avail-dot"></span>
           Available — UAE &amp; GCC
         </div>
-        <span class="hero-role">Operations Leader &times; Full-Stack Developer</span>
+        <span class="hero-role">Hospitality Operations Professional | Guest Experience &amp; Data Analytics</span>
         <h1>Prince<br/><em>Chakusa</em></h1>
         <p class="hero-desc">Bridging <strong>high-scale property operations</strong> and <strong>custom technical architecture</strong> across Dubai's STR market. I don't wait for better tools — I build them.</p>
         <div class="hero-btns">
@@ -974,10 +981,11 @@ strong{color:var(--espresso);font-weight:600;}
         </table>
         <div class="gold-rule" style="margin:0;"></div>
         <div style="padding:1.5rem 0;">
-          <div class="edu-row"><div class="edu-mark">UJ</div><div><div class="edu-name">University of Johannesburg</div><div class="edu-deg">Associate in Computer Science <span class="badge bg-gold" style="margin-left:.4rem;">In Progress</span></div></div></div>
+          <div class="edu-row"><div class="edu-mark">UP</div><div><div class="edu-name">University of the People</div><div class="edu-deg">Associate in Computer Science <span class="badge bg-gold" style="margin-left:.4rem;">In Progress</span></div></div></div>
           <div class="edu-row"><div class="edu-mark">LC</div><div><div class="edu-name">Lyceum College, South Africa</div><div class="edu-deg">Diploma in Business Management</div></div></div>
           <div class="edu-row"><div class="edu-mark">A+</div><div><div class="edu-name">CompTIA A+ Core 1</div><div class="edu-deg">Certified <span class="badge bg-green" style="margin-left:.4rem;">Certified</span></div></div></div>
           <div class="edu-row"><div class="edu-mark">DL</div><div><div class="edu-name">UAE Driver's Licence</div><div class="edu-deg">Valid until 2029</div></div></div>
+          <div class="edu-row"><div class="edu-mark" style="font-size:.5rem;letter-spacing:0;">BIG</div><div><div class="edu-name">Basel Institute on Governance</div><div class="edu-deg">Operational Analysis of Transaction Reports (KYC) <span class="badge bg-gold" style="margin-left:.4rem;">Started Mar 2026</span></div></div></div>
         </div>
       </div>
     </div>
