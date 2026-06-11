@@ -2,7 +2,7 @@
 
 # princechakusa.github.io
 
-### Personal Portfolio & Professional Site — Prince Chakusa
+### Personal Portfolio & Professional Site - Prince Chakusa
 
 [![Live Site](https://img.shields.io/badge/Live%20Site-princechakusa.github.io-B8860B?style=for-the-badge&logo=googlechrome&logoColor=white)](https://princechakusa.github.io)
 [![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/HTML)
@@ -16,19 +16,19 @@
 
 ## Overview
 
-A fully custom single-page portfolio application built from scratch — no frameworks, no templates. Designed to present a professional brand that bridges operations leadership and software development for recruiters across UAE, GCC, and global markets.
+A fully custom single-page portfolio application built from scratch - no frameworks, no templates. Designed to present a professional brand that bridges operations leadership and software development for recruiters across UAE, GCC, and global markets.
 
 The site features a dark espresso & gold design system inspired by luxury hospitality branding, a fixed sidebar navigation, smooth page transitions, and a fully responsive mobile layout.
 
 ## Features
 
-- **Single-file architecture** — zero build tools, zero dependencies, zero external JS frameworks
-- **Sidebar + Topbar navigation** — fixed desktop sidebar with off-canvas mobile drawer
-- **5 content sections** — Home, About, Skills, Experience, Work & Cases
-- **Smooth page transitions** — CSS `fadeIn` animations between sections
-- **Responsive** — fluid layout from 320px mobile to 1920px widescreen
-- **Embedded assets** — photo and all icons inline (no broken image dependencies on GitHub Pages)
-- **Performance optimized** — single HTTP request for the full site
+- **Single-file architecture** - zero build tools, zero dependencies, zero external JS frameworks
+- **Sidebar + Topbar navigation** - fixed desktop sidebar with off-canvas mobile drawer
+- **5 content sections** - Home, About, Skills, Experience, Work & Cases
+- **Smooth page transitions** - CSS `fadeIn` animations between sections
+- **Responsive** - fluid layout from 320px mobile to 1920px widescreen
+- **Embedded assets** - photo and all icons inline (no broken image dependencies on GitHub Pages)
+- **Performance optimized** - single HTTP request for the full site
 
 ## Design System
 
@@ -61,7 +61,7 @@ The site features a dark espresso & gold design system inspired by luxury hospit
 
 ## Local Development
 
-No build step required — open directly in a browser:
+No build step required - open directly in a browser:
 
 ```bash
 git clone https://github.com/princechakusa/princechakusa.github.io.git
@@ -72,11 +72,11 @@ open index.html
 
 ## Deployment
 
-Automatically deployed to GitHub Pages on every push to `master`. No CI pipeline required — GitHub Pages serves `index.html` at the root directly.
+Automatically deployed to GitHub Pages on every push to `master`. No CI pipeline required - GitHub Pages serves `index.html` at the root directly.
 
 ## Author
 
-**Prince Chakusa** — Operations & Property Management Leader | PropTech Builder
+**Prince Chakusa** - Operations & Property Management Leader | PropTech Builder
 
 - Portfolio: [princechakusa.github.io](https://princechakusa.github.io)
 - GitHub: [@princechakusa](https://github.com/princechakusa)

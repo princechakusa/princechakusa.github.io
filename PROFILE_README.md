@@ -37,10 +37,10 @@
 ```
 ┌─────────────────────────────────────────────────────────────────────┐
 │                                                                     │
-│   Prince Chakusa  —  Dubai, UAE                                     │
+│   Prince Chakusa  -  Dubai, UAE                                     │
 │                                                                     │
 │   For 5+ years I have run the operational engine of Dubai's         │
-│   holiday home market — 350+ units, hundreds of guests,             │
+│   holiday home market - 350+ units, hundreds of guests,             │
 │   and every moving part in between. Now I am building the           │
 │   software the industry doesn't know it needs yet.                  │
 │                                                                     │
@@ -49,7 +49,7 @@
 
 > *"Operational excellence is a system, not an accident. I build both."*
 
-I am a property operations leader turned software builder. My work in hospitality showed me that the biggest pain points in property and guest management have no good software solutions — so I am building them myself, while completing my Computer Science degree. The best products come from people who have lived the problem.
+I am a property operations leader turned software builder. My work in hospitality showed me that the biggest pain points in property and guest management have no good software solutions - so I am building them myself, while completing my Computer Science degree. The best products come from people who have lived the problem.
 
 ---
 
@@ -127,6 +127,14 @@ I am a property operations leader turned software builder. My work in hospitalit
   <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=princechakusa&layout=compact&theme=dark&bg_color=2C2420&border_color=B8860B&title_color=B8860B&text_color=F5E6C8&langs_count=6" />
 </p>
 
+<p align="center">
+  <img src="https://github-profile-trophy.vercel.app/?username=princechakusa&theme=onestar&no-frame=true&no-bg=true&column=7&margin-w=8" width="100%" />
+</p>
+
+<p align="center">
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=princechakusa&bg_color=2C2420&color=F5E6C8&line=B8860B&point=F4C95D&area=true&area_color=B8860B&hide_border=false&border_color=B8860B&radius=12" width="100%" />
+</p>
+
 ---
 
 ## Currently Working On
@@ -137,9 +145,9 @@ const prince = {
   location : "Dubai, UAE",
 
   building : [
-    "FixHub  — maintenance ticketing for property managers",
-    "Guestcare  — guest communication platform",
-    "GGS V3  — operations management suite",
+    "FixHub  - maintenance ticketing for property managers",
+    "Guestcare  - guest communication platform",
+    "GGS V3  - operations management suite",
   ],
 
   learning : [

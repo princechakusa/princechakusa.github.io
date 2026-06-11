@@ -4,15 +4,15 @@
 
 ### Critical Issues Found
 
-1. **No GitHub profile README** — `princechakusa/princechakusa` repo does not exist. This is the single most impactful missing element on a GitHub profile. Every recruiter and collaborator who lands on your profile sees a blank default page instead of a curated introduction. HIGHEST PRIORITY.
-2. **Repository naming inconsistencies** — `PaMarket` and `Guestcare` use PascalCase, which is a code class naming convention, not a repository naming convention. `ggs-v3-platform` is a cryptic internal codename that communicates nothing to an outside viewer.
-3. **Missing repository descriptions** — `ggs-v3-platform` and `Guestcare` have no description text at all. GitHub shows these in search results, on your profile, and in your pinned repos. A blank description is a missed pitch opportunity.
-4. **Casual repository description** — `fixhub-backend` uses the placeholder-quality description "This is for my Maintenance Dashboard." It reads like a draft note rather than a professional project summary.
-5. **0 followers, 0 following** — No community engagement signals. GitHub's algorithm and human visitors both use follower count as a credibility proxy. Following relevant accounts in PropTech, hospitality tech, and full-stack development is the fastest free lever.
-6. **No GitHub topics/tags on any repositories** — Topics are GitHub's primary SEO and discoverability mechanism. Without them, your repositories will not surface in topic-based searches (e.g., `property-management`, `proptech`, `hospitality`).
-7. **No pinned repositories configured** — GitHub defaults to showing your six most recently updated repos. Without pinning, your profile may surface incomplete or experimental work rather than your strongest projects.
-8. **Profile bio undersells** — "Customer Experience Specialist & Tech Enthusiast" is generic and does not communicate scope, geography, credentials, or technical depth. It could describe anyone.
-9. **Stats inconsistency** — The portfolio site states 400+ units managed, but Prince's verified figure is 350+. Inconsistent self-reported numbers reduce credibility. Pick one accurate figure and use it everywhere.
+1. **No GitHub profile README** - `princechakusa/princechakusa` repo does not exist. This is the single most impactful missing element on a GitHub profile. Every recruiter and collaborator who lands on your profile sees a blank default page instead of a curated introduction. HIGHEST PRIORITY.
+2. **Repository naming inconsistencies** - `PaMarket` and `Guestcare` use PascalCase, which is a code class naming convention, not a repository naming convention. `ggs-v3-platform` is a cryptic internal codename that communicates nothing to an outside viewer.
+3. **Missing repository descriptions** - `ggs-v3-platform` and `Guestcare` have no description text at all. GitHub shows these in search results, on your profile, and in your pinned repos. A blank description is a missed pitch opportunity.
+4. **Casual repository description** - `fixhub-backend` uses the placeholder-quality description "This is for my Maintenance Dashboard." It reads like a draft note rather than a professional project summary.
+5. **0 followers, 0 following** - No community engagement signals. GitHub's algorithm and human visitors both use follower count as a credibility proxy. Following relevant accounts in PropTech, hospitality tech, and full-stack development is the fastest free lever.
+6. **No GitHub topics/tags on any repositories** - Topics are GitHub's primary SEO and discoverability mechanism. Without them, your repositories will not surface in topic-based searches (e.g., `property-management`, `proptech`, `hospitality`).
+7. **No pinned repositories configured** - GitHub defaults to showing your six most recently updated repos. Without pinning, your profile may surface incomplete or experimental work rather than your strongest projects.
+8. **Profile bio undersells** - "Customer Experience Specialist & Tech Enthusiast" is generic and does not communicate scope, geography, credentials, or technical depth. It could describe anyone.
+9. **Stats inconsistency** - The portfolio site states 400+ units managed, but Prince's verified figure is 350+. Inconsistent self-reported numbers reduce credibility. Pick one accurate figure and use it everywhere.
 
 ---
 
@@ -24,7 +24,7 @@
 | PaMarket | pamarket | GitHub convention is lowercase kebab-case for all repo names |
 | ggs-v3-platform | vacationhub-operations | Clear, professional, eliminates cryptic internal acronym |
 | Guestcare | guestcare-platform | Lowercase, adds context about the product type |
-| princechakusa.github.io | princechakusa.github.io | Keep as is — GitHub Pages naming convention requires this format |
+| princechakusa.github.io | princechakusa.github.io | Keep as is - GitHub Pages naming convention requires this format |
 
 ---
 
@@ -40,11 +40,11 @@ This bio works because it: leads with professional identity, signals technical o
 
 ### Recommended Pinned Repositories (in order)
 
-1. `princechakusa.github.io` — Portfolio website; the anchor piece that ties everything together
-2. `property-maintenance-hub` — Most professionally packaged project; leads with your core domain
-3. `guestcare-platform` — Demonstrates hospitality technology focus
-4. `vacationhub-operations` — Showcases analytics and operational intelligence work
-5. `pamarket` — Shows web development breadth beyond your primary domain
+1. `princechakusa.github.io` - Portfolio website; the anchor piece that ties everything together
+2. `property-maintenance-hub` - Most professionally packaged project; leads with your core domain
+3. `guestcare-platform` - Demonstrates hospitality technology focus
+4. `vacationhub-operations` - Showcases analytics and operational intelligence work
+5. `pamarket` - Shows web development breadth beyond your primary domain
 
 Pin these in this order. GitHub displays pinned repos left-to-right, top row first. Your strongest pieces should land in slots 1 and 2 where eye-tracking research shows the most attention.
 
@@ -77,10 +77,10 @@ Apply these via each repository's Settings tab or by editing the repository desc
 
 - **Dimensions:** 1500 x 500px (GitHub profile header standard)
 - **Color palette:**
-  - Espresso `#2C2420` — primary background
-  - Gold `#B8860B` — accent, headline, decorative line
-  - Cream `#F9F7F2` — body text, secondary elements
-- **Style:** Modern minimal with a very slight grain texture overlay (3–5% noise). The grain adds tactility and prevents the flat digital look. No gradients — solid blocks of color with one gold accent line.
+  - Espresso `#2C2420` - primary background
+  - Gold `#B8860B` - accent, headline, decorative line
+  - Cream `#F9F7F2` - body text, secondary elements
+- **Style:** Modern minimal with a very slight grain texture overlay (3–5% noise). The grain adds tactility and prevents the flat digital look. No gradients - solid blocks of color with one gold accent line.
 - **Typography:**
   - Name ("Prince Chakusa"): Playfair Display Bold, 72–80px, Cream `#F9F7F2`
   - Tagline ("Operations Leader. Technology Builder."): Montserrat SemiBold, 24–28px, Gold `#B8860B`
@@ -91,20 +91,20 @@ Apply these via each repository's Settings tab or by editing the repository desc
 - **Recommended tools:** Figma (free tier is sufficient), Canva (use the 1500x500 custom size), or Adobe Express
 
 ### What to avoid
-- Stock photography of laptops, coffee cups, or city skylines at full opacity — they read as template work
+- Stock photography of laptops, coffee cups, or city skylines at full opacity - they read as template work
 - Bright saturated colors that clash with your existing portfolio palette
-- Cramming in logos, skill badges, or stats — the banner is branding, not a resume
+- Cramming in logos, skill badges, or stats - the banner is branding, not a resume
 
 ---
 
 ## Profile Picture Style Recommendations
 
-- **Subject:** Professional headshot. The portfolio already embeds a photo — use that same image for consistency across GitHub, LinkedIn, and email.
+- **Subject:** Professional headshot. The portfolio already embeds a photo - use that same image for consistency across GitHub, LinkedIn, and email.
 - **Crop:** Face takes 70–80% of the frame. A slight tilt (5–10 degrees) or 3/4 angle reads as approachable rather than stiff. GitHub crops to a circle, so center the face and leave minimal dead space at the edges.
-- **Background:** Dark neutral or blurred architectural/interior background. This harmonizes with the espresso-and-gold palette. Avoid bright white or busy backgrounds — they fight with GitHub's interface.
+- **Background:** Dark neutral or blurred architectural/interior background. This harmonizes with the espresso-and-gold palette. Avoid bright white or busy backgrounds - they fight with GitHub's interface.
 - **Attire:** Business casual or smart casual with a visible collar. The collar communicates professionalism without being overly formal. Avoid t-shirts for a public professional profile.
 - **Post-processing:** Slight contrast boost (10–15%), mild sharpening on the face, and a warm tone shift that complements the gold accent color. Avoid filters that desaturate skin tones.
-- **Technical minimum:** 400x400px source file. GitHub renders profiles at 460px diameter maximum — anything below 400px will appear pixelated.
+- **Technical minimum:** 400x400px source file. GitHub renders profiles at 460px diameter maximum - anything below 400px will appear pixelated.
 - **Style references:** Review the profile photo approach of Satya Nadella (Microsoft CEO), Naval Ravikant (investor/technologist), or senior hospitality executives on LinkedIn. Common pattern: simple background, direct gaze, neutral or dark clothing, no clutter.
 
 ---
@@ -115,7 +115,7 @@ Each project below is selected because it directly demonstrates a skill that Pro
 
 ### 1. Property Management SOP Generator
 **Stack:** Python, Markdown, Jinja2 templates
-**Rationale:** Demonstrates automation of operational knowledge — a core PropTech differentiator. Shows that Prince can codify institutional expertise, not just perform it. Generates standard operating procedures from a structured data input. High resume signal for property management companies investing in operational technology.
+**Rationale:** Demonstrates automation of operational knowledge - a core PropTech differentiator. Shows that Prince can codify institutional expertise, not just perform it. Generates standard operating procedures from a structured data input. High resume signal for property management companies investing in operational technology.
 
 ### 2. STR Revenue Calculator and Forecasting Tool
 **Stack:** JavaScript, Chart.js or Recharts, HTML/CSS
@@ -131,7 +131,7 @@ Each project below is selected because it directly demonstrates a skill that Pro
 
 ### 5. UAE Holiday Home Compliance Checklist App
 **Stack:** React or vanilla JavaScript, local storage for state
-**Rationale:** UAE's DTCM (Department of Tourism and Commerce Marketing) has specific holiday home licensing requirements. A compliance tool demonstrates deep local regulatory knowledge — a differentiated skill that non-Dubai-based PropTech candidates cannot replicate. Strong SEO potential on GitHub for Dubai real estate searches.
+**Rationale:** UAE's DTCM (Department of Tourism and Commerce Marketing) has specific holiday home licensing requirements. A compliance tool demonstrates deep local regulatory knowledge - a differentiated skill that non-Dubai-based PropTech candidates cannot replicate. Strong SEO potential on GitHub for Dubai real estate searches.
 
 ### 6. Property Operations Cost Tracker
 **Stack:** Supabase (PostgreSQL), vanilla JavaScript, HTML/CSS
@@ -143,16 +143,16 @@ Each project below is selected because it directly demonstrates a skill that Pro
 
 ### 8. Airbnb Pricing Optimizer
 **Stack:** Python, pandas, public Airbnb data (InsideAirbnb.com datasets), matplotlib or seaborn
-**Rationale:** Pricing optimization is the highest-leverage variable in STR revenue management. Using publicly available Airbnb listing data to build a pricing model demonstrates data analysis skills, PropTech domain knowledge, and quantitative thinking — the combination that distinguishes a technologist-operator from a pure operator.
+**Rationale:** Pricing optimization is the highest-leverage variable in STR revenue management. Using publicly available Airbnb listing data to build a pricing model demonstrates data analysis skills, PropTech domain knowledge, and quantitative thinking - the combination that distinguishes a technologist-operator from a pure operator.
 
 ---
 ---
 
 # ROADMAP_90_DAYS.md
 
-## Phase 1: Foundation (Days 1–30) — "Build the Base"
+## Phase 1: Foundation (Days 1–30) - "Build the Base"
 
-The goal of Phase 1 is to eliminate all critical deficiencies identified in the audit. By Day 30, every existing repo should be clean and professional, the profile README should be live, and the visual identity should be established. No new projects are needed yet — fix what exists first.
+The goal of Phase 1 is to eliminate all critical deficiencies identified in the audit. By Day 30, every existing repo should be clean and professional, the profile README should be live, and the visual identity should be established. No new projects are needed yet - fix what exists first.
 
 ---
 
@@ -173,7 +173,7 @@ The goal of Phase 1 is to eliminate all critical deficiencies identified in the 
 **Day 4–5: Rename All Repositories**
 - Priority: P1
 - Estimated time: 1 hour total
-- Task: Rename `PaMarket` to `pamarket`, `Guestcare` to `guestcare-platform`, `ggs-v3-platform` to `vacationhub-operations`, `fixhub-backend` to `property-maintenance-hub`. Go to each repo > Settings > Repository name. Warning: renaming breaks existing links — check for any hardcoded repo URLs in READMEs or external sites after renaming.
+- Task: Rename `PaMarket` to `pamarket`, `Guestcare` to `guestcare-platform`, `ggs-v3-platform` to `vacationhub-operations`, `fixhub-backend` to `property-maintenance-hub`. Go to each repo > Settings > Repository name. Warning: renaming breaks existing links - check for any hardcoded repo URLs in READMEs or external sites after renaming.
 - Success metric: All five repos use kebab-case lowercase naming
 
 **Day 6–7: Add Descriptions to All Repositories**
@@ -195,7 +195,7 @@ The goal of Phase 1 is to eliminate all critical deficiencies identified in the 
 **Days 8–10: Add GitHub Topics to All Repositories**
 - Priority: P1
 - Estimated time: 30 minutes total
-- Task: For each repo, click the gear icon next to "About." Add the topics listed in the Portfolio Guide's "Required GitHub Topics" section. Use the exact topic strings — GitHub auto-links these to topic pages.
+- Task: For each repo, click the gear icon next to "About." Add the topics listed in the Portfolio Guide's "Required GitHub Topics" section. Use the exact topic strings - GitHub auto-links these to topic pages.
 - Success metric: Every repo shows at least 5 topic tags on its page
 
 **Days 11–12: Configure Pinned Repositories**
@@ -239,7 +239,7 @@ The goal of Phase 1 is to eliminate all critical deficiencies identified in the 
 **Days 22–25: Follow Relevant Accounts**
 - Priority: P2
 - Estimated time: 1–2 hours spread across days
-- Task: Follow 50–75 accounts in the following categories: PropTech developers and founders, hospitality technology builders (search GitHub topics: `proptech`, `short-term-rental`, `property-management`), full-stack developers building operational tools, and developers in the UAE and Africa tech communities. Quality over quantity — follow accounts that post real code, not just forks.
+- Task: Follow 50–75 accounts in the following categories: PropTech developers and founders, hospitality technology builders (search GitHub topics: `proptech`, `short-term-rental`, `property-management`), full-stack developers building operational tools, and developers in the UAE and Africa tech communities. Quality over quantity - follow accounts that post real code, not just forks.
 - Success metric: Following count reaches at least 50 by Day 30
 
 **Days 26–27: Consistency Audit**
@@ -256,7 +256,7 @@ The goal of Phase 1 is to eliminate all critical deficiencies identified in the 
 
 ---
 
-## Phase 2: Content (Days 31–60) — "Fill the Portfolio"
+## Phase 2: Content (Days 31–60) - "Fill the Portfolio"
 
 The goal of Phase 2 is to add at least two new projects that demonstrate quantified technical work, and to deepen the documentation quality across existing repos.
 
@@ -281,7 +281,7 @@ The goal of Phase 2 is to add at least two new projects that demonstrate quantif
 **Days 38–44: Build STR Revenue Calculator and Forecasting Tool**
 - Priority: P1
 - Estimated time: 8–12 hours across the week
-- Task: Build the project described in "Suggested New Projects" item 2. Focus on the user-facing calculation interface — inputs for nightly rate, occupancy rate, number of units, operating costs, and seasonality adjustments. Output a monthly/annual revenue forecast with a simple chart. Host on GitHub Pages so it runs in the browser without any backend.
+- Task: Build the project described in "Suggested New Projects" item 2. Focus on the user-facing calculation interface - inputs for nightly rate, occupancy rate, number of units, operating costs, and seasonality adjustments. Output a monthly/annual revenue forecast with a simple chart. Host on GitHub Pages so it runs in the browser without any backend.
 - Week breakdown:
   - Days 38–39: Write README, sketch the input/output interface, set up repo
   - Days 40–42: Build calculator logic and Chart.js visualization
@@ -301,7 +301,7 @@ The goal of Phase 2 is to add at least two new projects that demonstrate quantif
 **Days 49–51: Write Challenges and Decisions Sections in READMEs**
 - Priority: P2
 - Estimated time: 2–3 hours total
-- Task: Add a short "Technical Decisions" or "What I Learned" section to at least three READMEs. This is the most underused README section and the one that most impresses senior engineers and hiring managers. Describe one architectural decision per project — why you chose Supabase over another database, why you structured the data model a certain way, what you would do differently.
+- Task: Add a short "Technical Decisions" or "What I Learned" section to at least three READMEs. This is the most underused README section and the one that most impresses senior engineers and hiring managers. Describe one architectural decision per project - why you chose Supabase over another database, why you structured the data model a certain way, what you would do differently.
 - Success metric: At least three repos have a "Technical Decisions" or "Lessons Learned" section
 
 ---
@@ -322,9 +322,9 @@ The goal of Phase 2 is to add at least two new projects that demonstrate quantif
 
 ---
 
-## Phase 3: Visibility (Days 61–90) — "Get Discovered"
+## Phase 3: Visibility (Days 61–90) - "Get Discovered"
 
-The goal of Phase 3 is to take the now-clean, content-rich profile and distribute it to the people who should see it — without spamming or performing inauthentically.
+The goal of Phase 3 is to take the now-clean, content-rich profile and distribute it to the people who should see it - without spamming or performing inauthentically.
 
 ---
 
@@ -333,13 +333,13 @@ The goal of Phase 3 is to take the now-clean, content-rich profile and distribut
 **Days 61–63: Update LinkedIn Profile with GitHub Links**
 - Priority: P1
 - Estimated time: 1–2 hours
-- Task: Add GitHub profile URL to LinkedIn contact section. Add `property-maintenance-hub` and `princechakusa.github.io` as Featured items on LinkedIn. Write a LinkedIn post announcing one of the new projects built in Phase 2 — describe the problem it solves, not just the tech stack. Tag relevant PropTech communities.
+- Task: Add GitHub profile URL to LinkedIn contact section. Add `property-maintenance-hub` and `princechakusa.github.io` as Featured items on LinkedIn. Write a LinkedIn post announcing one of the new projects built in Phase 2 - describe the problem it solves, not just the tech stack. Tag relevant PropTech communities.
 - Success metric: GitHub URL visible on LinkedIn; one project post published with at least one project linked
 
 **Days 64–67: Write One Technical Post or GitHub Discussion**
 - Priority: P2
 - Estimated time: 3–4 hours
-- Task: Write a short (500–800 word) technical post — either as a GitHub Gist, a DEV.to article, or a LinkedIn article — about a specific technical decision from one of your projects. Topic ideas: "Why I chose Supabase for a property management tool instead of Firebase," or "What I learned building a maintenance dashboard for 350 units." This type of content drives profile traffic organically.
+- Task: Write a short (500–800 word) technical post - either as a GitHub Gist, a DEV.to article, or a LinkedIn article - about a specific technical decision from one of your projects. Topic ideas: "Why I chose Supabase for a property management tool instead of Firebase," or "What I learned building a maintenance dashboard for 350 units." This type of content drives profile traffic organically.
 - Success metric: One published technical post with a link back to the relevant GitHub repo
 
 ---
@@ -349,7 +349,7 @@ The goal of Phase 3 is to take the now-clean, content-rich profile and distribut
 **Days 68–70: Optimize Repository Descriptions for Search**
 - Priority: P2
 - Estimated time: 1 hour
-- Task: Review all repo descriptions for keyword density. GitHub search indexes repo names, descriptions, and README content. Ensure that phrases like "property management," "short-term rental," "Dubai," "Supabase," and "hospitality" appear naturally in descriptions and README first paragraphs. Do not keyword-stuff — one natural occurrence per keyword per document is sufficient.
+- Task: Review all repo descriptions for keyword density. GitHub search indexes repo names, descriptions, and README content. Ensure that phrases like "property management," "short-term rental," "Dubai," "Supabase," and "hospitality" appear naturally in descriptions and README first paragraphs. Do not keyword-stuff - one natural occurrence per keyword per document is sufficient.
 - Success metric: Each repo description and README first paragraph contains at least two searchable domain keywords
 
 **Days 71–74: Complete UAE Compliance App and Deploy**
@@ -371,7 +371,7 @@ The goal of Phase 3 is to take the now-clean, content-rich profile and distribut
 **Days 78–81: Start Fourth Project (Optional but High-Value)**
 - Priority: P3
 - Estimated time: 6–10 hours
-- Task: Begin the Property Management SOP Generator (Python, described in "Suggested New Projects" item 1). This project is particularly strong because it demonstrates the ability to codify operational knowledge programmatically — a skill explicitly valued in PropTech product roles. Even a README-only start with a working minimal prototype is sufficient for Phase 3.
+- Task: Begin the Property Management SOP Generator (Python, described in "Suggested New Projects" item 1). This project is particularly strong because it demonstrates the ability to codify operational knowledge programmatically - a skill explicitly valued in PropTech product roles. Even a README-only start with a working minimal prototype is sufficient for Phase 3.
 - Success metric: Repo created with README; at least one working generation script committed
 
 ---
@@ -381,13 +381,13 @@ The goal of Phase 3 is to take the now-clean, content-rich profile and distribut
 **Days 82–85: Final README Pass**
 - Priority: P2
 - Estimated time: 3–4 hours
-- Task: Do a final proofread of all READMEs. Check: consistent tense (present for active projects, past for completed ones), no placeholder text remaining, all links work, all screenshots load. Pay special attention to the profile README — this is the document with the highest view count.
+- Task: Do a final proofread of all READMEs. Check: consistent tense (present for active projects, past for completed ones), no placeholder text remaining, all links work, all screenshots load. Pay special attention to the profile README - this is the document with the highest view count.
 - Success metric: Zero broken links or placeholder text across all repos
 
 **Days 86–88: Engage with GitHub PropTech Community**
 - Priority: P3
 - Estimated time: 2–3 hours
-- Task: Find and contribute to at least one open-source property management or hospitality technology project — even a documentation fix counts. A contribution to someone else's repo shows collaborative capability and often results in profile visits from the repo maintainer's network.
+- Task: Find and contribute to at least one open-source property management or hospitality technology project - even a documentation fix counts. A contribution to someone else's repo shows collaborative capability and often results in profile visits from the repo maintainer's network.
 - Success metric: At least one contribution (PR, issue, or discussion) visible on contribution graph from an external repo
 
 **Days 89–90: Measure and Plan Next 90 Days**
@@ -426,6 +426,6 @@ A recruiter or PropTech hiring manager who lands on `github.com/princechakusa` s
 3. Five pinned repos that each solve a real operational problem, with screenshots and full documentation
 4. A contribution graph showing consistent engagement over the past 90 days
 5. A follower count above zero with outbound following that signals genuine community participation
-6. At least two new projects that did not exist before this roadmap — projects that only someone with Prince's specific operational background and Dubai-market knowledge could have built
+6. At least two new projects that did not exist before this roadmap - projects that only someone with Prince's specific operational background and Dubai-market knowledge could have built
 
 The goal is not to look like a prolific open-source contributor. The goal is to look like an operations leader who builds purposeful, well-documented technology tools to solve the specific problems he encounters in his domain. That is a rare and commercially valuable profile.

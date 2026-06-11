@@ -19,16 +19,16 @@
 
 ## Overview
 
-Property Maintenance Hub is a full-featured maintenance operations platform built for property managers who need to triage, assign, and resolve maintenance requests at scale. It centralises the entire maintenance lifecycle — from initial ticket submission through vendor dispatch to SLA-monitored resolution — in a single, real-time dashboard. By connecting property managers directly to their vendor network inside one interface, the platform eliminates the back-and-forth that typically slows down repairs and erodes tenant satisfaction.
+Property Maintenance Hub is a full-featured maintenance operations platform built for property managers who need to triage, assign, and resolve maintenance requests at scale. It centralises the entire maintenance lifecycle - from initial ticket submission through vendor dispatch to SLA-monitored resolution - in a single, real-time dashboard. By connecting property managers directly to their vendor network inside one interface, the platform eliminates the back-and-forth that typically slows down repairs and erodes tenant satisfaction.
 
 ## Key Features
 
-- **Ticket Management** — Create, categorise, and prioritise maintenance requests with custom severity levels and property tagging
-- **Vendor Assignment** — Match open tickets to vetted vendors from an internal directory and dispatch work orders in one click
-- **SLA Tracking** — Automated countdown timers and escalation alerts ensure no ticket breaches agreed response windows
-- **Real-Time Status Updates** — Live dashboard reflects ticket progress from *Open* → *In Progress* → *Resolved* without page refresh
-- **Audit Trail** — Every status change, comment, and reassignment is logged with timestamps for compliance and dispute resolution
-- **Reporting** — Exportable summaries of ticket volume, resolution time, and vendor performance by property or date range
+- **Ticket Management** - Create, categorise, and prioritise maintenance requests with custom severity levels and property tagging
+- **Vendor Assignment** - Match open tickets to vetted vendors from an internal directory and dispatch work orders in one click
+- **SLA Tracking** - Automated countdown timers and escalation alerts ensure no ticket breaches agreed response windows
+- **Real-Time Status Updates** - Live dashboard reflects ticket progress from *Open* → *In Progress* → *Resolved* without page refresh
+- **Audit Trail** - Every status change, comment, and reassignment is logged with timestamps for compliance and dispute resolution
+- **Reporting** - Exportable summaries of ticket volume, resolution time, and vendor performance by property or date range
 
 ## Tech Stack
 
@@ -75,7 +75,7 @@ SUPABASE_ANON_KEY=your_anon_key
 1. **Log in** with your property manager credentials via the Supabase Auth flow.
 2. **Create a ticket** by selecting a property, describing the issue, and setting priority.
 3. **Assign a vendor** from the vendor directory modal that appears on any open ticket.
-4. **Monitor SLAs** on the main dashboard — tickets approaching their deadline surface automatically.
+4. **Monitor SLAs** on the main dashboard - tickets approaching their deadline surface automatically.
 5. **Close tickets** by logging resolution notes; the system timestamps completion and updates vendor performance records.
 
 ## Business Impact
@@ -133,16 +133,16 @@ Distributed under the [MIT License](./LICENSE).
 
 ## Overview
 
-GuestCare Platform is a guest communication and experience automation system purpose-built for short-term rental operators in high-velocity markets like Dubai. It replaces manual, error-prone guest messaging with automated, personalised communication flows that trigger at every stage of the guest journey — from booking confirmation through check-out. Operators gain a unified inbox with satisfaction scoring and review tracking, giving them the data they need to protect and grow their ratings on OTAs.
+GuestCare Platform is a guest communication and experience automation system purpose-built for short-term rental operators in high-velocity markets like Dubai. It replaces manual, error-prone guest messaging with automated, personalised communication flows that trigger at every stage of the guest journey - from booking confirmation through check-out. Operators gain a unified inbox with satisfaction scoring and review tracking, giving them the data they need to protect and grow their ratings on OTAs.
 
 ## Key Features
 
-- **Automated Guest Messaging** — Pre-built message sequences for booking confirmation, pre-arrival instructions, check-in day reminders, mid-stay check-ins, and checkout prompts
-- **Review Tracking** — Aggregates guest reviews across platforms (Airbnb, Booking.com, etc.) into a single feed with trend visualisation
-- **Satisfaction Scoring** — Proprietary scoring model converts guest response signals into an actionable satisfaction index per property
-- **Message Personalisation** — Dynamic variables (guest name, property address, WiFi code, check-in time) auto-populated in every message
-- **Response Templates** — Library of pre-approved response templates for common guest queries, reducing response time dramatically
-- **Operational Alerts** — Flags low satisfaction scores or unanswered messages so operators can intervene before a negative review is posted
+- **Automated Guest Messaging** - Pre-built message sequences for booking confirmation, pre-arrival instructions, check-in day reminders, mid-stay check-ins, and checkout prompts
+- **Review Tracking** - Aggregates guest reviews across platforms (Airbnb, Booking.com, etc.) into a single feed with trend visualisation
+- **Satisfaction Scoring** - Proprietary scoring model converts guest response signals into an actionable satisfaction index per property
+- **Message Personalisation** - Dynamic variables (guest name, property address, WiFi code, check-in time) auto-populated in every message
+- **Response Templates** - Library of pre-approved response templates for common guest queries, reducing response time dramatically
+- **Operational Alerts** - Flags low satisfaction scores or unanswered messages so operators can intervene before a negative review is posted
 
 ## Tech Stack
 
@@ -182,7 +182,7 @@ npx serve .
 
 1. **Add a property** via the Properties panel and configure check-in/check-out times.
 2. **Upload guest data** (manually or via CSV import) to seed an upcoming reservation.
-3. **Configure message flows** in the Automations tab — select triggers and edit template copy.
+3. **Configure message flows** in the Automations tab - select triggers and edit template copy.
 4. **Monitor the inbox** for incoming guest replies; satisfaction scores update in real time.
 5. **Review the ratings dashboard** to track platform review scores over time and spot trends.
 
@@ -243,16 +243,16 @@ Distributed under the [MIT License](./LICENSE).
 
 ## Overview
 
-VacationHub Operations (v3) is the third generation of a Guest & Operations Management System built to give short-term rental portfolio managers a single, real-time command centre for their entire property estate. The platform surfaces occupancy rates, revenue analytics, and operational KPIs in a live dashboard that refreshes without user intervention, enabling data-driven decisions at speed. Beyond metrics, it coordinates team operations — assigning housekeeping schedules, tracking task completion, and flagging exceptions — so nothing slips between the cracks as a portfolio scales.
+VacationHub Operations (v3) is the third generation of a Guest & Operations Management System built to give short-term rental portfolio managers a single, real-time command centre for their entire property estate. The platform surfaces occupancy rates, revenue analytics, and operational KPIs in a live dashboard that refreshes without user intervention, enabling data-driven decisions at speed. Beyond metrics, it coordinates team operations - assigning housekeeping schedules, tracking task completion, and flagging exceptions - so nothing slips between the cracks as a portfolio scales.
 
 ## Key Features
 
-- **Portfolio KPI Dashboard** — At-a-glance overview of occupancy rate, ADR (Average Daily Rate), RevPAR, and total revenue across the full portfolio
-- **Occupancy Tracking** — Property-level and portfolio-level occupancy heatmaps with week-over-week and month-over-month trend lines
-- **Revenue Analytics** — Drill-down revenue reporting by property, channel, and time period with exportable CSV output
-- **Team Operations** — Assign and track housekeeping, maintenance, and inspection tasks; real-time completion status visible to all team members
-- **Exception Alerts** — Automated flags for low occupancy thresholds, missed cleans, or revenue variance outside acceptable ranges
-- **Multi-Property View** — Switch between individual property deep-dives and aggregated portfolio-level summaries in one click
+- **Portfolio KPI Dashboard** - At-a-glance overview of occupancy rate, ADR (Average Daily Rate), RevPAR, and total revenue across the full portfolio
+- **Occupancy Tracking** - Property-level and portfolio-level occupancy heatmaps with week-over-week and month-over-month trend lines
+- **Revenue Analytics** - Drill-down revenue reporting by property, channel, and time period with exportable CSV output
+- **Team Operations** - Assign and track housekeeping, maintenance, and inspection tasks; real-time completion status visible to all team members
+- **Exception Alerts** - Automated flags for low occupancy thresholds, missed cleans, or revenue variance outside acceptable ranges
+- **Multi-Property View** - Switch between individual property deep-dives and aggregated portfolio-level summaries in one click
 
 ## Tech Stack
 
@@ -290,17 +290,17 @@ npx serve .
 
 ## Usage
 
-1. **Open the dashboard** — the Portfolio Overview loads automatically with all properties visible.
+1. **Open the dashboard** - the Portfolio Overview loads automatically with all properties visible.
 2. **Select a property** from the sidebar to drill into unit-level KPIs, occupancy calendar, and revenue breakdown.
 3. **Navigate to Team Ops** to view today's task schedule, assign new tasks, or mark completions.
 4. **Configure alert thresholds** in Settings to personalise when exception flags trigger.
-5. **Export reports** using the Download button on any chart or table — outputs as CSV or PDF.
+5. **Export reports** using the Download button on any chart or table - outputs as CSV or PDF.
 
 ## Business Impact
 
 | Metric | Benchmark |
 |---|---|
-| Decision latency | Real-time data vs. end-of-day manual reports — hours saved daily |
+| Decision latency | Real-time data vs. end-of-day manual reports - hours saved daily |
 | Occupancy visibility | 100% of portfolio tracked vs. platform-by-platform manual reconciliation |
 | Revenue leakage | Early occupancy alerts enable dynamic pricing adjustments before gaps crystallise |
 | Team accountability | Task completion rates surface instantly, reducing missed turnovers |
@@ -351,16 +351,16 @@ Distributed under the [MIT License](./LICENSE).
 
 ## Overview
 
-PaMarket is an online marketplace platform designed specifically for Zimbabwean buyers and sellers. It provides a familiar, trust-anchored shopping experience that meets local market conditions — fast-loading pages, intuitive category navigation, and seller profiles that build credibility in an environment where trust is a prerequisite for conversion. The platform is fully browser-based, requiring no app installation, making it accessible to the widest possible slice of Zimbabwe's internet-connected population.
+PaMarket is an online marketplace platform designed specifically for Zimbabwean buyers and sellers. It provides a familiar, trust-anchored shopping experience that meets local market conditions - fast-loading pages, intuitive category navigation, and seller profiles that build credibility in an environment where trust is a prerequisite for conversion. The platform is fully browser-based, requiring no app installation, making it accessible to the widest possible slice of Zimbabwe's internet-connected population.
 
 ## Key Features
 
-- **Product Listings** — Sellers can create rich product listings with images, descriptions, pricing, and stock levels in under two minutes
-- **User Profiles** — Both buyers and sellers maintain public profiles with ratings, transaction history, and verified contact information
-- **Search** — Full-text search with real-time suggestions surfaces relevant listings instantly across the entire catalogue
-- **Category Navigation** — Structured category and subcategory taxonomy allows shoppers to browse by market segment (Electronics, Fashion, Home, Agriculture, and more)
-- **Responsive Design** — Optimised for mobile-first browsing on the low-to-mid-range Android devices dominant in the Zimbabwean market
-- **Seller Dashboard** — Dedicated view for sellers to manage active listings, track enquiries, and update inventory
+- **Product Listings** - Sellers can create rich product listings with images, descriptions, pricing, and stock levels in under two minutes
+- **User Profiles** - Both buyers and sellers maintain public profiles with ratings, transaction history, and verified contact information
+- **Search** - Full-text search with real-time suggestions surfaces relevant listings instantly across the entire catalogue
+- **Category Navigation** - Structured category and subcategory taxonomy allows shoppers to browse by market segment (Electronics, Fashion, Home, Agriculture, and more)
+- **Responsive Design** - Optimised for mobile-first browsing on the low-to-mid-range Android devices dominant in the Zimbabwean market
+- **Seller Dashboard** - Dedicated view for sellers to manage active listings, track enquiries, and update inventory
 
 ## Tech Stack
 
@@ -389,7 +389,7 @@ PaMarket is an online marketplace platform designed specifically for Zimbabwean 
 git clone https://github.com/princechakusa/pamarket.git
 cd pamarket
 
-# 2. Open locally — no build step required
+# 2. Open locally - no build step required
 open index.html
 # or use a local server for full functionality:
 npx serve .
@@ -416,7 +416,7 @@ npx serve .
 | Metric | Benchmark |
 |---|---|
 | Market gap | Addresses the absence of a locally-tailored, mobile-optimised marketplace for Zimbabwe |
-| Accessibility | No app download required — zero friction entry for new users on any device |
+| Accessibility | No app download required - zero friction entry for new users on any device |
 | Seller empowerment | Any individual or SME can publish a storefront in under 5 minutes |
 | Search discoverability | Structured categories + full-text search surface long-tail listings that social media selling buries |
 
