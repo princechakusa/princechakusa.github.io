@@ -147,7 +147,7 @@ const prince = {
   building : [
     "FixHub  - maintenance ticketing for property managers",
     "Guestcare  - guest communication platform",
-    "GGS V3  - operations management suite",
+    "PaMarket  - online marketplace for Zimbabwe",
   ],
 
   learning : [
