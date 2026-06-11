@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Projects - Prince Chakusa</title>
+  <meta name="description" content="Software built by Prince Chakusa - FixHub maintenance ticketing, GuestCare guest communications, GGS property management platform, and PaMarket marketplace for Zimbabwe." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <div class="nav__inner">
+    <a href="index.html" class="nav__logo">Prince<span>.</span></a>
+    <div class="nav__links">
+      <a href="about.html">About</a>
+      <a href="experience.html">Experience</a>
+      <a href="projects.html" class="active">Projects</a>
+      <a href="skills.html">Skills</a>
+      <a href="education.html">Education</a>
+      <a href="contact.html">Hire Me</a>
+    </div>
+    <button class="nav__burger" id="burger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="nav__mobile" id="mobileNav">
+  <a href="about.html">About</a>
+  <a href="experience.html">Experience</a>
+  <a href="projects.html" class="active">Projects</a>
+  <a href="skills.html">Skills</a>
+  <a href="education.html">Education</a>
+  <a href="contact.html">Hire Me</a>
+</div>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="container">
+    <p class="eyebrow reveal">What I've built</p>
+    <h1 class="page-hero__title reveal reveal-delay-1">Things I've Built</h1>
+    <p class="page-hero__sub reveal reveal-delay-2">Each of these started with a real problem I was hitting at work. The operations experience came first. The software came after.</p>
+  </div>
+</div>
+
+<!-- PROJECTS GRID -->
+<section class="section">
+  <div class="container">
+    <div class="projects-full-grid">
+
+      <!-- FixHub -->
+      <div class="project-full-card reveal">
+        <img src="assets/fixhub-dashboard.jpg" alt="FixHub maintenance dashboard" class="project-full-card__img" />
+        <div class="project-full-card__body">
+          <span class="project-full-card__number">01</span>
+          <h2 class="project-full-card__title">FixHub</h2>
+          <p class="project-full-card__tagline">Maintenance ticketing built for property managers.</p>
+          <p class="project-full-card__desc">
+            No more WhatsApp threads. No more missed jobs. FixHub gives property managers a structured way to log maintenance requests, assign them to technicians, track status, and close them with documentation. It was built because I spent years watching jobs disappear into group chats - and watching that directly translate to unhappy guests and unhappy owners.
+          </p>
+          <p class="project-full-card__desc">
+            Deployed on a live portfolio of 350+ units. The result was a 40% reduction in average maintenance response time - not because the contractors got faster, but because the coordination got cleaner.
+          </p>
+          <div class="chips">
+            <span class="chip">JavaScript</span>
+            <span class="chip">HTML/CSS</span>
+            <span class="chip">Supabase</span>
+            <span class="chip">PostgreSQL</span>
+          </div>
+          <div class="project-full-card__links">
+            <a href="https://github.com/princechakusa/fixhub-backend" target="_blank" class="btn btn-dark" style="font-size: 0.8rem; padding: 9px 18px;">GitHub</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- GuestCare -->
+      <div class="project-full-card reveal reveal-delay-1">
+        <div class="project-full-card__placeholder">
+          <span>GuestCare - screenshot coming</span>
+        </div>
+        <div class="project-full-card__body">
+          <span class="project-full-card__number">02</span>
+          <h2 class="project-full-card__title">GuestCare</h2>
+          <p class="project-full-card__tagline">Guest communication platform for holiday home operators.</p>
+          <p class="project-full-card__desc">
+            Centralises messaging across Airbnb, Booking.com, and WhatsApp into one place. Holiday home operators currently jump between three or four apps to answer the same guest's questions - and response time is one of the top factors in review scores.
+          </p>
+          <p class="project-full-card__desc">
+            GuestCare also handles the guest journey: pre-arrival instructions, check-in guide, issue reporting during the stay, check-out reminders, and review follow-up. Everything a guest needs from booking to departure, in one flow.
+          </p>
+          <div class="chips">
+            <span class="chip">JavaScript</span>
+            <span class="chip">HTML/CSS</span>
+            <span class="chip">Supabase</span>
+          </div>
+          <div class="project-full-card__links">
+            <a href="https://github.com/princechakusa/Guestcare" target="_blank" class="btn btn-dark" style="font-size: 0.8rem; padding: 9px 18px;">GitHub</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- PaMarket -->
+      <div class="project-full-card reveal">
+        <div class="project-full-card__multi-img">
+          <img src="assets/pamarket-splash.jpg" alt="PaMarket splash screen" />
+          <img src="assets/pamarket-account.jpg" alt="PaMarket account screen" />
+        </div>
+        <div class="project-full-card__body">
+          <span class="project-full-card__number">03</span>
+          <h2 class="project-full-card__title">PaMarket</h2>
+          <p class="project-full-card__tagline">"Konke Endaweni Eyodwa" - Everything In One Place.</p>
+          <p class="project-full-card__desc">
+            Online marketplace for Zimbabwe. Buy, sell, find jobs - all in one place. The Zimbabwean market has been underserved by e-commerce for years. Local buyers and sellers have had to rely on fragmented Facebook groups and WhatsApp broadcasts, with no real structure, no search, no categories.
+          </p>
+          <p class="project-full-card__desc">
+            PaMarket is built specifically for that market: the browsing behaviour, the payment realities, the types of goods people actually trade. The tagline is in Ndebele - "Everything In One Place" - because that's what it's actually trying to do. It's live and open to users.
+          </p>
+          <div class="chips">
+            <span class="chip">JavaScript</span>
+            <span class="chip">HTML/CSS</span>
+          </div>
+          <div class="project-full-card__links">
+            <a href="https://github.com/princechakusa/PaMarket" target="_blank" class="btn btn-dark" style="font-size: 0.8rem; padding: 9px 18px;">GitHub</a>
+            <a href="https://princechakusa.github.io/PaMarket/" target="_blank" class="btn btn-outline" style="font-size: 0.8rem; padding: 9px 18px;">Live site</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- GGS Platform -->
+      <div class="project-full-card reveal reveal-delay-1">
+        <div class="project-full-card__placeholder">
+          <span>GGS Platform - screenshot coming</span>
+        </div>
+        <div class="project-full-card__body">
+          <span class="project-full-card__number">04</span>
+          <h2 class="project-full-card__title">GGS Platform</h2>
+          <p class="project-full-card__tagline">Property management platform for multi-unit operators.</p>
+          <p class="project-full-card__desc">
+            Brings bookings, maintenance, and financials into one dashboard for property management companies running multiple units. Most PMS software on the market is either too expensive, too complex, or built for hotel groups rather than holiday home operators managing a mixed residential and STR portfolio.
+          </p>
+          <p class="project-full-card__desc">
+            GGS is designed from the operator's perspective - because I am one. Booking calendar, maintenance queue, owner statements, occupancy reporting. The kind of dashboard I wished I had been using for five years.
+          </p>
+          <div class="chips">
+            <span class="chip">JavaScript</span>
+            <span class="chip">HTML/CSS</span>
+            <span class="chip">Supabase</span>
+            <span class="chip">Chart.js</span>
+          </div>
+          <div class="project-full-card__links">
+            <a href="https://github.com/princechakusa/ggs-v3-platform" target="_blank" class="btn btn-dark" style="font-size: 0.8rem; padding: 9px 18px;">GitHub</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-strip">
+  <div class="container">
+    <h2 class="cta-strip__title reveal">Want to talk about any of this?</h2>
+    <p class="cta-strip__sub reveal reveal-delay-1">I'm happy to walk through the technical decisions or the operational problems behind any of these.</p>
+    <div class="cta-strip__actions reveal reveal-delay-2">
+      <a href="contact.html" class="btn btn-gold">Get in touch</a>
+      <a href="https://github.com/princechakusa" target="_blank" class="btn btn-outline" style="border-color: rgba(247,245,240,0.3); color: rgba(247,245,240,0.8);">GitHub profile</a>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__inner">
+      <p class="footer__copy">&copy; <span id="yr"></span> Prince Chakusa. Built by hand.</p>
+      <div class="footer__links">
+        <a href="index.html">Home</a>
+        <a href="experience.html">Experience</a>
+        <a href="mailto:chakusaprince@gmail.com">Email</a>
+        <a href="https://linkedin.com/in/princechakusa" target="_blank">LinkedIn</a>
+        <a href="https://github.com/princechakusa" target="_blank">GitHub</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  const burger = document.getElementById('burger');
+  const mobileNav = document.getElementById('mobileNav');
+  burger.addEventListener('click', () => {
+    burger.classList.toggle('open');
+    mobileNav.classList.toggle('open');
+  });
+  mobileNav.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      burger.classList.remove('open');
+      mobileNav.classList.remove('open');
+    });
+  });
+
+  const revealEls = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('revealed');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08 });
+  revealEls.forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
