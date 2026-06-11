@@ -455,6 +455,11 @@ p {
   padding: 80px 0;
 }
 
+.page-hero + .section,
+.page-hero + .section--alt {
+  padding-top: 48px;
+}
+
 .section--alt {
   background: var(--bg2);
 }
