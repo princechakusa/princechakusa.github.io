@@ -289,7 +289,7 @@ p {
   padding-top: calc(var(--nav-h) + 80px);
   padding-bottom: 64px;
   border-bottom: 1px solid var(--border);
-  margin-bottom: 80px;
+  margin-bottom: 0;
 }
 
 .page-hero__title {
@@ -1534,7 +1534,7 @@ p {
   .page-hero {
     padding-top: calc(var(--nav-h) + 48px);
     padding-bottom: 48px;
-    margin-bottom: 56px;
+    margin-bottom: 0;
   }
 
   .section {
